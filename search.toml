@@ -1,0 +1,23 @@
+[input]
+base_directory = "output"
+html_selector = "main"
+
+[[input.files]]
+path = "lib/komiks-katarina/katarina001/index.html"
+url = "/lib/komiks-katarina/katarina001/"
+title = "\u0415\u043f\u0456\u0437\u043e\u0434 #1"
+
+[[input.files]]
+path = "lib/komiks-katarina/katarina002/index.html"
+url = "/lib/komiks-katarina/katarina002/"
+title = "\u0415\u043f\u0456\u0437\u043e\u0434 #2"
+
+[[input.files]]
+path = "lib/komiks-katarina/katarina003/index.html"
+url = "/lib/komiks-katarina/katarina003/"
+title = "\u0415\u043f\u0456\u0437\u043e\u0434 #3"
+
+[[input.files]]
+path = "lib/patch-not/p41a/index.html"
+url = "/lib/patch-not/p41a/"
+title = "\u041f\u0430\u0442\u0447-\u043d\u043e\u0442 4.1\u0430"

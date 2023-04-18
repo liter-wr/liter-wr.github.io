@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Альманах Поро">
+    <title>Заголовок статті-гайду</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+    <link rel="stylesheet" type="text/css" href="../theme/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="../theme/css/pygment.css" />
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../theme/css/stork.css">
+    <link rel="stylesheet" media="screen and (prefers-color-scheme: dark)"
+        href="../theme/css/stork-dark.css">
+<meta name="description" content="Щур із Заунду, який не боїться забруднити лапи!" />
+<meta property="og:description" content="Щур із Заунду, який не боїться забруднити лапи!">
+<meta property="og:title" content="Твіч">
+<meta property="og:site_name" content="Curiosity продакшин">
+<meta property="og:image" content="https://images.contentstack.io/v3/assets/blt187521ff0727be24/blt6d95f66073acbe03/60ee1319730ed71c59413b0d/Twitch_0.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://images.contentstack.io/v3/assets/blt187521ff0727be24/blt6d95f66073acbe03/60ee1319730ed71c59413b0d/Twitch_0.jpg">
+</head>
+
+<body class="min-h-screen flex flex-col max-w-7xl lg:max-w-none text-zinc-800 bg-neutral-100 
+    dark:bg-neutral-900 dark:text-zinc-300 container mx-auto justify-center md:px-3 ">
+    <script>
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia(
+                '(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
+    <nav class="sm:flex sm:justify-between xl:ml-32 pl-4 items-center">
+        <div class="flex pt-4">
+            <h1 class="font-semibold text-2xl"><a href="../">Альманах Поро</a></h1>
+            <button id="theme-toggle" type="button" aria-label="Light|Dark"
+                class="text-zinc-700 dark:text-zinc-400 rounded-full focus:outline-none text-sm ml-2 p-1">
+                <svg id="theme-toggle-dark-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                </svg>
+                <svg id="theme-toggle-light-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                        fill-rule="evenodd" clip-rule="evenodd"></path>
+                </svg>
+            </button>
+        </div>
+        <ul class="flex flex-wrap lg:mr-24 md:pt-0">
+            <li class="mr-4 pt-6"><a  href="../arch">Архів</a></li>
+            <li class="mr-4 pt-6"><a                     href="../lib">Бібліотека</a></li>
+            <li class="mr-4 pt-6"><a  href="../tags">Теги</a></li>
+            <li class="mr-4 pt-6"><a  href="../srch">Пошук</a></li>
+        </ul>
+    </nav>
+    <div class="flex-grow md:max-w-screen-md md:mx-auto md:w-3/4 px-4">
+        <nav class="text-zinc-800 dark:text-zinc-300 mt-12 pb-2 md:mt-16" aria-label="Breadcrumb">
+            <ul class="p-0 inline-flex items-center">
+                <li class="flex items-center">
+                    <a href="../" class="text-zinc-800 dark:text-zinc-300 inline-flex items-center">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z">
+                            </path>
+                        </svg>
+                        <!-- головна -->
+                    </a>
+                    <svg class="fill-current w-3 h-3 mr-2 ml-1" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 320 512">
+                        <path
+                            d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z" />
+                    </svg>
+                </li>
+                <li class="flex items-center">
+                    <a href="../categories.html">Бібліотека</a>
+                    <svg class="fill-current w-3 h-3 mr-2 ml-1" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 320 512">
+                        <path
+                            d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z" />
+                    </svg>
+                </li>
+                <li class="flex items-center">
+                    <a href="../lib/opis/">Опис</a>
+                    <svg class="fill-current w-3 h-3 mr-2 ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                        <path
+                            d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z" />
+                    </svg>
+                </li>
+            </ul>
+        </nav>
+
+<main>
+  <header>
+    <h1 class="font-semibold text-3xl my-2">Заголовок статті-гайду</h1>
+    <footer class="flex text-sm text-zinc-800 dark:text-zinc-400">
+      <div class="flex text-xs text-zinc-800 dark:text-zinc-400">
+        <time>10.04.2023</time>
+        <div>
+          <span>&nbsp;·&nbsp;2 хв</span>
+        </div>
+        <div>
+          <span>
+            <span>&nbsp;·&nbsp;ab</span>
+            <span>&nbsp;·&nbsp;bc</span>
+          </span>
+        </div>
+      </div>
+    </footer>
+  </header>
+  <details class="flex flex-col my-6 p-4 bg-zinc-200 dark:bg-zinc-800 rounded-lg">
+    <summary class="text-lg font-bold">Зміст</summary>
+    <div class="mx-4 px-4 underline">
+      <div id="toc"><ul><li><a class="toc-href" href="#metategi-statti" title="&Mcy;&iecy;&tcy;&acy;&tcy;&iecy;&gcy;&icy; &scy;&tcy;&acy;&tcy;&tcy;&iukcy;">&Mcy;&iecy;&tcy;&acy;&tcy;&iecy;&gcy;&icy; &scy;&tcy;&acy;&tcy;&tcy;&iukcy;</a></li><li><a class="toc-href" href="#html-iniektsiyi" title="HTML &iukcy;&ncy;" єкції'="">HTML &iukcy;&ncy;'&jukcy;&kcy;&tscy;&iukcy;&yicy;</a><ul><li><a class="toc-href" href="#tablitsi" title="&Tcy;&acy;&bcy;&lcy;&icy;&tscy;&iukcy;">&Tcy;&acy;&bcy;&lcy;&icy;&tscy;&iukcy;</a><ul><li><a class="toc-href" href="#bazova-tablitsia" title="&Bcy;&acy;&zcy;&ocy;&vcy;&acy; &tcy;&acy;&bcy;&lcy;&icy;&tscy;&yacy;">&Bcy;&acy;&zcy;&ocy;&vcy;&acy; &tcy;&acy;&bcy;&lcy;&icy;&tscy;&yacy;</a></li><li><a class="toc-href" href="#tablitsia-predstavlennia-skiniv" title="&Tcy;&acy;&bcy;&lcy;&icy;&tscy;&yacy; &pcy;&rcy;&iecy;&dcy;&scy;&tcy;&acy;&vcy;&lcy;&iecy;&ncy;&ncy;&yacy; &scy;&kcy;&iukcy;&ncy;&iukcy;&vcy;">&Tcy;&acy;&bcy;&lcy;&icy;&tscy;&yacy; &pcy;&rcy;&iecy;&dcy;&scy;&tcy;&acy;&vcy;&lcy;&iecy;&ncy;&ncy;&yacy; &scy;&kcy;&iukcy;&ncy;&iukcy;&vcy;</a></li><li><a class="toc-href" href="#tablitsia-z-pribiranniam-limitu-shirini-stroki" title="&Tcy;&acy;&bcy;&lcy;&icy;&tscy;&yacy; &zcy; &pcy;&rcy;&icy;&bcy;&icy;&rcy;&acy;&ncy;&ncy;&yacy;&mcy; &lcy;&iukcy;&mcy;&iukcy;&tcy;&ucy; &shcy;&icy;&rcy;&icy;&ncy;&icy; &scy;&tcy;&rcy;&ocy;&kcy;&icy;">&Tcy;&acy;&bcy;&lcy;&icy;&tscy;&yacy; &zcy; &pcy;&rcy;&icy;&bcy;&icy;&rcy;&acy;&ncy;&ncy;&yacy;&mcy; &lcy;&iukcy;&mcy;&iukcy;&tcy;&ucy; &shcy;&icy;&rcy;&icy;&ncy;&icy; &scy;&tcy;&rcy;&ocy;&kcy;&icy;</a></li></ul></li></ul></li><li><a class="toc-href" href="#kartki_2" title="&Kcy;&acy;&rcy;&tcy;&kcy;&icy;">&Kcy;&acy;&rcy;&tcy;&kcy;&icy;</a><ul><li><a class="toc-href" href="#kartka-geroia-z-zminoiu-bazovoyi-kharakteristiki" title="&Kcy;&acy;&rcy;&tcy;&kcy;&acy; &gcy;&iecy;&rcy;&ocy;&yacy; &zcy; &zcy;&mcy;&iukcy;&ncy;&ocy;&yucy; &bcy;&acy;&zcy;&ocy;&vcy;&ocy;&yicy; &khcy;&acy;&rcy;&acy;&kcy;&tcy;&iecy;&rcy;&icy;&scy;&tcy;&icy;&kcy;&icy;">&Kcy;&acy;&rcy;&tcy;&kcy;&acy; &gcy;&iecy;&rcy;&ocy;&yacy; &zcy; &zcy;&mcy;&iukcy;&ncy;&ocy;&yucy; &bcy;&acy;&zcy;&ocy;&vcy;&ocy;&yicy; &khcy;&acy;&rcy;&acy;&kcy;&tcy;&iecy;&rcy;&icy;&scy;&tcy;&icy;&kcy;&icy;</a></li><li><a class="toc-href" href="#nunu-ta-villump" title="&Ncy;&Ucy;&Ncy;&Ucy; &Tcy;&Acy; &Vcy;&Iukcy;&Lcy;&Lcy;&Ucy;&Mcy;&Pcy;">&Ncy;&Ucy;&Ncy;&Ucy; &Tcy;&Acy; &Vcy;&Iukcy;&Lcy;&Lcy;&Ucy;&Mcy;&Pcy;</a></li><li><a class="toc-href" href="#kartka-geroia-z-zminoiu-skila" title="&Kcy;&acy;&rcy;&tcy;&kcy;&acy; &gcy;&iecy;&rcy;&ocy;&yacy; &zcy; &zcy;&mcy;&iukcy;&ncy;&ocy;&yucy; &scy;&kcy;&iukcy;&lcy;&acy;">&Kcy;&acy;&rcy;&tcy;&kcy;&acy; &gcy;&iecy;&rcy;&ocy;&yacy; &zcy; &zcy;&mcy;&iukcy;&ncy;&ocy;&yucy; &scy;&kcy;&iukcy;&lcy;&acy;</a></li><li><a class="toc-href" href="#varus" title="&Vcy;&Acy;&Rcy;&Ucy;&Scy;">&Vcy;&Acy;&Rcy;&Ucy;&Scy;</a></li><li><a class="toc-href" href="#kartka-geroia-z-zminoiu-skila-ta-bazovoyi-kharakteristiki" title="&Kcy;&acy;&rcy;&tcy;&kcy;&acy; &gcy;&iecy;&rcy;&ocy;&yacy; &zcy; &zcy;&mcy;&iukcy;&ncy;&ocy;&yucy; &scy;&kcy;&iukcy;&lcy;&acy; &tcy;&acy; &bcy;&acy;&zcy;&ocy;&vcy;&ocy;&yicy; &khcy;&acy;&rcy;&acy;&kcy;&tcy;&iecy;&rcy;&icy;&scy;&tcy;&icy;&kcy;&icy;">&Kcy;&acy;&rcy;&tcy;&kcy;&acy; &gcy;&iecy;&rcy;&ocy;&yacy; &zcy; &zcy;&mcy;&iukcy;&ncy;&ocy;&yucy; &scy;&kcy;&iukcy;&lcy;&acy; &tcy;&acy; &bcy;&acy;&zcy;&ocy;&vcy;&ocy;&yicy; &khcy;&acy;&rcy;&acy;&kcy;&tcy;&iecy;&rcy;&icy;&scy;&tcy;&icy;&kcy;&icy;</a></li><li><a class="toc-href" href="#nunu-ta-villump_1" title="&Ncy;&Ucy;&Ncy;&Ucy; &Tcy;&Acy; &Vcy;&Iukcy;&Lcy;&Lcy;&Ucy;&Mcy;&Pcy;">&Ncy;&Ucy;&Ncy;&Ucy; &Tcy;&Acy; &Vcy;&Iukcy;&Lcy;&Lcy;&Ucy;&Mcy;&Pcy;</a></li><li><a class="toc-href" href="#kartka-geroia-u-iakogo-dokhuia-vsogo" title="&Kcy;&acy;&rcy;&tcy;&kcy;&acy; &gcy;&iecy;&rcy;&ocy;&yacy;, &ucy; &yacy;&kcy;&ocy;&gcy;&ocy; &dcy;&ocy;&khcy;&ucy;&yacy; &vcy;&scy;&softcy;&ocy;&gcy;&ocy;">&Kcy;&acy;&rcy;&tcy;&kcy;&acy; &gcy;&iecy;&rcy;&ocy;&yacy;, &ucy; &yacy;&kcy;&ocy;&gcy;&ocy; &dcy;&ocy;&khcy;&ucy;&yacy; &vcy;&scy;&softcy;&ocy;&gcy;&ocy;</a></li><li><a class="toc-href" href="#paik" title="&Pcy;&Acy;&Jcy;&Kcy;">&Pcy;&Acy;&Jcy;&Kcy;</a></li></ul></li><li><a class="toc-href" href="#kartinki_1" title="&Kcy;&acy;&rcy;&tcy;&icy;&ncy;&kcy;&icy;">&Kcy;&acy;&rcy;&tcy;&icy;&ncy;&kcy;&icy;</a><ul><li><a class="toc-href" href="#pidpis-do-kartinki" title="&Pcy;&iukcy;&dcy;&pcy;&icy;&scy; &dcy;&ocy; &kcy;&acy;&rcy;&tcy;&icy;&ncy;&kcy;&icy;">&Pcy;&iukcy;&dcy;&pcy;&icy;&scy; &dcy;&ocy; &kcy;&acy;&rcy;&tcy;&icy;&ncy;&kcy;&icy;</a></li><li><a class="toc-href" href="#pidpis-do-kartinki-za-dopomogoiu-tablitsi" title="&Pcy;&iukcy;&dcy;&pcy;&icy;&scy; &dcy;&ocy; &kcy;&acy;&rcy;&tcy;&icy;&ncy;&kcy;&icy; &zcy;&acy; &dcy;&ocy;&pcy;&ocy;&mcy;&ocy;&gcy;&ocy;&yucy; &tcy;&acy;&bcy;&lcy;&icy;&tscy;&iukcy;">&Pcy;&iukcy;&dcy;&pcy;&icy;&scy; &dcy;&ocy; &kcy;&acy;&rcy;&tcy;&icy;&ncy;&kcy;&icy; &zcy;&acy; &dcy;&ocy;&pcy;&ocy;&mcy;&ocy;&gcy;&ocy;&yucy; &tcy;&acy;&bcy;&lcy;&icy;&tscy;&iukcy;</a></li></ul></li></ul></div>
+    </div>
+  </details>
+  <div class="max-w-7xl container mx-auto my-8 text-zinc-800 dark:text-zinc-300  
+              prose lg:max-w-none prose-headings:text-zinc-800 prose-headings:dark:text-zinc-300 
+              prose-h1:text-3xl lg:prose-h1:text-3xl prose-headings:font-semibold 
+              prose-pre:bg-zinc-200 prose-pre:text-zinc-800
+              dark:prose-pre:bg-zinc-800 dark:prose-pre:text-zinc-200
+              prose-blockquote:text-zinc-800
+              dark:prose-blockquote:text-zinc-200
+              prose-a:text-slate-600 prose-a:font-normal
+              dark:prose-a:text-slate-400
+              dark:prose-strong:text-zinc-200 
+              dark:prose-code:text-zinc-200
+              dark:prose-code:bg-zinc-800
+              prose-code:bg-zinc-200
+              prose-code:font-light
+              prose-img:rounded-md
+              sm:text-left md:text-justify
+              ">
+    <h1 id="metategi-statti">&Mcy;&iecy;&tcy;&acy;&tcy;&iecy;&gcy;&icy; &scy;&tcy;&acy;&tcy;&tcy;&iukcy;</h1>
+<p>&Rcy;&ocy;&zcy;&pcy;&ocy;&chcy;&ncy;&iecy;&mcy;&ocy; &zcy; &pcy;&rcy;&ocy;&scy;&tcy;&ocy;&gcy;&ocy;, &mcy;&iecy;&tcy;&acy;&tcy;&iecy;&gcy;&icy;. &YAcy; &ncy;&iecy; &bcy;&ucy;&dcy;&ucy; &dcy;&iecy;&tcy;&acy;&lcy;&softcy;&ncy;&ocy; &zcy; &ucy;&mcy;&ncy;&icy;&mcy; &jukcy;&bcy;&lcy;&ocy;&mcy; &pcy;&ocy;&yacy;&scy;&ncy;&yucy;&vcy;&acy;&tcy;&icy; &shcy;&ocy; &tcy;&acy;&kcy;&iecy; &mcy;&iecy;&tcy;&acy;&tcy;&iecy;&gcy;&icy; &yacy;&kcy; &yicy;&khcy; &pcy;&rcy;&icy;&dcy;&ucy;&mcy;&acy;&lcy;&icy; &yacy;&kcy;&iukcy; &yicy;&khcy; &bcy;&ucy;&vcy;&acy;&yucy;&tcy;&softcy; &vcy;&acy;&rcy;&iukcy;&acy;&tscy;&iukcy;&yicy; &iukcy; &dcy;&ocy;&scy;&icy;&tcy;&softcy; &lcy;&icy;&tcy;&icy; &vcy;&ocy;&dcy;&ucy;. &Mcy;&iecy;&tcy;&acy;&tcy;&iecy;&gcy;&icy; &pcy;&icy;&shcy;&ucy;&tcy;&softcy;&scy;&yacy; &ncy;&acy; &pcy;&ocy;&chcy;&acy;&tcy;&kcy;&ucy; &scy;&tcy;&acy;&tcy;&tcy;&iukcy; &ucy; &vcy;&icy;&gcy;&lcy;&yacy;&dcy;&iukcy; <code>&kcy;&lcy;&yucy;&chcy;: &zcy;&ncy;&acy;&chcy;&iecy;&ncy;&ncy;&yacy;</code> . &Mcy;&iukcy;&zhcy; &kcy;&lcy;&yucy;&chcy;&iecy;&mcy; &tcy;&acy; &dcy;&vcy;&ocy;&kcy;&rcy;&acy;&pcy;&kcy;&ocy;&yucy; &ncy;&iecy; &pcy;&ocy;&vcy;&icy;&ncy;&ncy;&ocy; &bcy;&ucy;&tcy;&icy; &pcy;&rcy;&ocy;&bcy;&iukcy;&lcy;&ucy;, &mcy;&iukcy;&zhcy; &dcy;&vcy;&ocy;&kcy;&rcy;&acy;&pcy;&kcy;&ocy;&yucy; &tcy;&acy; &zcy;&ncy;&acy;&chcy;&iecy;&ncy;&ncy;&yacy;&mcy; - &scy;&kcy;&iukcy;&lcy;&softcy;&kcy;&icy; &zcy;&acy;&vcy;&gcy;&ocy;&dcy;&ncy;&ocy;. &Mcy;&iecy;&tcy;&acy;&tcy;&iecy;&gcy;&icy; &zcy;&acy;&pcy;&icy;&scy;&ucy;&yucy;&tcy;&softcy;&scy;&yacy; &vcy; &bcy;&ucy;&dcy;&softcy; &yacy;&kcy;&ocy;&mcy;&ucy; &pcy;&ocy;&rcy;&yacy;&dcy;&kcy;&ucy;. &Zcy;&acy;&kcy;&iukcy;&ncy;&chcy;&icy;&lcy;&icy; &pcy;&icy;&scy;&acy;&tcy;&icy; &mcy;&iecy;&tcy;&acy;&tcy;&iecy;&gcy;&icy; - &zcy;&rcy;&ocy;&bcy;&icy;&lcy;&icy; &pcy;&iecy;&rcy;&iecy;&khcy;&iukcy;&dcy; &chcy;&iecy;&rcy;&iecy;&zcy; &scy;&tcy;&rcy;&ocy;&chcy;&kcy;&ucy;.</p>
+<div class="no-max-width">
+<table>
+<thead>
+<tr>
+<th align="left">&Mcy;&iecy;&tcy;&acy;&tcy;&iecy;&gcy;</th>
+<th align="left">&Pcy;&ocy;&yacy;&scy;&ncy;&iecy;&ncy;&ncy;&yacy;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>Title:</code></td>
+<td align="left"><span class="wrap-content">&TScy;&iecy; &zcy;&acy;&gcy;&ocy;&lcy;&ocy;&vcy;&ocy;&kcy; &scy;&tcy;&acy;&tcy;&tcy;&iukcy;, &vcy;&iukcy;&ncy; &vcy;&iukcy;&dcy;&ocy;&bcy;&rcy;&acy;&zhcy;&acy;&jukcy;&tcy;&softcy;&scy;&yacy; &ncy;&acy; &gcy;&ocy;&lcy;&ocy;&vcy;&ncy;&iukcy;&jcy; &scy;&tcy;&ocy;&rcy;&iukcy;&ncy;&tscy;&iukcy; &scy;&acy;&jcy;&tcy;&ucy; &tcy;&acy; &mcy;&ocy;&zhcy;&lcy;&icy;&vcy;&ocy; &ncy;&acy; &pcy;&rcy;&iecy;'&vcy;&yucy; &pcy;&ocy;&scy;&icy;&lcy;&acy;&ncy;&softcy; &vcy; &bcy;&ocy;&gcy;&ocy;&mcy; &zcy;&acy;&bcy;&ucy;&tcy;&icy;&khcy; &mcy;&iecy;&rcy;&iecy;&zhcy;&acy;&khcy; &yacy;&kcy;&icy;&mcy;&icy; &yacy; &ncy;&iecy; &kcy;&ocy;&rcy;&icy;&scy;&tcy;&ucy;&yucy;&scy;&softcy;</span><img class="image-center image-large" src="../images/guide/title.jpg"/></td>
+</tr>
+<tr>
+<td align="left"><code>Date:</code></td>
+<td align="left"><span class="wrap-content">&Scy;&yucy;&dcy;&icy; &tcy;&rcy;&iecy;&bcy;&acy; &pcy;&icy;&scy;&acy;&tcy;&icy; &dcy;&acy;&tcy;&ucy; &vcy; &fcy;&ocy;&rcy;&mcy;&acy;&tcy;&iukcy; &rcy;&iukcy;&kcy;-&mcy;&iukcy;&scy;&yacy;&tscy;&softcy;-&dcy;&iecy;&ncy;&softcy; (&mcy;&ocy;&vcy;&ocy;&yucy; &ucy;&mcy;&ncy;&icy;&khcy; <code>YYYY-MM-DD</code> ), &mcy;&ocy;&zhcy;&ncy;&acy; &tcy;&acy;&kcy;&ocy;&zhcy; &ncy;&acy;&lcy;&acy;&shcy;&tcy;&ucy;&vcy;&acy;&tcy;&icy; &iukcy; &gcy;&ocy;&dcy;&icy;&ncy;&icy; &scy; &khcy;&vcy;&icy;&lcy;&icy;&ncy;&acy;&mcy;&icy; &acy;&lcy;&iecy; &ncy;&acy;&vcy;&iukcy;&shchcy;&ocy;?</span><img class="image-center image-large" src="../images/guide/data1.png"/><br/><img class="image-center image-large" src="../images/guide/data2.png"/></td>
+</tr>
+<tr>
+<td align="left"><code>Modified:</code></td>
+<td align="left">&CHcy;&icy;&tcy;&acy;&jcy; <code>Date</code> .</td>
+</tr>
+<tr>
+<td align="left"><code>Status:</code></td>
+<td align="left"><span class="wrap-content">&Scy;&tcy;&acy;&tcy;&ucy;&scy; &scy;&tcy;&acy;&tcy;&tcy;&iukcy;, &tcy;&ocy;&bcy;&iukcy; &tcy;&rcy;&iecy;&bcy;&acy; &zcy;&ncy;&acy;&tcy;&icy; &lcy;&icy;&shcy;&iecy; &zcy;&acy; &dcy;&vcy;&iukcy;, &ocy;&pcy;&ucy;&bcy;&lcy;&iukcy;&kcy;&ocy;&vcy;&acy;&ncy;&acy; ("published") &tcy;&acy; &chcy;&iecy;&rcy;&ncy;&iecy;&tcy;&kcy;&acy; ("draft"). &Zcy;&acy; &ocy;&pcy;&ucy;&bcy;&lcy;&iukcy;&kcy;&ocy;&vcy;&acy;&ncy;&ucy; &mcy;&ocy;&zhcy;&ncy;&acy; &ncy;&iecy; &pcy;&ocy;&yacy;&scy;&ncy;&yucy;&vcy;&acy;&tcy;&icy;, &acy; &ocy;&scy;&softcy; &chcy;&iecy;&rcy;&ncy;&iecy;&tcy;&kcy;&acy; &bcy;&ucy;&dcy;&iecy; &dcy;&ocy;&scy;&tcy;&ucy;&pcy;&ncy;&acy; &lcy;&icy;&shcy;&iecy; &zcy;&acy; &pcy;&ocy;&scy;&icy;&lcy;&acy;&ncy;&ncy;&yacy;&mcy; <code>liter-wr.github.io/drafts/{slug}</code> . &Pcy;&rcy;&ocy; slug &pcy;&ocy;&yacy;&scy;&ncy;&yucy;&yucy; &dcy;&acy;&lcy;&iukcy;</span></td>
+</tr>
+<tr>
+<td align="left"><code>Slug:</code></td>
+<td align="left"><span class="wrap-content">&Scy;&lcy;&acy;&gcy; - &tscy;&iecy; &pcy;&ocy;&scy;&icy;&lcy;&acy;&ncy;&ncy;&yacy; &ncy;&acy; &scy;&tcy;&acy;&tcy;&tcy;&yucy;, &yacy;&kcy;&shchcy;&ocy; &tscy;&iecy;&jcy; &pcy;&acy;&rcy;&acy;&mcy;&iecy;&tcy;&rcy; &ncy;&iecy; &ucy;&kcy;&acy;&zcy;&ucy;&vcy;&acy;&tcy;&icy;, &pcy;&rcy;&ocy;&gcy;&rcy;&acy;&mcy;&mcy;&acy; &scy;&acy;&mcy;&acy; &scy;&kcy;&lcy;&acy;&dcy;&iecy; &pcy;&ocy;&scy;&icy;&lcy;&acy;&ncy;&ncy;&yacy; &zcy; <code>Title</code> , &tscy;&softcy;&ocy;&gcy;&ocy; &rcy;&ocy;&bcy;&icy;&tcy;&icy; &ncy;&iecy; &bcy;&acy;&zhcy;&acy;&ncy;&ocy;, &bcy;&ocy; &vcy;&ocy;&ncy;&ocy; &mcy;&ocy;&zhcy;&iecy; &bcy;&ucy;&tcy;&icy; &dcy;&ocy;&vcy;&gcy;&icy;&mcy; &iukcy; &vcy;&acy;&pcy;&chcy;&jukcy;. &YAcy;&kcy;&shchcy;&ocy; &zcy;&rcy;&ocy;&bcy;&icy;&tcy;&icy; &dcy;&vcy;&iukcy; &scy;&tcy;&acy;&tcy;&tcy;&iukcy; &zcy; &ocy;&dcy;&ncy;&acy;&kcy;&ocy;&vcy;&icy;&mcy; <code>slug</code> &tcy;&ocy; &tcy;&acy;, &yacy;&kcy;&acy; &vcy;&icy;&lcy;&ocy;&zhcy;&iecy;&ncy;&acy; &pcy;&iukcy;&zcy;&ncy;&iukcy;&shcy;&iecy; &pcy;&ocy; &mcy;&iecy;&tcy;&acy;&tcy;&iecy;&gcy;&ucy; <code>date</code> &ncy;&acy;&kcy;&lcy;&acy;&dcy;&iecy;&tcy;&softcy;&scy;&yacy; &ncy;&acy; &tcy;&ucy;, &shchcy;&ocy; &vcy;&icy;&lcy;&ocy;&zhcy;&iecy;&ncy;&acy; &rcy;&acy;&ncy;&iukcy;&shcy;&iecy;, &mcy;&iecy;&ncy;&iukcy; &pcy;&rcy;&ocy; &tscy;&iecy; &pcy;&rcy;&ocy;&gcy;&rcy;&acy;&mcy;&mcy;&acy; &scy;&kcy;&acy;&zhcy;&iecy;, &acy;&lcy;&iecy; &scy;&tcy;&acy;&tcy;&tcy;&yacy; &shchcy;&ocy; &bcy;&ucy;&lcy;&acy; &rcy;&acy;&ncy;&iukcy;&shcy;&iecy; - &zcy;&ncy;&icy;&kcy;&ncy;&iecy;. &Vcy; <code>slug</code> &kcy;&rcy;&acy;&shchcy;&iecy; &vcy;&icy;&kcy;&ocy;&rcy;&icy;&scy;&tcy;&ocy;&vcy;&ucy;&vcy;&acy;&tcy;&icy; &lcy;&iukcy;&tcy;&icy;&ncy;&icy;&tscy;&yucy;, &chcy;&icy;&scy;&lcy;&acy; &tcy;&acy; &zcy;&ncy;&acy;&kcy; <code>-</code> (&kcy;&ocy;&rcy;&ocy;&tcy;&kcy;&iecy; &tcy;&icy;&rcy;&iecy;).</span></td>
+</tr>
+<tr>
+<td align="left"><code>Tags:</code></td>
+<td align="left"><span class="wrap-content"> &Tcy;&iecy;&gcy;&icy; &scy;&tcy;&acy;&tcy;&tcy;&iukcy;. &Pcy;&iecy;&rcy;&iecy;&rcy;&acy;&khcy;&ocy;&vcy;&ucy;&vcy;&acy;&tcy;&icy; &chcy;&iecy;&rcy;&iecy;&zcy; &kcy;&ocy;&mcy;&ucy;. <code>&acy;&bcy;&iecy;&tcy;&kcy;&acy;, &bcy;&iecy;&bcy;&iecy;&tcy;&kcy;&acy;, &vcy;&iecy;&vcy;&iecy;&tcy;&kcy;&acy; &bcy;&iecy;&zcy; &gcy;&iecy;&tcy;&iecy;&tcy;&kcy;&icy;</code> </span><br/> <blockquote> <img align="absmiddle" alt=":warning:" class="gemoji" height="20px" src="https://github.githubassets.com/images/icons/emoji/unicode/26a0.png" title=":warning:" width="20px"/> <strong>&Ucy;&vcy;&acy;&gcy;&acy;:</strong> <span class="wrap-content"> &Tcy;&iecy;&gcy;&icy; <ins>&ncy;&iecy;</ins> &chcy;&ucy;&tcy;&lcy;&icy;&vcy;&iukcy; &dcy;&ocy; &rcy;&iecy;&gcy;&iukcy;&scy;&tcy;&rcy;&ucy;, &acy;&lcy;&iecy; &yacy;&kcy;&shchcy;&ocy; &vcy; &ocy;&scy;&tcy;&acy;&ncy;&ncy;&iukcy;&jcy; &scy;&tcy;&acy;&tcy;&iukcy; &pcy;&ocy; <code>Date</code> &bcy;&ucy;&dcy;&iecy; &tcy;&iecy;&gcy; &ncy;&acy;&pcy;&rcy;&icy;&kcy;&lcy;&acy;&dcy; &ncy;&iecy; <em>&tcy;&iecy;&gcy;</em> &acy; <em>&Tcy;&iecy;&Gcy;</em>, &tcy;&ocy; &ncy;&acy; &scy;&tcy;&ocy;&rcy;&iukcy;&ncy;&tscy;&iukcy; &tcy;&iecy;&gcy;&iukcy;&vcy; &bcy;&ucy;&dcy;&iecy; &ncy;&iecy; &gcy;&acy;&rcy;&ncy;&iecy;&ncy;&softcy;&kcy;&icy;&jcy; <em>&tcy;&iecy;&gcy;</em> &zcy; &mcy;&acy;&lcy;&ocy;&yicy; &lcy;&iukcy;&tcy;&iecy;&rcy;&icy;, &acy; &pcy;&rcy;&icy;&pcy;&icy;&zcy;&dcy;&ncy;&ucy;&tcy;&acy; &kcy;&lcy;&yacy;&chcy;&yacy; <em>&Tcy;&iecy;&Gcy;</em> </span> </blockquote></td>
+</tr>
+<tr>
+<td align="left"><code>Category:</code></td>
+<td align="left"><span class="wrap-content">&Kcy;&acy;&tcy;&iecy;&gcy;&ocy;&rcy;&iukcy;&yacy; &scy;&tcy;&acy;&tcy;&tcy;&iukcy;. <ins>&Mcy;&ocy;&zhcy;&iecy; &bcy;&ucy;&tcy;&icy; &tcy;&iukcy;&lcy;&softcy;&kcy;&icy; &ocy;&dcy;&ncy;&acy; &ncy;&acy; &scy;&tcy;&acy;&tcy;&tcy;&yucy;</ins>. </span></td>
+</tr>
+<tr>
+<td align="left"><code>Readtime:</code></td>
+<td align="left"><span class="wrap-content">&Scy;&yucy;&dcy;&icy; &tcy;&rcy;&iecy;&bcy;&acy; &ncy;&acy;&pcy;&icy;&scy;&acy;&tcy;&icy; &tcy;&iukcy;&lcy;&softcy;&kcy;&icy; &tscy;&icy;&fcy;&rcy;&ucy;, &ocy;&zcy;&ncy;&acy;&chcy;&acy;&jukcy; &kcy;&iukcy;&lcy;&softcy;&kcy;&iukcy;&scy;&tcy;&softcy; &khcy;&vcy;&icy;&lcy;&icy;&ncy; &ncy;&acy; &pcy;&rcy;&ocy;&chcy;&icy;&tcy;&acy;&ncy;&ncy;&yacy;. &Vcy;&ocy;&ncy;&acy; &pcy;&iukcy;&dcy;&scy;&tcy;&acy;&vcy;&icy;&tcy;&softcy;&scy;&yacy; &pcy;&ocy;&rcy;&yacy;&dcy; &zcy; &dcy;&acy;&tcy;&ocy;&yucy; &pcy;&ucy;&bcy;&lcy;&iukcy;&kcy;&acy;&tscy;&iukcy;&yicy; (&dcy;&icy;&vcy;&icy;&scy;&softcy; &scy;&kcy;&rcy;&iukcy;&ncy; <code>Date</code> )</span></td>
+</tr>
+<tr>
+<td align="left"><code>Twittercard:</code></td>
+<td align="left"><span class="wrap-content">&TScy;&iecy; &mcy;&iecy;&tcy;&acy;&tcy;&iecy;&gcy; &ncy;&acy; &pcy;&rcy;&iecy;&vcy;'&yucy; &pcy;&ocy;&scy;&icy;&lcy;&acy;&ncy;&ncy;&yacy; &tcy;&vcy;&iukcy;&tcy;&iecy;&rcy;&ucy; &tcy;&acy; &vcy; &tcy;&iecy;&lcy;&iecy;&gcy;&rcy;&acy;&mcy;, &iukcy;&zcy; &vcy;&scy;&softcy;&ocy;&gcy;&ocy; &shcy;&ocy; &tcy;&rcy;&iecy;&bcy;&acy; &zcy;&ncy;&acy;&tcy;&icy; - &zcy;&acy;&vcy;&zhcy;&dcy;&icy; <code>Twittercard: summary_large_image</code> </span></td>
+</tr>
+<tr>
+<td align="left"><code>twitterimage: &tcy;&acy; og_image:</code></td>
+<td align="left"><span class="wrap-content">&Scy;&yucy;&dcy;&icy; &tcy;&rcy;&iecy;&bcy;&acy; &vcy;&scy;&tcy;&acy;&vcy;&icy;&tcy;&icy; &pcy;&ocy;&scy;&icy;&lcy;&acy;&ncy;&ncy;&yacy; &ncy;&acy; &kcy;&acy;&rcy;&tcy;&icy;&ncy;&kcy;&ucy; &yacy;&kcy;&acy; &bcy;&ucy;&dcy;&iecy; &vcy; &pcy;&rcy;&iecy;&vcy;'&yucy;. &Pcy;&rcy;&yacy;&mcy;&iecy; &pcy;&ocy;&scy;&icy;&lcy;&acy;&ncy;&ncy;&yacy; &ncy;&acy; &kcy;&acy;&rcy;&tcy;&icy;&ncy;&kcy;&ucy;. <code>twitterimage</code> &pcy;&ocy;&tcy;&rcy;&iukcy;&bcy;&iecy;&ncy; &dcy;&lcy;&yacy; &pcy;&rcy;&iecy;&vcy;'&yucy; &vcy; &tcy;&vcy;&iukcy;&tcy;&iecy;&rcy;&rcy;&iukcy; &tcy;&acy; &tcy;&iecy;&lcy;&iecy;&gcy;&rcy;&acy;&mcy;&iukcy;, <code>og_image</code> - &ncy;&acy; &vcy;&scy;&icy;&khcy; &iukcy;&ncy;&shcy;&icy;&khcy; &mcy;&iecy;&rcy;&iecy;&zhcy;&acy;&khcy; &yacy;&kcy;&iukcy; &pcy;&iukcy;&dcy;&tcy;&rcy;&icy;&mcy;&ucy;&yucy;&tcy;&softcy; og-&tcy;&iecy;&gcy;&icy;.</span></td>
+</tr>
+<tr>
+<td align="left"><code>og_title:</code></td>
+<td align="left"><span class="wrap-content"> &Zcy;&acy;&gcy;&ocy;&lcy;&ocy;&vcy;&ocy;&kcy; &ncy;&acy; &pcy;&rcy;&iecy;&vcy;'&yucy; &pcy;&ocy;&scy;&icy;&lcy;&acy;&ncy;&ncy;&yacy; </span></td>
+</tr>
+<tr>
+<td align="left"><code>Summary:</code></td>
+<td align="left"><span class="wrap-content">&Kcy;&ocy;&rcy;&ocy;&tcy;&kcy;&icy;&jcy; &ocy;&pcy;&icy;&scy; &vcy;&mcy;&iukcy;&scy;&tcy;&ucy; &scy;&tcy;&acy;&tcy;&tcy;&iukcy;, &pcy;&rcy;&iecy;&dcy;&scy;&tcy;&acy;&vcy;&lcy;&iecy;&ncy;&icy;&jcy; &ncy;&acy; &gcy;&ocy;&lcy;&ocy;&vcy;&ncy;&iukcy;&jcy; &scy;&tcy;&ocy;&rcy;&iukcy;&ncy;&tscy;&iukcy; &scy;&acy;&jcy;&tcy;&ucy; &tcy;&acy; &vcy; &pcy;&rcy;&iecy;&vcy;'&yucy; &pcy;&ocy;&scy;&icy;&lcy;&acy;&ncy;&ncy;&yacy;.</span></td>
+</tr>
+<tr>
+<td align="left"><code>og_sitename:</code></td>
+<td align="left"><span class="wrap-content">&Ncy;&acy;&zcy;&vcy;&acy; &scy;&acy;&jcy;&tcy;&ucy; &pcy;&rcy;&iecy;&dcy;&scy;&tcy;&acy;&vcy;&lcy;&iecy;&ncy;&acy; &ncy;&acy; &pcy;&rcy;&iecy;&vcy;'&yucy;</span><img class="image-center image-large" src="../images/guide/preview.png"/></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>&Bcy;&acy;&zcy;&acy;, &scy;&tcy;&rcy;&icy;&zhcy;&iecy;&ncy;&softcy;, &gcy;&rcy;&ucy;&ncy;&tcy; &iukcy; &tcy;&acy;&kcy; &dcy;&acy;&lcy;&iukcy; &dcy;&lcy;&yacy; &mcy;&iecy;&tcy;&acy;&tcy;&iecy;&gcy;&iukcy;&vcy;:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Title</span><span class="o">:</span>
+<span class="n">Date</span><span class="o">:</span><span class="w">            </span><span class="n">YY</span><span class="o">-</span><span class="n">MM</span><span class="o">-</span><span class="n">DD</span>
+<span class="n">slug</span><span class="o">:</span>
+<span class="n">Tags</span><span class="o">:</span>
+<span class="n">Category</span><span class="o">:</span>
+<span class="n">Readtime</span><span class="o">:</span>
+<span class="n">twittercard</span><span class="o">:</span><span class="w">     </span><span class="n">summary_large_image</span>
+<span class="n">twitterimage</span><span class="o">:</span>
+<span class="n">og_image</span><span class="o">:</span>
+<span class="n">og_title</span><span class="o">:</span>
+<span class="n">Summary</span><span class="o">:</span>
+<span class="n">og_sitename</span><span class="o">:</span>
+
+<span class="o">...</span>
+</code></pre></div>
+<p>&Tcy;&ucy;&tcy; &pcy;&rcy;&iecy;&dcy;&scy;&tcy;&acy;&vcy;&lcy;&iecy;&ncy;&iukcy; &ncy;&iecy; &vcy;&scy;&iukcy; &mcy;&iecy;&tcy;&acy;-&tcy;&iecy;&gcy;&icy;, &acy; &lcy;&icy;&shcy;&iecy; &tcy;&iukcy;, &shchcy;&ocy; &ncy;&acy;&jcy;&chcy;&acy;&scy;&tcy;&iukcy;&shcy;&iecy; &vcy;&icy;&kcy;&ocy;&rcy;&icy;&scy;&tcy;&ocy;&vcy;&ucy;&yucy;&tcy;&softcy;&scy;&yacy;. &Vcy;&scy;&iukcy; &mcy;&iecy;&tcy;&acy;&tcy;&iecy;&gcy;&icy; &pcy;&rcy;&iecy;&dcy;&scy;&tcy;&acy;&vcy;&lcy;&iecy;&ncy;&iukcy; &vcy; &tcy;&acy;&bcy;&lcy;&icy;&chcy;&tscy;&iukcy; &vcy;&icy;&shchcy;&iecy; &yacy;&kcy;&ucy; &yacy; &mcy;&ocy;&zhcy;&iecy; &kcy;&ocy;&lcy;&icy;&scy;&softcy; &dcy;&ocy;&pcy;&ocy;&vcy;&ncy;&yucy; &zcy;&acy; &vcy;&acy;&shcy;&icy;&mcy; &bcy;&acy;&zhcy;&acy;&ncy;&ncy;&yacy;&mcy;. &Dcy;&ocy;&rcy;&iecy;&chcy;&iukcy;, &shchcy;&iecy; &jukcy; &mcy;&iecy;&tcy;&acy;&tcy;&iecy;&gcy;&icy; <code>author</code> &tcy;&acy; <code>authors</code> , &acy;&lcy;&iecy; &mcy;&iecy;&ncy;&iukcy; &vcy;&pcy;&acy;&dcy;&lcy;&ucy; &yicy;&khcy; &vcy;&ncy;&ocy;&scy;&icy;&tcy;&icy; &bcy;&ocy; &yacy; &tcy;&iukcy;&lcy;&softcy;&kcy;&icy; &shchcy;&ocy; &zcy;&acy; &ncy;&icy;&khcy; &zcy;&gcy;&acy;&dcy;&acy;&vcy;. &Zcy;&acy; &zcy;&acy;&mcy;&ocy;&vcy;&chcy;&ucy;&vcy;&acy;&ncy;&ncy;&yacy;&mcy; &ucy; &ncy;&acy;&scy; &scy;&tcy;&ocy;&yicy;&tcy;&softcy; <code>author: &Vcy;&iukcy;&scy;&ncy;&icy;&kcy; &pcy;&ocy;&rcy;&ocy; | Wild Rift UA</code> .</p>
+<p>&Pcy;&acy;&lcy;&kcy;&acy;&mcy;&icy; &kcy;&ocy;&rcy;&icy;&scy;&tcy;&ucy;&vcy;&acy;&tcy;&icy;&scy;&softcy; &vcy;&mcy;&iukcy;&jukcy;&mcy;&ocy;, &tcy;&iecy;&pcy;&iecy;&rcy; &pcy;&iecy;&rcy;&iecy;&jcy;&dcy;&iecy;&mcy;&ocy; &dcy;&ocy; &acy;&rcy;&tcy;&icy;&lcy;&iecy;&rcy;&iukcy;&yicy; &gcy;&icy;&gcy;&icy;&gcy;&icy;</p>
+<h1 id="html-iniektsiyi">HTML &iukcy;&ncy;'&jukcy;&kcy;&tscy;&iukcy;&yicy;</h1>
+<h2 id="tablitsi">&Tcy;&acy;&bcy;&lcy;&icy;&tscy;&iukcy;</h2>
+<p><img class="image-center image-large" src="https://kamp-sport.com/storage/app/media/deryt.jpg"/>
+&YAcy; &zcy;&rcy;&ocy;&bcy;&icy;&vcy; 2 &iukcy;&ncy;'&jukcy;&kcy;&tscy;&iukcy;&yicy; &dcy;&lcy;&yacy; &tcy;&acy;&bcy;&lcy;&icy;&tscy;&softcy;. 4 &zcy; &ncy;&icy;&khcy; &pcy;&rcy;&iecy;&dcy;&scy;&tcy;&acy;&vcy;&lcy;&iecy;&ncy;&iukcy; &ncy;&icy;&zhcy;&chcy;&iecy;.</p>
+<h3 id="bazova-tablitsia">&Bcy;&acy;&zcy;&ocy;&vcy;&acy; &tcy;&acy;&bcy;&lcy;&icy;&tscy;&yacy;</h3>
+<p>&Ucy; &bcy;&acy;&zcy;&ocy;&vcy;&icy;&khcy; &tcy;&acy;&bcy;&lcy;&icy;&tscy;&yacy;&khcy; &ncy;&acy;&dcy;&pcy;&icy;&scy;&icy;, &shchcy;&ocy; &ncy;&iecy; &vcy;&lcy;&iukcy;&zcy;&acy;&yucy;&tcy;&softcy; &vcy; &shcy;&icy;&rcy;&icy;&ncy;&ucy; &rcy;&yacy;&dcy;&kcy;&acy;, &ocy;&bcy;&rcy;&icy;&vcy;&acy;&yucy;&tcy;&softcy;&scy;&yacy; &tcy;&rcy;&icy;&kcy;&rcy;&acy;&pcy;&kcy;&ocy;&yucy;. &Dcy;&lcy;&yacy; &ncy;&icy;&khcy; &ncy;&iecy;&mcy;&acy; &iukcy;&ncy;'&jukcy;&kcy;&tscy;&iukcy;&jcy;, &mcy;&ocy;&zhcy;&ncy;&acy; &ncy;&iecy; &lcy;&yacy;&kcy;&acy;&tcy;&icy;&scy;&softcy;. &Pcy;&rcy;&icy;&kcy;&lcy;&acy;&dcy; &bcy;&acy;&zcy;&ocy;&vcy;&ocy;&yicy; &tcy;&acy;&bcy;&lcy;&icy;&tscy;&iukcy;:</p>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>#</strong></th>
+<th align="center"><strong>&Kcy;&Ocy;&Mcy;&Acy;&Ncy;&Dcy;&Acy;</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">1</td>
+<td align="center"><span class="tour-comm-text-align">&Kcy;&ocy;&mcy;&acy;&ncy;&dcy;&acy; &pcy;&ocy;&mcy;&iukcy;&dcy;&ocy;&rcy;&iukcy;&vcy;</span></td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center"><span class="tour-comm-text-align">&Kcy;&ocy;&mcy;&acy;&ncy;&dcy;&acy; &zcy; &ncy;&iecy;&jcy;&mcy;&ocy;&vcy;&iukcy;&rcy;&ncy;&ocy; &dcy;&ocy;&vcy;&gcy;&ocy;&yucy; &ncy;&acy;&zcy;&vcy;&ocy;&yucy; &shcy;&ocy;&bcy; &bcy;&ucy;&lcy;&ocy; &shcy;&ocy; &rcy;&ocy;&bcy;&icy;&tcy;&icy; &tcy;&acy; &yacy; &zcy;&rcy;&ocy;&bcy;&lcy;&yucy; &yicy;&yicy; &shchcy;&iecy; &dcy;&ocy;&vcy;&shcy;&ocy;&yucy;!</span></td>
+</tr>
+</tbody>
+</table>
+<p>2-&jcy; &rcy;&yacy;&dcy;&ocy;&kcy; &vcy; &tscy;&iukcy;&jcy; &tcy;&acy;&bcy;&lcy;&icy;&tscy;&iukcy; &ocy;&bcy;&rcy;&icy;&vcy;&acy;&jukcy;&tcy;&softcy;&scy;&yacy;, &ocy;&scy;&kcy;&lcy;&softcy;&kcy;&icy; &shcy;&icy;&rcy;&icy;&ncy;&icy; &iecy;&kcy;&rcy;&acy;&ncy;&acy; &kcy;&ocy;&rcy;&icy;&scy;&tcy;&ucy;&vcy;&acy;&chcy;&acy; &ncy;&iecy; &vcy;&icy;&scy;&tcy;&acy;&chcy;&acy;&jukcy; &shchcy;&ocy;&bcy; &vcy;&iukcy;&dcy;&ocy;&bcy;&rcy;&acy;&zcy;&icy;&tcy;&icy; &tcy;&acy;&bcy;&lcy;&icy;&tscy;&yucy; &pcy;&ocy;&vcy;&ncy;&iukcy;&scy;&tcy;&yucy;.</p>
+<p>&Mcy;&acy;&rcy;&kcy;&dcy;&acy;&ucy;&ncy; &kcy;&ocy;&dcy; &tscy;&iukcy;&jukcy;&yicy; &tcy;&acy;&bcy;&lcy;&icy;&tscy;&iukcy;:</p>
+<div class="highlight"><pre><span></span><code><span class="p">|</span> <span class="s s-Atom">**\#**</span> <span class="p">|</span>                                                        <span class="s s-Atom">**&Kcy;&Ocy;&Mcy;&Acy;&Ncy;&Dcy;&Acy;**</span>                                                        <span class="p">|</span>
+<span class="p">|</span> <span class="o">:-</span><span class="s s-Atom">---:</span> <span class="p">|</span> <span class="o">:-</span><span class="s s-Atom">----------------------------------------------------------------------------------------------------------------------:</span> <span class="p">|</span>
+<span class="p">|</span>   <span class="mi">1</span>    <span class="p">|</span>                                <span class="o">&lt;</span><span class="s s-Atom">span</span> <span class="s s-Atom">class=</span><span class="s2">"tour-comm-text-align"</span><span class="s s-Atom">&gt;&Kcy;&ocy;&mcy;&acy;&ncy;&dcy;&acy;</span> <span class="s s-Atom">&pcy;&ocy;&mcy;&iukcy;&dcy;&ocy;&rcy;&iukcy;&vcy;&lt;/span</span><span class="o">&gt;</span>                                <span class="p">|</span>
+<span class="p">|</span>   <span class="mi">2</span>    <span class="p">|</span> <span class="o">&lt;</span><span class="s s-Atom">span</span> <span class="s s-Atom">class=</span><span class="s2">"tour-comm-text-align"</span><span class="s s-Atom">&gt;&Kcy;&ocy;&mcy;&acy;&ncy;&dcy;&acy;</span> <span class="s s-Atom">&zcy;</span> <span class="s s-Atom">&ncy;&iecy;&jcy;&mcy;&ocy;&vcy;&iukcy;&rcy;&ncy;&ocy;</span> <span class="s s-Atom">&dcy;&ocy;&vcy;&gcy;&ocy;&yucy;</span> <span class="s s-Atom">&ncy;&acy;&zcy;&vcy;&ocy;&yucy;</span> <span class="s s-Atom">&shcy;&ocy;&bcy;</span> <span class="s s-Atom">&bcy;&ucy;&lcy;&ocy;</span> <span class="s s-Atom">&shcy;&ocy;</span> <span class="s s-Atom">&rcy;&ocy;&bcy;&icy;&tcy;&icy;</span> <span class="s s-Atom">&tcy;&acy;</span> <span class="s s-Atom">&yacy;</span> <span class="s s-Atom">&zcy;&rcy;&ocy;&bcy;&lcy;&yucy;</span> <span class="s s-Atom">&yicy;&yicy;</span> <span class="s s-Atom">&shchcy;&iecy;</span> <span class="s s-Atom">&dcy;&ocy;&vcy;&shcy;&ocy;&yucy;</span><span class="p">!</span><span class="s s-Atom">&lt;/span</span><span class="o">&gt;</span> <span class="p">|</span>
+</code></pre></div>
+<p>&Ocy;&Jcy;! &Acy; &shcy;&ocy; &tscy;&iecy;? &TScy;&iecy; &iukcy;&ncy;'&jukcy;&kcy;&tscy;&iukcy;&yacy;! &Acy;&lcy;&iecy; &vcy;&ocy;&ncy;&acy; &ncy;&iecy; &dcy;&lcy;&yacy; &tcy;&acy;&bcy;&lcy;&icy;&tscy;&softcy;. &Acy;&lcy;&iecy; &vcy;&ocy;&ncy;&acy; &pcy;&rcy;&acy;&tscy;&yucy;&jukcy; &tcy;&iukcy;&lcy;&softcy;&kcy;&icy; &vcy; &tcy;&acy;&bcy;&lcy;&icy;&tscy;&yacy;&khcy;. <code>&lt;span class="tour-comm-text-align"&gt;&lt;/span&gt;</code> - &rcy;&ocy;&bcy;&icy;&tcy;&softcy; &iukcy;&zcy; &ncy;&acy;&dcy;&pcy;&icy;&scy;&ucy; (&yacy;&kcy;&icy;&jcy; &zcy;&ncy;&acy;&khcy;&icy;&tcy;&softcy;&scy;&yacy; &mcy;&iukcy;&zhcy; &vcy;&iukcy;&dcy;&kcy;&rcy;&icy;&tcy;&tcy;&yacy;&mcy; &scy;&pcy;&acy;&ncy;-&iecy;&lcy;&iecy;&mcy;&iecy;&ncy;&tcy;&ucy; &tcy;&acy; &jcy;&ocy;&gcy;&ocy; &zcy;&acy;&kcy;&rcy;&icy;&tcy;&tcy;&yacy;&mcy; [<code>` &lt;span&gt; &Tcy;&Ucy;&Tcy; &lt;/span&gt;</code> `]). &Ucy; &tscy;&softcy;&ocy;&gcy;&ocy; &scy;&pcy;&acy;&ncy;&acy; &ucy; &mcy;&iecy;&ncy;&iecy; &pcy;&rcy;&ocy;&pcy;&icy;&scy;&acy;&ncy;&acy; &scy;&tcy;&icy;&lcy;&iukcy;&zcy;&acy;&tscy;&iukcy;&yacy;, &ucy; &yacy;&kcy;&ocy;&yicy; &jukcy; &ncy;&acy;&zcy;&vcy;&acy; "tour-comm-text-align". &TScy;&yucy; &ncy;&acy;&zcy;&vcy;&ucy; &tcy;&icy; &vcy;&kcy;&acy;&zcy;&ucy;&jukcy;&shcy; &vcy; &acy;&tcy;&rcy;&icy;&bcy;&ucy;&tcy;&iukcy; &scy;&pcy;&acy;&ncy;-&iecy;&lcy;&iecy;&mcy;&iecy;&ncy;&tcy;&ucy; class &vcy; &kcy;&acy;&vcy;&icy;&chcy;&kcy;&acy;&khcy;. &Tcy;&acy;&bcy;&tcy;&ocy;, &zcy;&acy;&kcy;&rcy;&iukcy;&pcy;&icy;&mcy;&ocy; &zcy;&ncy;&acy;&ncy;&ncy;&yacy;.</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">"&ncy;&acy;&zcy;&vcy;&acy; &scy;&tcy;&icy;&lcy;&iukcy;&zcy;&acy;&tscy;&iukcy;&yicy;"</span><span class="p">&gt;</span>&Tcy;&iecy;&kcy;&scy;&tcy; &yacy;&kcy;&icy;&jcy; &scy;&tcy;&icy;&lcy;&iukcy;&zcy;&ucy;&jukcy;&mcy;&ocy;<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>&SHCHcy;&iecy; &rcy;&acy;&zcy;, &tscy;&iecy;&jcy; &scy;&tcy;&icy;&lcy;&softcy; &pcy;&rcy;&acy;&tscy;&yucy;&jukcy; &tcy;&iukcy;&lcy;&softcy;&kcy;&icy; &vcy; &tcy;&acy;&bcy;&lcy;&icy;&chcy;&kcy;&acy;&khcy;, &yacy;&kcy;&shchcy;&ocy; &tcy;&icy; &vcy;&icy;&kcy;&ocy;&rcy;&icy;&scy;&tcy;&acy;&jukcy;&shcy; <code>&lt;span class="tour-comm-text-align"&gt;&lt;/span&gt;</code> &pcy;&ocy;&zcy;&acy; &mcy;&iecy;&zhcy;&acy;&mcy;&icy; &tcy;&acy;&bcy;&lcy;&icy;&tscy;&iukcy;, &tcy;&ocy; &vcy;&iukcy;&ncy; &ncy;&iecy; &scy;&pcy;&rcy;&acy;&tscy;&yucy;&jukcy;, &acy; &vcy;&zcy;&acy;&gcy;&acy;&lcy;&iukcy; &ncy;&acy;&vcy;&iukcy;&shchcy;&ocy;? &Vcy;&iukcy;&ncy; &pcy;&ocy;&tcy;&rcy;&iukcy;&bcy;&iecy;&ncy; &tcy;&iukcy;&lcy;&softcy;&kcy;&icy; &yacy;&kcy;&shchcy;&ocy; &ucy; &tcy;&iecy;&bcy;&iecy; &vcy; &tcy;&acy;&bcy;&lcy;&icy;&tscy;&iukcy; &zcy;&acy;&gcy;&ocy;&lcy;&ocy;&vcy;&ocy;&kcy; &pcy;&ocy;&vcy;&icy;&ncy;&iecy;&ncy; &zcy;&ncy;&acy;&khcy;&ocy;&dcy;&icy;&tcy;&icy;&scy;&softcy; &pcy;&ocy; &tscy;&iecy;&ncy;&tcy;&rcy;&ucy; &kcy;&lcy;&iukcy;&tcy;&icy;&ncy;&kcy;&icy;, &acy; &zcy;&ncy;&acy;&chcy;&iecy;&ncy;&ncy;&yacy; &yacy;&kcy;&iecy;&scy;&softcy; &vcy; &tscy;&softcy;&ocy;&mcy;&ucy; &scy;&tcy;&ocy;&vcy;&pcy;&chcy;&icy;&kcy;&ucy; &tcy;&rcy;&iecy;&bcy;&acy; &vcy;&icy;&mcy;&iukcy;&rcy;&yacy;&tcy;&icy; &pcy;&ocy; &lcy;&iukcy;&vcy;&ocy;&mcy;&ucy; &kcy;&rcy;&acy;&yucy;, &ocy;&scy;&softcy; &tscy;&iecy; &iukcy; &rcy;&ocy;&bcy;&icy;&tcy;&softcy; &tscy;&iecy;&jcy; &scy;&pcy;&acy;&ncy;. &Tcy;&iecy;&kcy;&scy;&tcy;, &yacy;&kcy;&icy;&jcy; &bcy;&ucy;&dcy;&iecy; &pcy;&rcy;&iecy;&dcy;&scy;&tcy;&acy;&vcy;&lcy;&iecy;&ncy;&icy;&jcy; &vcy; &tcy;&acy;&bcy;&lcy;&icy;&tscy;&iukcy; &vcy; &ocy;&bcy;&gcy;&ocy;&rcy;&tcy;&tscy;&iukcy; &scy;&pcy;&acy;&ncy; &zcy; &tscy;&icy;&mcy; &kcy;&lcy;&acy;&scy;&ocy;&mcy; &bcy;&ucy;&dcy;&iecy; &vcy;&icy;&rcy;&iukcy;&vcy;&ncy;&yacy;&ncy;&ocy; &pcy;&ocy; &lcy;&iukcy;&vcy;&ocy;&mcy;&ucy; &kcy;&rcy;&acy;&yucy; &kcy;&lcy;&iukcy;&tcy;&icy;&ncy;&kcy;&icy;. &Mcy;&Ocy;&ZHcy;&Ncy;&Acy; &Bcy;&Ucy;&Lcy;&Ocy; &Zcy; &TScy;&SOFTcy;&Ocy;&Gcy;&Ocy; &Pcy;&Ocy;&CHcy;&Icy;&Ncy;&Acy;&Tcy;&Icy;? &ncy;&jukcy;</p>
+<h3 id="tablitsia-predstavlennia-skiniv">&Tcy;&acy;&bcy;&lcy;&icy;&tscy;&yacy; &pcy;&rcy;&iecy;&dcy;&scy;&tcy;&acy;&vcy;&lcy;&iecy;&ncy;&ncy;&yacy; &scy;&kcy;&iukcy;&ncy;&iukcy;&vcy;</h3>
+<p>&Ocy;&dcy;&rcy;&acy;&zcy;&ucy; &zcy; &pcy;&rcy;&icy;&kcy;&lcy;&acy;&dcy;&ucy;.</p>
+<div class="skins">
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><img class="image-center image-large" src="https://images.contentstack.io/v3/assets/blt370612131b6e0756/blt1a50e4b1471b25d5/642270578cbb571155db1927/03292023_WRPatchNotes4.1a_Birdio.jpg"/>&Pcy;&IEcy;&Rcy;&SHcy;&Ocy;&Kcy;&Vcy;&Iukcy;&Tcy;&Ncy;&IEcy;&Vcy;&Icy;&Jcy; &Gcy;&Acy;&Lcy;&Iukcy;&Ocy;<br/><em>&Bcy;&ucy;&dcy;&iecy; &dcy;&ocy;&scy;&tcy;&ucy;&pcy;&ncy;&icy;&jcy; &zcy; 30 &bcy;&iecy;&rcy;&iecy;&zcy;&ncy;&yacy; 03:01 UTC+3</em></td>
+<td align="center"><img class="image-center image-large" src="https://images.contentstack.io/v3/assets/blt370612131b6e0756/blt6d15c6fea9e21f78/64227058b7ff2821000dd23b/03292023_WRPatchNotes4.1a_Cosmic-Defender-Xin-Zhao.jpg"/>&Kcy;&Ocy;&Scy;&Mcy;&Iukcy;&CHcy;&Ncy;&Icy;&Jcy; &Zcy;&Acy;&KHcy;&Icy;&Scy;&Ncy;&Icy;&Kcy; &Kcy;&Scy;&Iukcy;&Ncy;&SOFTcy; &CHcy;&ZHcy;&Acy;&Ocy;<br/><em>&Bcy;&ucy;&dcy;&iecy; &dcy;&ocy;&scy;&tcy;&ucy;&pcy;&ncy;&icy;&jcy; &zcy; 04 &kcy;&vcy;&iukcy;&tcy;&ncy;&yacy; 03:01 UTC+3</em></td>
+</tr>
+<tr>
+<td align="center"><img class="image-center image-large" src="https://images.contentstack.io/v3/assets/blt370612131b6e0756/blt00e7ed39b0912750/64227059f328751d801e7a3d/03292023_WRPatchNotes4.1a_CosmicQueenAshe_FINAL.jpg"/>&Kcy;&Ocy;&Scy;&Mcy;&Iukcy;&CHcy;&Ncy;&Acy; &Kcy;&Ocy;&Rcy;&Ocy;&Lcy;&IEcy;&Vcy;&Acy; &IEcy;&SHcy;<br/><em>&Bcy;&ucy;&dcy;&iecy; &dcy;&ocy;&scy;&tcy;&ucy;&pcy;&ncy;&acy; &zcy; 04 &kcy;&vcy;&iukcy;&tcy;&ncy;&yacy; 03:01 UTC+3</em></td>
+<td align="center"><img class="image-center image-large" src="https://images.contentstack.io/v3/assets/blt370612131b6e0756/blt9deba7de00030963/64227059f7f78f5e04dc9986/03292023_WRPatchNotes4.1a_Cosmic-Reaver-Kassadin.jpg"/>&Kcy;&Ocy;&Scy;&Mcy;&Iukcy;&CHcy;&Ncy;&Icy;&Jcy; &Rcy;&Ocy;&Zcy;&Vcy;&Iukcy;&Dcy;&Ncy;&Icy;&Kcy; &Kcy;&Acy;&Scy;&Scy;&Acy;&Dcy;&Iukcy;&Ncy;<br/><em>&Bcy;&ucy;&dcy;&iecy; &dcy;&ocy;&scy;&tcy;&ucy;&pcy;&ncy;&icy;&jcy; &zcy; 04 &kcy;&vcy;&iukcy;&tcy;&ncy;&yacy; 03:01 UTC+3</em></td>
+</tr>
+<tr>
+<td align="center"><img class="image-center image-large" src="https://images.contentstack.io/v3/assets/blt370612131b6e0756/blt199d392c965b8b9b/642270598cbb571155db192b/03292023_WRPatchNotes4.1a_CosmicLux.jpg"/>&Kcy;&Ocy;&Scy;&Mcy;&Iukcy;&CHcy;&Ncy;&Acy; &Lcy;&YUcy;&Kcy;&Scy;<br/><em>&Bcy;&ucy;&dcy;&iecy; &dcy;&ocy;&scy;&tcy;&ucy;&pcy;&ncy;&acy; &zcy; 04 &kcy;&vcy;&iukcy;&tcy;&ncy;&yacy; 03:01 UTC+3</em></td>
+<td align="center"><img class="image-center image-large" src="https://images.contentstack.io/v3/assets/blt370612131b6e0756/blt05a7f4e0be9c56de/64227059649e141123a6e0a9/03292023_WRPatchNotes4.1a_Dark-Cosmic-Lux.jpg"/>&Tcy;&IEcy;&Mcy;&Ncy;&Acy; &Kcy;&Ocy;&Scy;&Mcy;&Iukcy;&CHcy;&Ncy;&Acy; &Lcy;&YUcy;&Kcy;&Scy;<br/><em>&Bcy;&ucy;&dcy;&iecy; &dcy;&ocy;&scy;&tcy;&ucy;&pcy;&ncy;&acy; &zcy; 04 &kcy;&vcy;&iukcy;&tcy;&ncy;&yacy; 03:01 UTC+3</em></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>&Tcy;&ucy;&tcy; &ocy;&dcy;&rcy;&acy;&zcy;&ucy; &dcy;&vcy;&iukcy; &iukcy;&ncy;'&jukcy;&kcy;&tscy;&iukcy;&yicy;, &ncy;&acy; &iecy;&kcy;&rcy;&acy;&ncy;&acy;&khcy; &shcy;&icy;&rcy;&icy;&ncy;&ocy;&yucy; &mcy;&iecy;&ncy;&shcy;&iecy; 640 <em>&chcy;&icy; 760 &ncy;&iecy; &pcy;&acy;&mcy;'&yacy;&tcy;&acy;&yucy; &ncy;&iecy; &scy;&ucy;&tcy;&softcy; &kcy;&ocy;&rcy;&ocy;&chcy;&iecy;</em> &pcy;&iukcy;&kcy;&scy;&iecy;&lcy;&iukcy;&vcy; &vcy;&scy;&iukcy; &scy;&tcy;&ocy;&vcy;&pcy;&tscy;&iukcy; &vcy;&icy;&scy;&tcy;&rcy;&ocy;&yucy;&tcy;&softcy;&scy;&yacy; &vcy; &ocy;&dcy;&icy;&ncy; &scy;&tcy;&ocy;&vcy;&pcy;&iecy;&tscy;&softcy;. &Kcy;&ocy;&dcy; &tscy;&iukcy;&jukcy;&yicy; &tcy;&acy;&bcy;&lcy;&icy;&tscy;&iukcy; &bcy;&iecy;&zcy; &dcy;&ocy;&vcy;&zhcy;&iecy;&lcy;&iecy;&zcy;&ncy;&icy;&khcy; &ncy;&iukcy;&kcy;&ocy;&mcy;&ucy; &ncy;&iecy; &pcy;&ocy;&tcy;&rcy;&iukcy;&bcy;&ncy;&icy;&khcy; &pcy;&ocy;&scy;&icy;&lcy;&acy;&ncy;&softcy;:</p>
+<div class="highlight"><pre><span></span><code>&lt;div class="skins" markdown="1"&gt;
+|                                                                                                                           |                                                                                                                                   |
+| :-----------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------: |
+| &lt;img src="&pcy;&ocy;&scy;&icy;&lcy;&acy;&ncy;&ncy;&yacy;" class="image-center image-large"/&gt;&Pcy;&IEcy;&Rcy;&SHcy;&Ocy;&Kcy;&Vcy;&Iukcy;&Tcy;&Ncy;&IEcy;&Vcy;&Icy;&Jcy; &Gcy;&Acy;&Lcy;&Iukcy;&Ocy;&lt;br/&gt;_&Bcy;&ucy;&dcy;&iecy; &dcy;&ocy;&scy;&tcy;&ucy;&pcy;&ncy;&icy;&jcy; &zcy; 30 &bcy;&iecy;&rcy;&iecy;&zcy;&ncy;&yacy; 03:01 UTC+3_ | &lt;img src="&pcy;&ocy;&scy;&icy;&lcy;&acy;&ncy;&ncy;&yacy;" class="image-center image-large"/&gt;&Kcy;&Ocy;&Scy;&Mcy;&Iukcy;&CHcy;&Ncy;&Icy;&Jcy; &Zcy;&Acy;&KHcy;&Icy;&Scy;&Ncy;&Icy;&Kcy; &Kcy;&Scy;&Iukcy;&Ncy;&SOFTcy; &CHcy;&ZHcy;&Acy;&Ocy;&lt;br/&gt;_&Bcy;&ucy;&dcy;&iecy; &dcy;&ocy;&scy;&tcy;&ucy;&pcy;&ncy;&icy;&jcy; &zcy; 04 &kcy;&vcy;&iukcy;&tcy;&ncy;&yacy; 03:01 UTC+3_ |
+|  &lt;img src="&pcy;&ocy;&scy;&icy;&lcy;&acy;&ncy;&ncy;&yacy;" class="image-center image-large"/&gt;&Kcy;&Ocy;&Scy;&Mcy;&Iukcy;&CHcy;&Ncy;&Acy; &Kcy;&Ocy;&Rcy;&Ocy;&Lcy;&IEcy;&Vcy;&Acy; &IEcy;&SHcy;&lt;br/&gt;_&Bcy;&ucy;&dcy;&iecy; &dcy;&ocy;&scy;&tcy;&ucy;&pcy;&ncy;&acy; &zcy; 04 &kcy;&vcy;&iukcy;&tcy;&ncy;&yacy; 03:01 UTC+3_  | &lt;img src="&pcy;&ocy;&scy;&icy;&lcy;&acy;&ncy;&ncy;&yacy;" class="image-center image-large"/&gt;&Kcy;&Ocy;&Scy;&Mcy;&Iukcy;&CHcy;&Ncy;&Icy;&Jcy; &Rcy;&Ocy;&Zcy;&Vcy;&Iukcy;&Dcy;&Ncy;&Icy;&Kcy; &Kcy;&Acy;&Scy;&Scy;&Acy;&Dcy;&Iukcy;&Ncy;&lt;br/&gt;_&Bcy;&ucy;&dcy;&iecy; &dcy;&ocy;&scy;&tcy;&ucy;&pcy;&ncy;&icy;&jcy; &zcy; 04 &kcy;&vcy;&iukcy;&tcy;&ncy;&yacy; 03:01 UTC+3_  |
+|     &lt;img src="&pcy;&ocy;&scy;&icy;&lcy;&acy;&ncy;&ncy;&yacy;" class="image-center image-large"/&gt;&Kcy;&Ocy;&Scy;&Mcy;&Iukcy;&CHcy;&Ncy;&Acy; &Lcy;&YUcy;&Kcy;&Scy;&lt;br/&gt;_&Bcy;&ucy;&dcy;&iecy; &dcy;&ocy;&scy;&tcy;&ucy;&pcy;&ncy;&acy; &zcy; 04 &kcy;&vcy;&iukcy;&tcy;&ncy;&yacy; 03:01 UTC+3_      |      &lt;img src="&pcy;&ocy;&scy;&icy;&lcy;&acy;&ncy;&ncy;&yacy;" class="image-center image-large"/&gt;&Tcy;&IEcy;&Mcy;&Ncy;&Acy; &Kcy;&Ocy;&Scy;&Mcy;&Iukcy;&CHcy;&Ncy;&Acy; &Lcy;&YUcy;&Kcy;&Scy;&lt;br/&gt;_&Bcy;&ucy;&dcy;&iecy; &dcy;&ocy;&scy;&tcy;&ucy;&pcy;&ncy;&acy; &zcy; 04 &kcy;&vcy;&iukcy;&tcy;&ncy;&yacy; 03:01 UTC+3_       |
+&lt;/div&gt;
+</code></pre></div>
+<p>&Scy;&acy;&mcy; <code>&lt;div class="skins"&gt;&lt;/div&gt;</code> &ncy;&iukcy;&chcy;&ocy;&gcy;&ocy; &ncy;&iecy; &zcy;&mcy;&iukcy;&ncy;&yucy;&jukcy;, &yacy; &chcy;&iecy;&rcy;&iecy;&zcy; &fcy;&acy;&jcy;&lcy; &scy;&tcy;&icy;&lcy;&iukcy;&vcy; &zcy;&vcy;&iecy;&rcy;&tcy;&acy;&yucy;&scy;&softcy; &dcy;&ocy; div &zcy; &kcy;&lcy;&acy;&scy;&ocy;&mcy; skins &iukcy; &shcy;&ucy;&kcy;&acy;&yucy; &vcy; &ncy;&softcy;&ocy;&mcy;&ucy; &tcy;&acy;&bcy;&lcy;&icy;&tscy;&yucy;, &yacy;&kcy;&ucy; &jcy; &rcy;&iecy;&dcy;&acy;&gcy;&ucy;&yucy; &scy;&tcy;&icy;&lcy;&yacy;&mcy;&icy;.</p>
+<p><code>&lt;div class="skins" markdown="1"&gt;&lt;/div&gt;</code> <em>&mcy;&acy;&rcy;&kcy;&dcy;&acy;&ucy;&ncy;="1"</em> &ncy;&iecy;&ocy;&bcy;&iukcy;&khcy;&dcy;&ncy;&ocy; &dcy;&lcy;&yacy; &tcy;&ocy;&gcy;&ocy;, &shchcy;&ocy;&bcy; &pcy;&rcy;&ocy;&gcy;&rcy;&acy;&mcy;&acy; &chcy;&icy;&tcy;&acy;&lcy;&acy; &vcy;&mcy;&iukcy;&scy;&tcy; div &yacy;&kcy; &mcy;&acy;&rcy;&kcy;&dcy;&acy;&ucy;&ncy; &rcy;&ocy;&zcy;&mcy;&iukcy;&tcy;&kcy;&ucy;, &acy; &ncy;&iecy; &tcy;&iecy;&kcy;&scy;&tcy;.</p>
+<p>&Tcy;&icy; &pcy;&ocy;&mcy;&iukcy;&tcy;&icy;&lcy;&acy; &shchcy;&ocy; &vcy; &tscy;&iukcy;&jcy; &tcy;&acy;&bcy;&icy;&lcy;&tscy;&iukcy; &zcy;&acy;&gcy;&ocy;&lcy;&ocy;&vcy;&ocy;&kcy; &pcy;&ucy;&scy;&tcy;&icy;&jcy;? &YAcy;&kcy;&shchcy;&ocy; &jcy;&ocy;&gcy;&ocy; &zcy;&acy;&lcy;&icy;&shcy;&icy;&tcy;&icy; &pcy;&ucy;&scy;&tcy;&icy;&mcy;, &tcy;&ocy; &vcy;&iukcy;&ncy; &vcy;&scy;&iecy; &ocy;&dcy;&ncy;&ocy; &zcy;'&yacy;&vcy;&icy;&tcy;&softcy;&scy;&yacy; &acy;&lcy;&iecy; &ncy;&iecy; &bcy;&ucy;&dcy;&iecy; &zcy;&acy;&jcy;&mcy;&acy;&tcy;&icy; &vcy;&icy;&scy;&ocy;&tcy;&icy;. &Dcy;&ucy;&mcy;&acy;&yucy;, &tscy;&iecy; &yucy;&zcy;&acy;&bcy;&iecy;&lcy;&softcy;&ncy;&ocy; &tcy;&iukcy;&lcy;&softcy;&kcy;&icy; &vcy; &tcy;&acy;&bcy;&lcy;&icy;&tscy;&yacy;&khcy; &scy;&kcy;&iukcy;&ncy;&iukcy;&vcy;.</p>
+<h3 id="tablitsia-z-pribiranniam-limitu-shirini-stroki">&Tcy;&acy;&bcy;&lcy;&icy;&tscy;&yacy; &zcy; &pcy;&rcy;&icy;&bcy;&icy;&rcy;&acy;&ncy;&ncy;&yacy;&mcy; &lcy;&iukcy;&mcy;&iukcy;&tcy;&ucy; &shcy;&icy;&rcy;&icy;&ncy;&icy; &scy;&tcy;&rcy;&ocy;&kcy;&icy;</h3>
+<p>&Pcy;&rcy;&icy;&kcy;&lcy;&acy;&dcy; - &tcy;&acy;&bcy;&lcy;&icy;&tscy;&yacy; &mcy;&iecy;&tcy;&acy;&tcy;&iecy;&gcy;&iukcy;&vcy; &zcy;&vcy;&iecy;&rcy;&khcy;&ucy;. &YIcy;&yicy; &kcy;&ocy;&dcy;:</p>
+<div class="highlight"><pre><span></span><code>&lt;div class="no-max-width" markdown="1"&gt;
+| &Mcy;&iecy;&tcy;&acy;&tcy;&iecy;&gcy;                             | &Pcy;&ocy;&yacy;&scy;&ncy;&iecy;&ncy;&ncy;&yacy;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| :---------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ``` Title: ```                      | &lt;span class="wrap-content"&gt;&TScy;&iecy; &zcy;&acy;&gcy;&ocy;&lcy;&ocy;&vcy;&ocy;&kcy; &scy;&tcy;&acy;&tcy;&tcy;&iukcy;, &vcy;&iukcy;&ncy; &vcy;&iukcy;&dcy;&ocy;&bcy;&rcy;&acy;&zhcy;&acy;&jukcy;&tcy;&softcy;&scy;&yacy; &ncy;&acy; &gcy;&ocy;&lcy;&ocy;&vcy;&ncy;&iukcy;&jcy; &scy;&tcy;&ocy;&rcy;&iukcy;&ncy;&tscy;&iukcy; &scy;&acy;&jcy;&tcy;&ucy; &tcy;&acy; &mcy;&ocy;&zhcy;&lcy;&icy;&vcy;&ocy; &ncy;&acy; &pcy;&rcy;&iecy;'&vcy;&yucy; &pcy;&ocy;&scy;&icy;&lcy;&acy;&ncy;&softcy; &vcy; &bcy;&ocy;&gcy;&ocy;&mcy; &zcy;&acy;&bcy;&ucy;&tcy;&icy;&khcy; &mcy;&iecy;&rcy;&iecy;&zhcy;&acy;&khcy; &yacy;&kcy;&icy;&mcy;&icy; &yacy; &ncy;&iecy; &kcy;&ocy;&rcy;&icy;&scy;&tcy;&ucy;&yucy;&scy;&softcy;&lt;/span&gt;&lt;img src="{static}/images/guide/title.jpg" class="image-center image-large"/&gt;                                                                                                                                                                                                                                                              |
+| ``` Date: ```                       | &lt;span class="wrap-content"&gt;&Scy;&yucy;&dcy;&icy; &tcy;&rcy;&iecy;&bcy;&acy; &pcy;&icy;&scy;&acy;&tcy;&icy; &dcy;&acy;&tcy;&ucy; &vcy; &fcy;&ocy;&rcy;&mcy;&acy;&tcy;&iukcy; &rcy;&iukcy;&kcy;-&mcy;&iukcy;&scy;&yacy;&tscy;&softcy;-&dcy;&iecy;&ncy;&softcy; (&mcy;&ocy;&vcy;&ocy;&yucy; &ucy;&mcy;&ncy;&icy;&khcy; ``` YYYY-MM-DD ``` ), &mcy;&ocy;&zhcy;&ncy;&acy; &tcy;&acy;&kcy;&ocy;&zhcy; &ncy;&acy;&lcy;&acy;&shcy;&tcy;&ucy;&vcy;&acy;&tcy;&icy; &iukcy; &gcy;&ocy;&dcy;&icy;&ncy;&icy; &scy; &khcy;&vcy;&icy;&lcy;&icy;&ncy;&acy;&mcy;&icy; &acy;&lcy;&iecy; &ncy;&acy;&vcy;&iukcy;&shchcy;&ocy;?&lt;/span&gt;&lt;img src="{static}/images/guide/data1.png" class="image-center image-large"/&gt;&lt;br/&gt;&lt;img src="{static}/images/guide/data2.png" class="image-center image-large"/&gt;                                                                                                                                                                             |
+| ``` Modified: ```                   | &CHcy;&icy;&tcy;&acy;&jcy; ``` Date ``` .                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| ``` Status: ```                     | &lt;span class="wrap-content"&gt;&Scy;&tcy;&acy;&tcy;&ucy;&scy; &scy;&tcy;&acy;&tcy;&tcy;&iukcy;, &tcy;&ocy;&bcy;&iukcy; &tcy;&rcy;&iecy;&bcy;&acy; &zcy;&ncy;&acy;&tcy;&icy; &lcy;&icy;&shcy;&iecy; &zcy;&acy; &dcy;&vcy;&iukcy;, &ocy;&pcy;&ucy;&bcy;&lcy;&iukcy;&kcy;&ocy;&vcy;&acy;&ncy;&acy; ("published") &tcy;&acy; &chcy;&iecy;&rcy;&ncy;&iecy;&tcy;&kcy;&acy; ("draft"). &Zcy;&acy; &ocy;&pcy;&ucy;&bcy;&lcy;&iukcy;&kcy;&ocy;&vcy;&acy;&ncy;&ucy; &mcy;&ocy;&zhcy;&ncy;&acy; &ncy;&iecy; &pcy;&ocy;&yacy;&scy;&ncy;&yucy;&vcy;&acy;&tcy;&icy;, &acy; &ocy;&scy;&softcy; &chcy;&iecy;&rcy;&ncy;&iecy;&tcy;&kcy;&acy; &bcy;&ucy;&dcy;&iecy; &dcy;&ocy;&scy;&tcy;&ucy;&pcy;&ncy;&acy; &lcy;&icy;&shcy;&iecy; &zcy;&acy; &pcy;&ocy;&scy;&icy;&lcy;&acy;&ncy;&ncy;&yacy;&mcy; ``` liter-wr.github.io/drafts/{slug} ``` . &Pcy;&rcy;&ocy; slug &pcy;&ocy;&yacy;&scy;&ncy;&yucy;&yucy; &dcy;&acy;&lcy;&iukcy;&lt;/span&gt;                                                                                                                                                                                                                                    |
+&lt;/div&gt;
+</code></pre></div>
+<p>&Ucy; &ncy;&iukcy;&jcy; &mcy;&icy; &bcy;&acy;&chcy;&icy;&mcy;&ocy; &zcy;&ncy;&acy;&jcy;&ocy;&mcy;&icy;&jcy; &iecy;&lcy;&iecy;&mcy;&iecy;&ncy;&tcy;, <code>&lt;span&gt;&lt;/span&gt;</code>, &acy;&lcy;&iecy; &vcy;&zhcy;&iecy; &zcy; &iukcy;&ncy;&shcy;&icy;&mcy; &kcy;&lcy;&acy;&scy;&ocy;&mcy;. &TScy;&iecy;&jcy; &kcy;&lcy;&acy;&scy;, <code>wrap-content</code>, &dcy;&ocy;&zcy;&vcy;&ocy;&lcy;&yacy;&jukcy; &vcy; &tcy;&acy;&bcy;&lcy;&icy;&tscy;&iukcy; &rcy;&ocy;&bcy;&icy;&tcy;&icy; &pcy;&iecy;&rcy;&iecy;&ncy;&ocy;&scy; &ncy;&acy; &iukcy;&ncy;&shcy;&ucy; &scy;&tcy;&rcy;&ocy;&kcy;&ucy;. &Vcy;&scy;&iecy;. &Dcy;&ocy;&rcy;&iecy;&chcy;&iukcy;, &tcy;&icy; &mcy;&ocy;&zhcy;&iecy;&shcy; &rcy;&ocy;&bcy;&icy;&tcy;&icy; &vcy; &ocy;&dcy;&ncy;&ocy;&mcy;&ucy; <code>&lt;span&gt;&lt;/span&gt;</code> &dcy;&iecy;&kcy;&iukcy;&lcy;&softcy;&kcy;&acy; &acy;&tcy;&rcy;&icy;&bcy;&ucy;&tcy;&iukcy;&vcy; &kcy;&lcy;&acy;&scy;&ucy;, &ncy;&acy;&pcy;&rcy;&icy;&kcy;&lcy;&acy;&dcy; </p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">"wrap-content tour-comm-text-align"</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>&bcy;&ucy;&dcy;&iecy; &pcy;&iecy;&rcy;&iecy;&ncy;&ocy;&scy;&icy;&tcy;&icy; &ncy;&acy; &ncy;&acy;&scy;&tcy;&ucy;&pcy;&ncy;&ucy; &scy;&tcy;&rcy;&ocy;&chcy;&kcy;&ucy; &tcy;&acy; &vcy;&icy;&rcy;&iukcy;&vcy;&ncy;&yucy;&vcy;&acy;&tcy;&icy; &tcy;&iecy;&kcy;&scy;&tcy; &pcy;&ocy; &lcy;&iukcy;&vcy;&ocy;&mcy;&ucy; &kcy;&rcy;&acy;&yucy;. &TScy;&iecy; &mcy;&ocy;&zhcy;&ncy;&acy; &rcy;&ocy;&bcy;&icy;&tcy;&icy; &ncy;&iecy; &tcy;&iukcy;&lcy;&softcy;&kcy;&icy; &zcy;&iukcy; span, &acy;&lcy;&iecy; &iukcy; &zcy; &iukcy;&ncy;&shcy;&icy;&mcy;&icy; &iecy;&lcy;&iecy;&mcy;&iecy;&ncy;&tcy;&acy;&mcy;&icy; HTML.</p>
+<p>&Vcy; &kcy;&iukcy;&ncy;&tscy;&iukcy; &kcy;&iukcy;&ncy;&tscy;&iukcy;&vcy; &vcy;&icy;&jcy;&shcy;&lcy;&ocy; &bcy;&iukcy;&lcy;&softcy;&shcy;&iecy; &iukcy;&ncy;'&jukcy;&kcy;&tscy;&iukcy;&jcy; &acy;&lcy;&iecy; &dcy;&ucy;&mcy;&acy;&yucy; &vcy;&scy;&iecy; &ocy;&dcy;&ncy;&ocy;, &dcy;&lcy;&yacy; &pcy;&rcy;&icy;&kcy;&ocy;&lcy;&acy; &ncy;&iecy;&khcy;&acy;&jcy; &bcy;&ucy;&dcy;&iecy; 4.</p>
+<p>&Kcy;&acy;&rcy;&tcy;&ocy;&chcy;&kcy;&icy; &gcy;&iecy;&rcy;&ocy;&ocy;&ocy;&ocy;&ocy;&ocy;&yicy;&vcy;. &Tcy;&ucy;&tcy; &tcy;&iecy;&bcy;&iecy; &pcy;&ocy;&rcy;&vcy;&iecy;!</p>
+<h1 id="kartki_2">&Kcy;&acy;&rcy;&tcy;&kcy;&icy;</h1>
+<h3 id="kartka-geroia-z-zminoiu-bazovoyi-kharakteristiki">&Kcy;&acy;&rcy;&tcy;&kcy;&acy; &gcy;&iecy;&rcy;&ocy;&yacy; &zcy; &zcy;&mcy;&iukcy;&ncy;&ocy;&yucy; &bcy;&acy;&zcy;&ocy;&vcy;&ocy;&yicy; &khcy;&acy;&rcy;&acy;&kcy;&tcy;&iecy;&rcy;&icy;&scy;&tcy;&icy;&kcy;&icy;</h3>
+<blockquote>
+<p><img alt="&scy;&pcy;&lcy;&iecy;&shcy;-&acy;&rcy;&tcy; &Ncy;&ucy;&ncy;&ucy;" class="image-center image-large" id="nunu-ta-villump" src="https://images.contentstack.io/v3/assets/blt370612131b6e0756/blta02c716405e3b57f/6164e134ca79db05abb0f20a/LOLWR_Patch25_NunuPatchNotes.jpg"/></p>
+<h3 id="nunu-ta-villump">&Ncy;&Ucy;&Ncy;&Ucy; &Tcy;&Acy; &Vcy;&Iukcy;&Lcy;&Lcy;&Ucy;&Mcy;&Pcy;</h3>
+<p>&Ncy;&ucy;&ncy;&ucy; &ncy;&iecy; &ocy;&tcy;&rcy;&icy;&mcy;&acy;&vcy; &zcy;&ncy;&acy;&chcy;&ncy;&icy;&khcy; &pcy;&ocy;&kcy;&rcy;&acy;&shchcy;&iecy;&ncy;&softcy; &pcy;&iukcy;&scy;&lcy;&yacy; &vcy;&icy;&pcy;&ucy;&scy;&kcy;&ucy; &ncy;&ocy;&vcy;&icy;&khcy; &pcy;&rcy;&iecy;&dcy;&mcy;&iecy;&tcy;&iukcy;&vcy; &dcy;&lcy;&yacy; &tcy;&acy;&ncy;&kcy;&iukcy;&vcy;, &tcy;&ocy;&mcy;&ucy; &pcy;&ocy;&tcy;&rcy;&iecy;&bcy;&ucy;&jukcy; &dcy;&iecy;&yacy;&kcy;&ocy;&yicy; &dcy;&ocy;&pcy;&ocy;&mcy;&ocy;&gcy;&icy;, &shchcy;&ocy;&bcy; &vcy;&iukcy;&ncy; &zcy;&ncy;&ocy;&vcy;&ucy; &mcy;&iukcy;&gcy; &vcy;&iecy;&scy;&tcy;&icy; &kcy;&ocy;&mcy;&acy;&ncy;&dcy;&ucy; &dcy;&ocy; &pcy;&iecy;&rcy;&iecy;&mcy;&ocy;&gcy;&icy;.</p>
+<blockquote>
+<p><div class="text-container-skill"><h4>&Bcy;&Acy;&Zcy;&Ocy;&Vcy;&Iukcy; &KHcy;&Acy;&Rcy;&Acy;&Kcy;&Tcy;&IEcy;&Rcy;&Icy;&Scy;&Tcy;&Icy;&Kcy;&Icy;</h4><ul>
+<li>&zcy;&dcy;&ocy;&rcy;&ocy;&vcy;'&yacy; &zcy;&acy; &rcy;&iukcy;&vcy;&iecy;&ncy;&softcy;: 105 &rarr; <strong>112</strong></li>
+</ul></div></p>
+</blockquote>
+</blockquote>
+<p>&Gcy;&acy;&rcy;&ncy;&ocy;, &dcy;&acy;? &Ocy;&scy;&softcy; &yicy;&yicy; &kcy;&ocy;&dcy;:</p>
+<div class="highlight"><pre><span></span><code>&gt;<span class="w"> </span><span class="nt">&lt;img</span><span class="w"> </span><span class="na">src=</span><span class="s">"&pcy;&ocy;&scy;&icy;&lcy;&acy;&ncy;&ncy;&yacy;"</span><span class="w"> </span><span class="na">alt=</span><span class="s">"&scy;&pcy;&lcy;&iecy;&shcy;-&acy;&rcy;&tcy; &Ncy;&ucy;&ncy;&ucy;"</span><span class="w"> </span><span class="na">class=</span><span class="s">"image-center image-large"</span><span class="w"> </span><span class="na">id=</span><span class="s">"nunu-ta-villump"</span><span class="nt">/&gt;</span>
+&gt;
+&gt;<span class="w"> </span>###<span class="w"> </span>&Ncy;&Ucy;&Ncy;&Ucy;<span class="w"> </span>&Tcy;&Acy;<span class="w"> </span>&Vcy;&Iukcy;&Lcy;&Lcy;&Ucy;&Mcy;&Pcy;
+&gt;<span class="w"> </span>
+&gt;<span class="w"> </span>&Ncy;&ucy;&ncy;&ucy;<span class="w"> </span>&ncy;&iecy;<span class="w"> </span>&ocy;&tcy;&rcy;&icy;&mcy;&acy;&vcy;<span class="w"> </span>&zcy;&ncy;&acy;&chcy;&ncy;&icy;&khcy;<span class="w"> </span>&pcy;&ocy;&kcy;&rcy;&acy;&shchcy;&iecy;&ncy;&softcy;<span class="w"> </span>&pcy;&iukcy;&scy;&lcy;&yacy;<span class="w"> </span>&vcy;&icy;&pcy;&ucy;&scy;&kcy;&ucy;<span class="w"> </span>&ncy;&ocy;&vcy;&icy;&khcy;<span class="w"> </span>&pcy;&rcy;&iecy;&dcy;&mcy;&iecy;&tcy;&iukcy;&vcy;<span class="w"> </span>&dcy;&lcy;&yacy;<span class="w"> </span>&tcy;&acy;&ncy;&kcy;&iukcy;&vcy;,<span class="w"> </span>&tcy;&ocy;&mcy;&ucy;<span class="w"> </span>&pcy;&ocy;&tcy;&rcy;&iecy;&bcy;&ucy;&jukcy;<span class="w"> </span>&dcy;&iecy;&yacy;&kcy;&ocy;&yicy;<span class="w"> </span>&dcy;&ocy;&pcy;&ocy;&mcy;&ocy;&gcy;&icy;,<span class="w"> </span>&shchcy;&ocy;&bcy;<span class="w"> </span>&vcy;&iukcy;&ncy;<span class="w"> </span>&zcy;&ncy;&ocy;&vcy;&ucy;<span class="w"> </span>&mcy;&iukcy;&gcy;<span class="w"> </span>&vcy;&iecy;&scy;&tcy;&icy;<span class="w"> </span>&kcy;&ocy;&mcy;&acy;&ncy;&dcy;&ucy;<span class="w"> </span>&dcy;&ocy;<span class="w"> </span>&pcy;&iecy;&rcy;&iecy;&mcy;&ocy;&gcy;&icy;.
+&gt;
+&gt;<span class="w"> </span>&gt;
+&gt;<span class="w"> </span>&gt;<span class="w"> </span><span class="nt">&lt;div</span><span class="w"> </span><span class="na">class=</span><span class="s">"text-container-skill"</span><span class="nt">&gt;&lt;h4&gt;</span>&Bcy;&Acy;&Zcy;&Ocy;&Vcy;&Iukcy;<span class="w"> </span>&KHcy;&Acy;&Rcy;&Acy;&Kcy;&Tcy;&IEcy;&Rcy;&Icy;&Scy;&Tcy;&Icy;&Kcy;&Icy;<span class="nt">&lt;/h4&gt;&lt;ul&gt;</span>
+<span class="w">    </span><span class="nt">&lt;li&gt;</span>&zcy;&dcy;&ocy;&rcy;&ocy;&vcy;'&yacy;<span class="w"> </span>&zcy;&acy;<span class="w"> </span>&rcy;&iukcy;&vcy;&iecy;&ncy;&softcy;:<span class="w"> </span>105<span class="w"> </span>&rarr;<span class="w"> </span>**112**<span class="nt">&lt;/li&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/ul&gt;&lt;/div&gt;</span>
+</code></pre></div>
+<p>&YAcy; &ncy;&iecy; &zcy;&ncy;&acy;&yucy; &yacy;&kcy; &kcy;&ocy;&rcy;&ocy;&tcy;&kcy;&ocy; &pcy;&ocy;&yacy;&scy;&ncy;&icy;&tcy;&icy; &tcy;&iecy; &shchcy;&ocy; &tcy;&icy; &zcy;&acy;&rcy;&acy;&zcy; &bcy;&acy;&chcy;&icy;&shcy;, &mcy;&ocy;&zhcy;&lcy;&icy;&vcy;&ocy;, &pcy;&rcy;&ocy;&chcy;&icy;&tcy;&acy;&vcy;&shcy;&icy; &tcy;&iecy; &shchcy;&ocy; &vcy;&zhcy;&iecy; &bcy;&ucy;&lcy;&ocy; &ocy;&pcy;&icy;&scy;&acy;&ncy;&ocy; &scy;&acy;&mcy;&acy; &zcy;&rcy;&ocy;&zcy;&ucy;&mcy;&iukcy;&jukcy;&shcy; &shchcy;&ocy; &tcy;&ucy;&tcy;, &tcy;&ocy; &yacy; &bcy;&ucy;&dcy;&ucy; &dcy;&ucy;&zhcy;&iecy; &rcy;&acy;&dcy;&icy;&jcy;.</p>
+<p>&Iukcy;&zcy; &ncy;&ocy;&vcy;&ocy;&gcy;&ocy;, <code>&lt;h4&gt;&lt;/h4&gt;</code> - &zcy;&acy;&gcy;&ocy;&lcy;&ocy;&vcy;&ocy;&kcy; 4-&gcy;&ocy; &rcy;&iukcy;&vcy;&ncy;&yacy;, &tcy;&acy;&kcy;, &tscy;&iecy; &tcy;&iukcy; &scy;&acy;&mcy;&iukcy; <code>####</code>, &chcy;&ocy;&mcy;&ucy; &ncy;&iecy; &vcy;&icy;&kcy;&ocy;&rcy;&icy;&scy;&tcy;&acy;&tcy;&icy; &yicy;&khcy;? &Tcy;&ocy;&gcy;&ocy; &shcy;&ocy; &tcy;&ocy;&dcy;&iukcy; &vcy;&scy;&iecy; &pcy;&rcy;&acy;&tscy;&yucy;&jukcy; &ncy;&iecy; &pcy;&rcy;&acy;&vcy;&icy;&lcy;&softcy;&ncy;&ocy;.</p>
+<p><code>&lt;ul&gt;&lt;li&gt;&lt;/li&gt;&lt;/ul&gt;</code> - &scy;&pcy;&icy;&scy;&ocy;&kcy;, ul - &ocy;&bcy;&gcy;&ocy;&rcy;&tcy;&kcy;&acy; &scy;&pcy;&icy;&scy;&kcy;&ucy;, &acy; li - &pcy;&ucy;&ncy;&kcy;&tcy; &scy;&pcy;&icy;&scy;&kcy;&ucy;, &vcy; ul &mcy;&ocy;&zhcy;&iecy; &bcy;&ucy;&tcy;&icy; &bcy;&iecy;&zcy; li</p>
+<p>&Ucy; &tcy;&iecy;&gcy;&acy; <code>&lt;img/&gt;</code> &zcy;'&yacy;&vcy;&icy;&vcy;&scy;&yacy; &acy;&tcy;&icy;&bcy;&ucy;&tcy; id, &jcy;&ocy;&gcy;&ocy; &kcy;&rcy;&acy;&shchcy;&iecy; &ncy;&iecy; &zcy;&acy;&pcy;&ocy;&vcy;&ncy;&yucy;&jcy; &acy; &zcy;&acy;&lcy;&icy;&shcy;&acy;&jcy; &pcy;&ucy;&scy;&tcy;&icy;&mcy;, &ocy;&scy;&kcy;&iukcy;&lcy;&softcy;&kcy;&icy; &tscy;&iecy; - &scy;&lcy;&acy;&gcy; &zcy;&acy;&gcy;&ocy;&lcy;&ocy;&vcy;&kcy;&ucy;, &yacy;&kcy;&shchcy;&ocy; &tcy;&icy; &vcy;&gcy;&acy;&dcy;&acy;&jukcy;&shcy; &yacy;&kcy; &pcy;&rcy;&acy;&tscy;&yucy;&jukcy; &scy;&lcy;&acy;&gcy; &iukcy; &zcy;&ncy;&acy;&jukcy;&shcy; &yacy;&kcy; &ncy;&acy;&pcy;&icy;&scy;&acy;&tcy;&icy; &zcy;&acy;&gcy;&ocy;&lcy;&ocy;&vcy;&ocy;&kcy; &acy;&ncy;&gcy;&lcy;&iukcy;&jcy;&scy;&softcy;&kcy;&icy;&mcy;&icy; &lcy;&iukcy;&tcy;&iecy;&rcy;&acy;&mcy;&icy; - &vcy;&acy;&lcy;&yacy;&jcy;, &yacy; &lcy;&icy;&shcy;&iecy; &scy;&kcy;&acy;&zhcy;&ucy; &shchcy;&ocy; &Dcy;&zhcy;&icy;&ncy; &tscy;&iecy; djin.</p>
+<p>&Bcy;&acy;&zcy;&ocy;&vcy;&icy;&jcy; &shcy;&acy;&bcy;&lcy;&ocy;&ncy; &dcy;&lcy;&yacy; &kcy;&acy;&rcy;&tcy;&kcy;&icy; &gcy;&iecy;&rcy;&ocy;&yacy;, &ucy; &yacy;&kcy;&ocy;&gcy;&ocy; &zcy;&mcy;&iukcy;&ncy;&ucy;&jukcy;&tcy;&softcy;&scy;&yacy; &bcy;&acy;&zcy;&ocy;&vcy;&acy; &khcy;&acy;&rcy;&acy;&kcy;&tcy;&iecy;&rcy;&icy;&scy;&tcy;&icy;&kcy;&acy;:</p>
+<div class="highlight"><pre><span></span><code>&gt; <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"___"</span> <span class="na">alt</span><span class="o">=</span><span class="s">"___"</span> <span class="na">class</span><span class="o">=</span><span class="s">"image-center image-large"</span> <span class="na">id</span><span class="o">=</span><span class="s">""</span><span class="p">/&gt;</span>
+&gt;
+&gt; ### ___
+&gt; 
+&gt; ___
+&gt;
+&gt; &gt;
+&gt; &gt; <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"text-container-skill"</span><span class="p">&gt;&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>&Bcy;&Acy;&Zcy;&Ocy;&Vcy;&Acy; &KHcy;&Acy;&Rcy;&Acy;&Kcy;&Tcy;&IEcy;&Rcy;&Icy;&Scy;&Tcy;&Icy;&Kcy;&Acy;<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>___: ___ &rarr; **___**<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>&Acy;&lcy;&softcy;&tcy;&ucy;&shcy;&kcy;&ucy; &zcy;&acy;&pcy;&ocy;&vcy;&ncy;&yucy;&jcy;, &pcy;&rcy;&ocy;&gcy;&rcy;&acy;&mcy;&acy; &dcy;&ucy;&zhcy;&iecy; &rcy;&ucy;&gcy;&acy;&jukcy;&tcy;&softcy;&scy;&yacy; &yacy;&kcy;&shchcy;&ocy; &vcy;&ocy;&ncy;&acy; &pcy;&ucy;&scy;&tcy;&acy;.</p>
+<h3 id="kartka-geroia-z-zminoiu-skila">&Kcy;&acy;&rcy;&tcy;&kcy;&acy; &gcy;&iecy;&rcy;&ocy;&yacy; &zcy; &zcy;&mcy;&iukcy;&ncy;&ocy;&yucy; &scy;&kcy;&iukcy;&lcy;&acy;</h3>
+<blockquote>
+<p><img alt="&scy;&pcy;&lcy;&iecy;&shcy;-&acy;&rcy;&tcy; &Vcy;&acy;&rcy;&ucy;&scy;&acy;" class="image-center image-large" id="varus" src="https://images.contentstack.io/v3/assets/blt370612131b6e0756/blt270e3f7d6389e76b/62cd1ce78437a53767620826/WRLOL_PatchNotes_Varus.jpg"/></p>
+<h3 id="varus">&Vcy;&Acy;&Rcy;&Ucy;&Scy;</h3>
+<p>&Vcy;&acy;&rcy;&ucy;&scy; &iukcy;&zcy; &Acy;&Pcy; &zcy;&bcy;&iukcy;&rcy;&kcy;&ocy;&yucy; &pcy;&ocy;&kcy;&acy;&zcy;&acy;&vcy; &zcy;&rcy;&ocy;&scy;&tcy;&acy;&ncy;&ncy;&yacy; &vcy;&iukcy;&ncy;-&rcy;&iecy;&jcy;&tcy;&ucy; &vcy;&iukcy;&dcy;&ncy;&ocy;&scy;&ncy;&ocy; &Acy;&Dcy;, &tcy;&ocy;&mcy;&ucy; &mcy;&icy; &vcy;&vcy;&ocy;&dcy;&icy;&mcy;&ocy; &ocy;&scy;&lcy;&acy;&bcy;&lcy;&iecy;&ncy;&ncy;&yacy;, &shchcy;&ocy;&bcy; &zcy;&bcy;&acy;&lcy;&acy;&ncy;&scy;&ucy;&vcy;&acy;&tcy;&icy; &ocy;&bcy;&icy;&dcy;&vcy;&iukcy; &zcy;&bcy;&iukcy;&rcy;&kcy;&icy;.</p>
+<blockquote>
+<p><div class="container-skill"><div id="bord-skill"><img alt="4-&jcy; &scy;&kcy;&iukcy;&lcy; &Vcy;&acy;&rcy;&ucy;&scy;&acy;" class="skill-image" src="https://images.contentstack.io/v3/assets/blt370612131b6e0756/blt06cdc738309d60b3/5f7f7b99e91fb80ef8022cf3/varus_4.jpg"/></div>
+<div class="text-container-skill"><h4>R</h4><ul>
+<li>&kcy;&ocy;&iecy;&fcy;&iukcy;&tscy;&iukcy;&jukcy;&ncy;&tcy; &scy;&icy;&lcy;&icy; &ucy;&mcy;&iukcy;&ncy;&softcy;: 100% &rarr; <strong>85%</strong></li>
+<li>&kcy;&ocy;&iecy;&fcy;&iukcy;&tscy;&iukcy;&jukcy;&ncy;&tcy; &scy;&icy;&lcy;&icy; &ucy;&mcy;&iukcy;&ncy;&softcy;: 100% &rarr; <strong>85%</strong></li>
+</ul></div></div></p>
+</blockquote>
+</blockquote>
+<p>&iecy;&mcy;... &dcy;&ocy; &kcy;&ocy;&dcy;&ucy;</p>
+<div class="highlight"><pre><span></span><code>&gt;<span class="w"> </span><span class="nt">&lt;img</span><span class="w"> </span><span class="na">src=</span><span class="s">"&pcy;&ocy;&scy;&icy;&lcy;&acy;&ncy;&ncy;&yacy;"</span><span class="w"> </span><span class="na">alt=</span><span class="s">"&scy;&pcy;&lcy;&iecy;&shcy;-&acy;&rcy;&tcy; &Vcy;&acy;&rcy;&ucy;&scy;&acy;"</span><span class="w"> </span><span class="na">class=</span><span class="s">"image-center image-large"</span><span class="w"> </span><span class="na">id=</span><span class="s">"varus"</span><span class="nt">/&gt;</span>
+&gt;
+&gt;<span class="w"> </span>###<span class="w"> </span>&Vcy;&Acy;&Rcy;&Ucy;&Scy;
+&gt;<span class="w"> </span>
+&gt;<span class="w"> </span>&Vcy;&acy;&rcy;&ucy;&scy;<span class="w"> </span>&iukcy;&zcy;<span class="w"> </span>&Acy;&Pcy;<span class="w"> </span>&zcy;&bcy;&iukcy;&rcy;&kcy;&ocy;&yucy;<span class="w"> </span>&pcy;&ocy;&kcy;&acy;&zcy;&acy;&vcy;<span class="w"> </span>&zcy;&rcy;&ocy;&scy;&tcy;&acy;&ncy;&ncy;&yacy;<span class="w"> </span>&vcy;&iukcy;&ncy;-&rcy;&iecy;&jcy;&tcy;&ucy;<span class="w"> </span>&vcy;&iukcy;&dcy;&ncy;&ocy;&scy;&ncy;&ocy;<span class="w"> </span>&Acy;&Dcy;,<span class="w"> </span>&tcy;&ocy;&mcy;&ucy;<span class="w"> </span>&mcy;&icy;<span class="w"> </span>&vcy;&vcy;&ocy;&dcy;&icy;&mcy;&ocy;<span class="w"> </span>&ocy;&scy;&lcy;&acy;&bcy;&lcy;&iecy;&ncy;&ncy;&yacy;,<span class="w"> </span>&shchcy;&ocy;&bcy;<span class="w"> </span>&zcy;&bcy;&acy;&lcy;&acy;&ncy;&scy;&ucy;&vcy;&acy;&tcy;&icy;<span class="w"> </span>&ocy;&bcy;&icy;&dcy;&vcy;&iukcy;<span class="w"> </span>&zcy;&bcy;&iukcy;&rcy;&kcy;&icy;.
+&gt;
+&gt;<span class="w"> </span>&gt;<span class="w"> </span><span class="nt">&lt;div</span><span class="w"> </span><span class="na">class=</span><span class="s">"container-skill"</span><span class="nt">&gt;&lt;div</span><span class="w"> </span><span class="na">id=</span><span class="s">"bord-skill"</span><span class="nt">&gt;&lt;img</span><span class="w"> </span><span class="na">src=</span><span class="s">"&pcy;&ocy;&scy;&icy;&lcy;&acy;&ncy;&ncy;&yacy;"</span><span class="w"> </span><span class="na">alt=</span><span class="s">"4-&jcy; &scy;&kcy;&iukcy;&lcy; &Vcy;&acy;&rcy;&ucy;&scy;&acy;"</span><span class="w"> </span><span class="na">class=</span><span class="s">"skill-image"</span><span class="nt">&gt;&lt;/div&gt;</span>
+&gt;<span class="w"> </span>&gt;<span class="w"> </span><span class="nt">&lt;div</span><span class="w"> </span><span class="na">class=</span><span class="s">"text-container-skill"</span><span class="nt">&gt;&lt;h4&gt;</span>R<span class="nt">&lt;/h4&gt;&lt;ul&gt;</span>
+<span class="w">    </span><span class="nt">&lt;li&gt;</span>&kcy;&ocy;&iecy;&fcy;&iukcy;&tscy;&iukcy;&jukcy;&ncy;&tcy;<span class="w"> </span>&scy;&icy;&lcy;&icy;<span class="w"> </span>&ucy;&mcy;&iukcy;&ncy;&softcy;:<span class="w"> </span>100%<span class="w"> </span>&rarr;<span class="w"> </span>**85%**<span class="nt">&lt;/li&gt;</span>
+<span class="w">    </span><span class="nt">&lt;li&gt;</span>&kcy;&ocy;&iecy;&fcy;&iukcy;&tscy;&iukcy;&jukcy;&ncy;&tcy;<span class="w"> </span>&scy;&icy;&lcy;&icy;<span class="w"> </span>&ucy;&mcy;&iukcy;&ncy;&softcy;:<span class="w"> </span>100%<span class="w"> </span>&rarr;<span class="w"> </span>**85%**<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;&lt;/div&gt;&lt;/div&gt;</span>
+</code></pre></div>
+<p>&YAcy; &scy;&pcy;&iecy;&tscy;&iukcy;&acy;&lcy;&softcy;&ncy;&ocy; &pcy;&rcy;&ocy;&dcy;&ucy;&bcy;&lcy;&yucy;&vcy;&acy;&vcy; <code>&lt;li&gt;&lt;/li&gt;</code> &shchcy;&ocy;&bcy; &tcy;&icy; &ncy;&acy;&gcy;&lcy;&yacy;&dcy;&ncy;&ocy; &pcy;&ocy;&bcy;&acy;&chcy;&icy;&lcy;&acy;, &yacy;&kcy; &vcy;&icy;&gcy;&lcy;&yacy;&dcy;&acy;&jukcy; &zcy;&mcy;&iukcy;&ncy;&acy; &dcy;&vcy;&ocy;&khcy; &pcy;&acy;&rcy;&acy;&mcy;&iecy;&tcy;&rcy;&iukcy;&vcy; &vcy; &ocy;&dcy;&ncy;&ocy;&mcy;&ucy; &scy;&kcy;&iukcy;&lcy;&iukcy;, &tcy;&acy;&kcy;&icy;&khcy; &mcy;&ocy;&zhcy;&iecy; &bcy;&ucy;&tcy;&icy; &bcy;&iecy;&zcy;&lcy;&iukcy;&chcy;, &dcy;&acy;&lcy;&iukcy; &pcy;&ocy;&bcy;&acy;&chcy;&icy;&shcy;.</p>
+<p>&Bcy;&acy;&zcy;&ocy;&vcy;&icy;&jcy; &shcy;&acy;&bcy;&lcy;&ocy;&ncy; &dcy;&lcy;&yacy; &kcy;&acy;&rcy;&tcy;&kcy;&icy; &gcy;&iecy;&rcy;&ocy;&yacy;, &ucy; &yacy;&kcy;&ocy;&gcy;&ocy; &zcy;&mcy;&iukcy;&ncy;&yucy;&jukcy;&tcy;&softcy;&scy;&yacy; &ocy;&dcy;&icy;&ncy; &scy;&kcy;&iukcy;&lcy;</p>
+<div class="highlight"><pre><span></span><code>&gt; <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"___"</span> <span class="na">alt</span><span class="o">=</span><span class="s">"___"</span> <span class="na">class</span><span class="o">=</span><span class="s">"image-center image-large"</span> <span class="na">id</span><span class="o">=</span><span class="s">""</span><span class="p">/&gt;</span>
+&gt;
+&gt; ### ___
+&gt; 
+&gt; ___
+&gt;
+&gt; &gt; <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"container-skill"</span><span class="p">&gt;&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"bord-skill"</span><span class="p">&gt;&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"___"</span> <span class="na">alt</span><span class="o">=</span><span class="s">"___"</span> <span class="na">class</span><span class="o">=</span><span class="s">"skill-image"</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+&gt; &gt; <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"text-container-skill"</span><span class="p">&gt;&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>___<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>___: ___ &rarr; **___**<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+<h3 id="kartka-geroia-z-zminoiu-skila-ta-bazovoyi-kharakteristiki">&Kcy;&acy;&rcy;&tcy;&kcy;&acy; &gcy;&iecy;&rcy;&ocy;&yacy; &zcy; &zcy;&mcy;&iukcy;&ncy;&ocy;&yucy; &scy;&kcy;&iukcy;&lcy;&acy; &tcy;&acy; &bcy;&acy;&zcy;&ocy;&vcy;&ocy;&yicy; &khcy;&acy;&rcy;&acy;&kcy;&tcy;&iecy;&rcy;&icy;&scy;&tcy;&icy;&kcy;&icy;</h3>
+<blockquote>
+<p><img alt="&scy;&pcy;&lcy;&iecy;&shcy;-&acy;&rcy;&tcy; &Ncy;&ucy;&ncy;&ucy;" class="image-center image-large" id="nunu-ta-villump" src="https://images.contentstack.io/v3/assets/blt370612131b6e0756/blta02c716405e3b57f/6164e134ca79db05abb0f20a/LOLWR_Patch25_NunuPatchNotes.jpg"/></p>
+<h3 id="nunu-ta-villump_1">&Ncy;&Ucy;&Ncy;&Ucy; &Tcy;&Acy; &Vcy;&Iukcy;&Lcy;&Lcy;&Ucy;&Mcy;&Pcy;</h3>
+<p>&Ncy;&ucy;&ncy;&ucy; &ncy;&iecy; &ocy;&tcy;&rcy;&icy;&mcy;&acy;&vcy; &zcy;&ncy;&acy;&chcy;&ncy;&icy;&khcy; &pcy;&ocy;&kcy;&rcy;&acy;&shchcy;&iecy;&ncy;&softcy; &pcy;&iukcy;&scy;&lcy;&yacy; &vcy;&icy;&pcy;&ucy;&scy;&kcy;&ucy; &ncy;&ocy;&vcy;&icy;&khcy; &pcy;&rcy;&iecy;&dcy;&mcy;&iecy;&tcy;&iukcy;&vcy; &dcy;&lcy;&yacy; &tcy;&acy;&ncy;&kcy;&iukcy;&vcy;, &tcy;&ocy;&mcy;&ucy; &pcy;&ocy;&tcy;&rcy;&iecy;&bcy;&ucy;&jukcy; &dcy;&iecy;&yacy;&kcy;&ocy;&yicy; &dcy;&ocy;&pcy;&ocy;&mcy;&ocy;&gcy;&icy;, &shchcy;&ocy;&bcy; &vcy;&iukcy;&ncy; &zcy;&ncy;&ocy;&vcy;&ucy; &mcy;&iukcy;&gcy; &vcy;&iecy;&scy;&tcy;&icy; &kcy;&ocy;&mcy;&acy;&ncy;&dcy;&ucy; &dcy;&ocy; &pcy;&iecy;&rcy;&iecy;&mcy;&ocy;&gcy;&icy;.</p>
+<blockquote>
+<p><div class="text-container-skill"><h4>&Bcy;&Acy;&Zcy;&Ocy;&Vcy;&Iukcy; &KHcy;&Acy;&Rcy;&Acy;&Kcy;&Tcy;&IEcy;&Rcy;&Icy;&Scy;&Tcy;&Icy;&Kcy;&Icy;</h4><ul>
+<li>&zcy;&dcy;&ocy;&rcy;&ocy;&vcy;'&yacy; &zcy;&acy; &rcy;&iukcy;&vcy;&iecy;&ncy;&softcy;: 105 &rarr; <strong>112</strong></li>
+</ul></div></p>
+<hr/>
+<p><div class="container-skill"><div id="bord-skill"><img alt="1-&jcy; &scy;&kcy;&iukcy;&lcy; &Ncy;&ucy;&ncy;&ucy;" class="skill-image" src="https://www.mobafire.com/images/ability/nunu-amp-willump-consume.png"/></div>
+<div class="text-container-skill"><h4>Q</h4><ul>
+<li>&kcy;&ocy;&iecy;&fcy;&iukcy;&tscy;&iukcy;&jukcy;&ncy;&tcy; &lcy;&iukcy;&kcy;&ucy;&vcy;&acy;&ncy;&ncy;&yacy; &vcy;&iukcy;&dcy; &bcy;&ocy;&ncy;&ucy;&scy;&ncy;&ocy;&gcy;&ocy; &zcy;&dcy;&ocy;&rcy;&ocy;&vcy;'&yacy;: 8% &rarr; <strong>9%</strong></li>
+</ul></div></div></p>
+</blockquote>
+</blockquote>
+<p>&Ocy;&pcy;&acy;! &Fcy;&iukcy;&kcy;&scy;&ucy;&yucy; &ncy;&ocy;&vcy;&icy;&jcy; &iecy;&lcy;&iecy;&mcy;&iecy;&ncy;&tcy; - &rcy;&ocy;&zcy;&dcy;&iukcy;&lcy;&softcy;&ncy;&icy;&kcy;. &Kcy;&ocy;&dcy;:</p>
+<div class="highlight"><pre><span></span><code>&gt; <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"&pcy;&ocy;&scy;&icy;&lcy;&acy;&ncy;&ncy;&yacy;"</span> <span class="na">alt</span><span class="o">=</span><span class="s">"&scy;&pcy;&lcy;&iecy;&shcy;-&acy;&rcy;&tcy; &Ncy;&ucy;&ncy;&ucy;"</span> <span class="na">class</span><span class="o">=</span><span class="s">"image-center image-large"</span> <span class="na">id</span><span class="o">=</span><span class="s">"nunu-ta-villump"</span><span class="p">/&gt;</span>
+&gt;
+&gt; ### &Ncy;&Ucy;&Ncy;&Ucy; &Tcy;&Acy; &Vcy;&Iukcy;&Lcy;&Lcy;&Ucy;&Mcy;&Pcy;
+&gt; 
+&gt; &Ncy;&ucy;&ncy;&ucy; &ncy;&iecy; &ocy;&tcy;&rcy;&icy;&mcy;&acy;&vcy; &zcy;&ncy;&acy;&chcy;&ncy;&icy;&khcy; &pcy;&ocy;&kcy;&rcy;&acy;&shchcy;&iecy;&ncy;&softcy; &pcy;&iukcy;&scy;&lcy;&yacy; &vcy;&icy;&pcy;&ucy;&scy;&kcy;&ucy; &ncy;&ocy;&vcy;&icy;&khcy; &pcy;&rcy;&iecy;&dcy;&mcy;&iecy;&tcy;&iukcy;&vcy; &dcy;&lcy;&yacy; &tcy;&acy;&ncy;&kcy;&iukcy;&vcy;, &tcy;&ocy;&mcy;&ucy; &pcy;&ocy;&tcy;&rcy;&iecy;&bcy;&ucy;&jukcy; &dcy;&iecy;&yacy;&kcy;&ocy;&yicy; &dcy;&ocy;&pcy;&ocy;&mcy;&ocy;&gcy;&icy;, &shchcy;&ocy;&bcy; &vcy;&iukcy;&ncy; &zcy;&ncy;&ocy;&vcy;&ucy; &mcy;&iukcy;&gcy; &vcy;&iecy;&scy;&tcy;&icy; &kcy;&ocy;&mcy;&acy;&ncy;&dcy;&ucy; &dcy;&ocy; &pcy;&iecy;&rcy;&iecy;&mcy;&ocy;&gcy;&icy;.
+&gt;
+&gt; &gt;
+&gt; &gt; <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"text-container-skill"</span><span class="p">&gt;&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>&Bcy;&Acy;&Zcy;&Ocy;&Vcy;&Iukcy; &KHcy;&Acy;&Rcy;&Acy;&Kcy;&Tcy;&IEcy;&Rcy;&Icy;&Scy;&Tcy;&Icy;&Kcy;&Icy;<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>&zcy;&dcy;&ocy;&rcy;&ocy;&vcy;'&yacy; &zcy;&acy; &rcy;&iukcy;&vcy;&iecy;&ncy;&softcy;: 105 &rarr; **112**<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+&gt; &gt; ***
+&gt; &gt; <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"container-skill"</span><span class="p">&gt;&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"bord-skill"</span><span class="p">&gt;&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"&pcy;&ocy;&scy;&icy;&lcy;&acy;&ncy;&ncy;&yacy;"</span> <span class="na">alt</span><span class="o">=</span><span class="s">"1-&jcy; &scy;&kcy;&iukcy;&lcy; &Ncy;&ucy;&ncy;&ucy;"</span> <span class="na">class</span><span class="o">=</span><span class="s">"skill-image"</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+&gt; &gt; <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"text-container-skill"</span><span class="p">&gt;&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>Q<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>&kcy;&ocy;&iecy;&fcy;&iukcy;&tscy;&iukcy;&jukcy;&ncy;&tcy; &lcy;&iukcy;&kcy;&ucy;&vcy;&acy;&ncy;&ncy;&yacy; &vcy;&iukcy;&dcy; &bcy;&ocy;&ncy;&ucy;&scy;&ncy;&ocy;&gcy;&ocy; &zcy;&dcy;&ocy;&rcy;&ocy;&vcy;'&yacy;: 8% &rarr; **9%**<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>&Rcy;&ocy;&zcy;&dcy;&iukcy;&lcy;&softcy;&ncy;&icy;&kcy; - &tscy;&iecy; <code>***</code>. &Vcy;&scy;&iecy;. &Bcy;&iukcy;&lcy;&softcy;&shcy;&iecy; &ncy;&iukcy;&chcy;&ocy;&gcy;&ocy;</p>
+<p>&Bcy;&acy;&zcy;&ocy;&vcy;&icy;&jcy; &shcy;&acy;&bcy;&lcy;&ocy;&ncy; &kcy;&acy;&rcy;&tcy;&kcy;&icy; &gcy;&iecy;&rcy;&ocy;&yacy; &zcy; &zcy;&mcy;&iukcy;&ncy;&ocy;&yucy; &scy;&kcy;&iukcy;&lcy;&acy; &tcy;&acy; &bcy;&acy;&zcy;&ocy;&vcy;&ocy;&yicy; &khcy;&acy;&rcy;&acy;&kcy;&tcy;&iecy;&rcy;&icy;&scy;&tcy;&icy;&kcy;&icy;</p>
+<div class="highlight"><pre><span></span><code>&gt; <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"___"</span> <span class="na">alt</span><span class="o">=</span><span class="s">"___"</span> <span class="na">class</span><span class="o">=</span><span class="s">"image-center image-large"</span> <span class="na">id</span><span class="o">=</span><span class="s">"___"</span><span class="p">/&gt;</span>
+&gt;
+&gt; ### ___
+&gt; 
+&gt; ___
+&gt;
+&gt; &gt;
+&gt; &gt; <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"text-container-skill"</span><span class="p">&gt;&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>&Bcy;&Acy;&Zcy;&Ocy;&Vcy;&Iukcy; &KHcy;&Acy;&Rcy;&Acy;&Kcy;&Tcy;&IEcy;&Rcy;&Icy;&Scy;&Tcy;&Icy;&Kcy;&Icy;<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>___: ___ &rarr; **___**<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+&gt; &gt; ***
+&gt; &gt; <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"container-skill"</span><span class="p">&gt;&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"bord-skill"</span><span class="p">&gt;&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"___"</span> <span class="na">alt</span><span class="o">=</span><span class="s">"___"</span> <span class="na">class</span><span class="o">=</span><span class="s">"skill-image"</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+&gt; &gt; <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"text-container-skill"</span><span class="p">&gt;&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>___<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>___: ___ &rarr; **___**<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>&Ncy;&iecy; &zcy;&acy;&tcy;&rcy;&icy;&mcy;&ucy;&jukcy;&mcy;&ocy;&scy;&softcy;, &jcy;&dcy;&iecy;&mcy;&ocy; &dcy;&acy;&lcy;&iukcy;</p>
+<h3 id="kartka-geroia-u-iakogo-dokhuia-vsogo">&Kcy;&acy;&rcy;&tcy;&kcy;&acy; &gcy;&iecy;&rcy;&ocy;&yacy;, &ucy; &yacy;&kcy;&ocy;&gcy;&ocy; &dcy;&ocy;&khcy;&ucy;&yacy; &vcy;&scy;&softcy;&ocy;&gcy;&ocy;</h3>
+<blockquote>
+<p><img alt="&scy;&pcy;&lcy;&iecy;&shcy;-&acy;&rcy;&tcy; &Pcy;&acy;&jcy;&kcy;&acy;" class="image-center image-large" id="paik" src="https://images.contentstack.io/v3/assets/blt370612131b6e0756/blt5cfcd6ee9cc1d7ad/62a95b0ca9454a5197099705/Pyke_800x200.jpg"/></p>
+<h3 id="paik">&Pcy;&Acy;&Jcy;&Kcy;</h3>
+<p>&Ncy;&acy;&rcy;&acy;&zcy;&iukcy;, &Pcy;&acy;&jcy;&kcy; &ncy;&acy; &rcy;&ocy;&lcy;&iukcy; &pcy;&iukcy;&dcy;&tcy;&rcy;&icy;&mcy;&kcy;&icy; &scy;&lcy;&acy;&bcy;&iukcy;&shcy;&icy;&jcy; &ncy;&iukcy;&zhcy; &ncy;&acy; &scy;&iecy;&rcy;&iecy;&dcy;&ncy;&iukcy;&jcy; &lcy;&iukcy;&ncy;&iukcy;&yicy; &tcy;&acy; &vcy; &lcy;&iukcy;&scy;&iukcy;. &Mcy;&icy; &khcy;&ocy;&chcy;&iecy;&mcy;&ocy; &vcy;&vcy;&iecy;&scy;&tcy;&icy; &tscy;&iukcy; &zcy;&mcy;&iukcy;&ncy;&icy;, &acy;&bcy;&ocy; &zcy;&bcy;&acy;&lcy;&acy;&ncy;&scy;&ucy;&vcy;&acy;&tcy;&icy; &tcy;&rcy;&icy; &rcy;&ocy;&lcy;&iukcy; &ncy;&acy; &ocy;&dcy;&ncy;&ocy;&mcy;&ucy; &rcy;&iukcy;&vcy;&ncy;&iukcy;.</p>
+<blockquote>
+<p><div class="container-skill">
+<div id="bord-skill"><img alt="1-&jcy; &scy;&kcy;&iukcy;&lcy; &Pcy;&acy;&jcy;&kcy;&acy;" class="skill-image" src="https://images.contentstack.io/v3/assets/blt370612131b6e0756/blt1791722dbdecf5f0/62a95bd844e495573d5622da/Pyke_1.jpg"/></div>
+<div class="text-container-skill"><h4>Q</h4><ul>
+<li>&kcy;&ocy;&iecy;&fcy;&iukcy;&tscy;&iukcy;&jukcy;&ncy;&tcy; &shcy;&kcy;&ocy;&dcy;&icy; &mcy;&iukcy;&ncy;&softcy;&jcy;&ocy;&ncy;&acy;&mcy;: 100% &rarr; <strong>80%</strong></li>
+<li>&kcy;&ocy;&iecy;&fcy;&iukcy;&tscy;&iukcy;&jukcy;&ncy;&tcy; &shcy;&kcy;&ocy;&dcy;&icy; &lcy;&iukcy;&scy;&ncy;&icy;&mcy; &mcy;&ocy;&ncy;&scy;&tcy;&rcy;&acy;&mcy;: 110% &rarr; <strong>90%</strong></li>
+</ul></div></div></p>
+<hr/>
+<p><div class="container-skill">
+<div id="bord-skill"><img alt="3-&jcy; &scy;&kcy;&iukcy;&lcy; &Pcy;&acy;&jcy;&kcy;&acy;" class="skill-image" src="https://images.contentstack.io/v3/assets/blt370612131b6e0756/blt988365c24b1231df/62a95c2ce75cbf5ab6769df0/Pyke_3.jpg"/></div>
+<div class="text-container-skill"><h4>E</h4><ul>
+<li>&kcy;&ocy;&iecy;&fcy;&iukcy;&tscy;&iukcy;&jukcy;&ncy;&tcy; &shcy;&kcy;&ocy;&dcy;&icy; &lcy;&iukcy;&scy;&ncy;&icy;&mcy; &mcy;&ocy;&ncy;&scy;&tcy;&rcy;&acy;&mcy;: 110%  &rarr; <strong>100%</strong></li>
+</ul></div></div></p>
+<hr/>
+<p><div class="container-skill">
+<div id="bord-skill"><img alt="4-&jcy; &scy;&kcy;&iukcy;&lcy; &Pcy;&acy;&jcy;&kcy;&acy;" class="skill-image" src="https://images.contentstack.io/v3/assets/blt370612131b6e0756/blt8e92226911a284c6/62a95c52c4d59b57e0c256f2/Pyke_4.jpg"/></div>
+<div class="text-container-skill"><h4>R</h4><ul>
+<li>&dcy;&ocy;&dcy;&acy;&tcy;&kcy;&ocy;&vcy;&iecy; &zcy;&ocy;&lcy;&ocy;&tcy;&ocy; &pcy;&rcy;&icy; &dcy;&lcy;&yacy; &scy;&acy;&mcy;&ocy;&scy;&tcy;&iukcy;&jcy;&ncy;&icy;&khcy; &vcy;&bcy;&icy;&vcy;&scy;&tcy;&vcy;: 110% &rarr; <strong>100%</strong></li>
+<li>&zcy;&ocy;&lcy;&ocy;&tcy;&ocy;, &yacy;&kcy;&iecy; &ocy;&tcy;&rcy;&icy;&mcy;&acy;&jukcy; &Pcy;&acy;&jcy;&kcy; &pcy;&rcy;&icy; &ucy;&chcy;&acy;&scy;&tcy;&iukcy; &ucy; &vcy;&bcy;&icy;&vcy;&scy;&tcy;&vcy;&iukcy;: 110% &rarr; <strong>120%</strong></li>
+<li>&zcy;&ocy;&lcy;&ocy;&tcy;&ocy;, &yacy;&kcy;&iecy; &ocy;&tcy;&rcy;&icy;&mcy;&acy;&jukcy; &Pcy;&acy;&jcy;&kcy;, &yacy;&kcy;&shchcy;&ocy; &scy;&ocy;&yucy;&zcy;&ncy;&icy;&kcy; &vcy;&bcy;&icy;&vcy;&acy;&jukcy; &vcy;&ocy;&rcy;&ocy;&gcy;&acy; &vcy; &rcy;&acy;&dcy;&iukcy;&ucy;&scy;&iukcy; &ucy;&lcy;&softcy;&tcy;&icy;&mcy;&iecy;&jcy;&tcy;&ucy; &Pcy;&acy;&jcy;&kcy;&acy;: 110% &rarr; <strong>120%</strong></li>
+<li>&mcy;&acy;&kcy;&scy;&icy;&mcy;&ucy;&mcy; &dcy;&ocy;&dcy;&acy;&tcy;&kcy;&ocy;&vcy;&ocy;&gcy;&ocy; &zcy;&ocy;&lcy;&ocy;&tcy;&acy;: 550 &zcy;. &rarr; <strong>600 &zcy;.</strong></li>
+</ul></div></div></p>
+</blockquote>
+</blockquote>
+<p>&Kcy;&ocy;&dcy;:</p>
+<div class="highlight"><pre><span></span><code>&gt; <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"&pcy;&ocy;&scy;&icy;&lcy;&acy;&ncy;&ncy;&yacy;"</span> <span class="na">alt</span><span class="o">=</span><span class="s">"&scy;&pcy;&lcy;&iecy;&shcy;-&acy;&rcy;&tcy; &Pcy;&acy;&jcy;&kcy;&acy;"</span> <span class="na">class</span><span class="o">=</span><span class="s">"image-center image-large"</span> <span class="na">id</span><span class="o">=</span><span class="s">"paik"</span><span class="p">/&gt;</span>
+&gt;
+&gt; ### &Pcy;&Acy;&Jcy;&Kcy;
+&gt; 
+&gt; &Ncy;&acy;&rcy;&acy;&zcy;&iukcy;, &Pcy;&acy;&jcy;&kcy; &ncy;&acy; &rcy;&ocy;&lcy;&iukcy; &pcy;&iukcy;&dcy;&tcy;&rcy;&icy;&mcy;&kcy;&icy; &scy;&lcy;&acy;&bcy;&iukcy;&shcy;&icy;&jcy; &ncy;&iukcy;&zhcy; &ncy;&acy; &scy;&iecy;&rcy;&iecy;&dcy;&ncy;&iukcy;&jcy; &lcy;&iukcy;&ncy;&iukcy;&yicy; &tcy;&acy; &vcy; &lcy;&iukcy;&scy;&iukcy;. &Mcy;&icy; &khcy;&ocy;&chcy;&iecy;&mcy;&ocy; &vcy;&vcy;&iecy;&scy;&tcy;&icy; &tscy;&iukcy; &zcy;&mcy;&iukcy;&ncy;&icy;, &acy;&bcy;&ocy; &zcy;&bcy;&acy;&lcy;&acy;&ncy;&scy;&ucy;&vcy;&acy;&tcy;&icy; &tcy;&rcy;&icy; &rcy;&ocy;&lcy;&iukcy; &ncy;&acy; &ocy;&dcy;&ncy;&ocy;&mcy;&ucy; &rcy;&iukcy;&vcy;&ncy;&iukcy;.
+&gt;
+&gt; &gt; <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"container-skill"</span><span class="p">&gt;</span>
+&gt; &gt; <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"bord-skill"</span><span class="p">&gt;&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"&pcy;&ocy;&scy;&icy;&lcy;&acy;&ncy;&ncy;&yacy;"</span> <span class="na">alt</span><span class="o">=</span><span class="s">"1-&jcy; &scy;&kcy;&iukcy;&lcy; &Pcy;&acy;&jcy;&kcy;&acy;"</span> <span class="na">class</span><span class="o">=</span><span class="s">"skill-image"</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+&gt; &gt; <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"text-container-skill"</span><span class="p">&gt;&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>Q<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>&kcy;&ocy;&iecy;&fcy;&iukcy;&tscy;&iukcy;&jukcy;&ncy;&tcy; &shcy;&kcy;&ocy;&dcy;&icy; &mcy;&iukcy;&ncy;&softcy;&jcy;&ocy;&ncy;&acy;&mcy;: 100% &rarr; **80%**<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>&kcy;&ocy;&iecy;&fcy;&iukcy;&tscy;&iukcy;&jukcy;&ncy;&tcy; &shcy;&kcy;&ocy;&dcy;&icy; &lcy;&iukcy;&scy;&ncy;&icy;&mcy; &mcy;&ocy;&ncy;&scy;&tcy;&rcy;&acy;&mcy;: 110% &rarr; **90%**<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+&gt; &gt; ***
+&gt; &gt; <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"container-skill"</span><span class="p">&gt;</span>
+&gt; &gt; <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"bord-skill"</span><span class="p">&gt;&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"&pcy;&ocy;&scy;&icy;&lcy;&acy;&ncy;&ncy;&yacy;"</span> <span class="na">alt</span><span class="o">=</span><span class="s">"3-&jcy; &scy;&kcy;&iukcy;&lcy; &Pcy;&acy;&jcy;&kcy;&acy;"</span> <span class="na">class</span><span class="o">=</span><span class="s">"skill-image"</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+&gt; &gt; <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"text-container-skill"</span><span class="p">&gt;&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>E<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>&kcy;&ocy;&iecy;&fcy;&iukcy;&tscy;&iukcy;&jukcy;&ncy;&tcy; &shcy;&kcy;&ocy;&dcy;&icy; &lcy;&iukcy;&scy;&ncy;&icy;&mcy; &mcy;&ocy;&ncy;&scy;&tcy;&rcy;&acy;&mcy;: 110%  &rarr; **100%**<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+&gt; &gt; ***
+&gt; &gt; <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"container-skill"</span><span class="p">&gt;</span>
+&gt; &gt; <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"bord-skill"</span><span class="p">&gt;&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"&pcy;&ocy;&scy;&icy;&lcy;&acy;&ncy;&ncy;&yacy;"</span> <span class="na">alt</span><span class="o">=</span><span class="s">"4-&jcy; &scy;&kcy;&iukcy;&lcy; &Pcy;&acy;&jcy;&kcy;&acy;"</span> <span class="na">class</span><span class="o">=</span><span class="s">"skill-image"</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+&gt; &gt; <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"text-container-skill"</span><span class="p">&gt;&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>R<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>&dcy;&ocy;&dcy;&acy;&tcy;&kcy;&ocy;&vcy;&iecy; &zcy;&ocy;&lcy;&ocy;&tcy;&ocy; &pcy;&rcy;&icy; &dcy;&lcy;&yacy; &scy;&acy;&mcy;&ocy;&scy;&tcy;&iukcy;&jcy;&ncy;&icy;&khcy; &vcy;&bcy;&icy;&vcy;&scy;&tcy;&vcy;: 110% &rarr; **100%**<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>&zcy;&ocy;&lcy;&ocy;&tcy;&ocy;, &yacy;&kcy;&iecy; &ocy;&tcy;&rcy;&icy;&mcy;&acy;&jukcy; &Pcy;&acy;&jcy;&kcy; &pcy;&rcy;&icy; &ucy;&chcy;&acy;&scy;&tcy;&iukcy; &ucy; &vcy;&bcy;&icy;&vcy;&scy;&tcy;&vcy;&iukcy;: 110% &rarr; **120%**<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>&zcy;&ocy;&lcy;&ocy;&tcy;&ocy;, &yacy;&kcy;&iecy; &ocy;&tcy;&rcy;&icy;&mcy;&acy;&jukcy; &Pcy;&acy;&jcy;&kcy;, &yacy;&kcy;&shchcy;&ocy; &scy;&ocy;&yucy;&zcy;&ncy;&icy;&kcy; &vcy;&bcy;&icy;&vcy;&acy;&jukcy; &vcy;&ocy;&rcy;&ocy;&gcy;&acy; &vcy; &rcy;&acy;&dcy;&iukcy;&ucy;&scy;&iukcy; &ucy;&lcy;&softcy;&tcy;&icy;&mcy;&iecy;&jcy;&tcy;&ucy; &Pcy;&acy;&jcy;&kcy;&acy;: 110% &rarr; **120%**<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>&mcy;&acy;&kcy;&scy;&icy;&mcy;&ucy;&mcy; &dcy;&ocy;&dcy;&acy;&tcy;&kcy;&ocy;&vcy;&ocy;&gcy;&ocy; &zcy;&ocy;&lcy;&ocy;&tcy;&acy;: 550 &zcy;. &rarr; **600 &zcy;.**<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>&Ocy;&Jcy; &Gcy;&Ocy;&Lcy;&Ocy;&Vcy;&Acy; &Bcy;&Ocy;&Lcy;&Icy;&Tcy;&SOFTcy; &Pcy;&Iukcy;&Zcy;&Dcy;&Acy;</p>
+<div class="highlight"><pre><span></span><code>&gt; <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"___"</span> <span class="na">alt</span><span class="o">=</span><span class="s">"___"</span> <span class="na">class</span><span class="o">=</span><span class="s">"image-center image-large"</span> <span class="na">id</span><span class="o">=</span><span class="s">""</span><span class="p">/&gt;</span>
+&gt;
+&gt; ### ___
+&gt; 
+&gt; ___
+&gt;
+&gt; &gt; <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"container-skill"</span><span class="p">&gt;</span>
+&gt; &gt; <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"bord-skill"</span><span class="p">&gt;&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"___"</span> <span class="na">alt</span><span class="o">=</span><span class="s">"___"</span> <span class="na">class</span><span class="o">=</span><span class="s">"skill-image"</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+&gt; &gt; <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"text-container-skill"</span><span class="p">&gt;&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>___<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>___: ___ &rarr; **___**<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>___: ___ &rarr; **___**<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+&gt; &gt; ***
+&gt; &gt; <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"container-skill"</span><span class="p">&gt;</span>
+&gt; &gt; <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"bord-skill"</span><span class="p">&gt;&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"___"</span> <span class="na">alt</span><span class="o">=</span><span class="s">"___"</span> <span class="na">class</span><span class="o">=</span><span class="s">"skill-image"</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+&gt; &gt; <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"text-container-skill"</span><span class="p">&gt;&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>___<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>___: ___  &rarr; **___**<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+&gt; &gt; ***
+&gt; &gt; <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"container-skill"</span><span class="p">&gt;</span>
+&gt; &gt; <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"bord-skill"</span><span class="p">&gt;&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"___"</span> <span class="na">alt</span><span class="o">=</span><span class="s">"___"</span> <span class="na">class</span><span class="o">=</span><span class="s">"skill-image"</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+&gt; &gt; <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"text-container-skill"</span><span class="p">&gt;&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>___<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>___: ___ &rarr; **___**<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>___: ___ &rarr; **___**<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>___: ___ &rarr; **___**<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>___: ___ &rarr; **___**<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>&Mcy;&iukcy;&zhcy; &kcy;&ocy;&zhcy;&ncy;&ocy;&yucy; &kcy;&acy;&rcy;&tcy;&kcy;&ocy;&yucy; &tcy;&rcy;&iecy;&bcy;&acy; &rcy;&ocy;&bcy;&icy;&tcy;&icy; &rcy;&ocy;&zcy;&dcy;&iukcy;&lcy;&softcy;&ncy;&icy;&kcy;.</p>
+<p>&Pcy;&rcy;&icy;&kcy;&lcy;&acy;&dcy;:</p>
+<div class="highlight"><pre><span></span><code>&kcy;&acy;&rcy;&tcy;&kcy;&acy;-1
+
+***
+
+&kcy;&acy;&rcy;&tcy;&kcy;&acy;-2
+</code></pre></div>
+<h1 id="kartinki_1">&Kcy;&acy;&rcy;&tcy;&icy;&ncy;&kcy;&icy;</h1>
+<h3 id="pidpis-do-kartinki">&Pcy;&iukcy;&dcy;&pcy;&icy;&scy; &dcy;&ocy; &kcy;&acy;&rcy;&tcy;&icy;&ncy;&kcy;&icy;</h3>
+<p>
+<figure class="fi-cent"><img src="https://prod.assets.earlygamecdn.com/images/Glorious-Crimson_2023-03-07-162730_gnyf.jpg?transform=article3x_webp"/><figcaption>Have we seen the last of the Glorious Crimson skin line? | &copy; Riot Games</figcaption></figure>
+</p>
+<div class="highlight"><pre><span></span><code>![___| &amp;copy; Riot Games](&pcy;&ocy;&scy;&icy;&lcy;&acy;&ncy;&ncy;&yacy;){: .fi-cent}
+</code></pre></div>
+<h3 id="pidpis-do-kartinki-za-dopomogoiu-tablitsi">&Pcy;&iukcy;&dcy;&pcy;&icy;&scy; &dcy;&ocy; &kcy;&acy;&rcy;&tcy;&icy;&ncy;&kcy;&icy; &zcy;&acy; &dcy;&ocy;&pcy;&ocy;&mcy;&ocy;&gcy;&ocy;&yucy; &tcy;&acy;&bcy;&lcy;&icy;&tscy;&iukcy;</h3>
+<table>
+<thead>
+<tr>
+<th align="left"><img class="image-center image-large" src="https://prod.assets.earlygamecdn.com/images/Glorious-Crimson_2023-03-07-162730_gnyf.jpg?transform=article3x_webp"/></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><span class="image-capt">Have we seen the last of the Glorious Crimson skin line? | &copy; Riot Games</span></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>| &lt;img src="&pcy;&ocy;&scy;&icy;&lcy;&acy;&ncy;&ncy;&yacy;" class="image-center image-large"/&gt;                                                        |
+| :------------------------------------------------------------------------------------------------------------- |
+| &lt;span class="image-capt"&gt;Have we seen the last of the Glorious Crimson skin line? \| &amp;copy; Riot Games &lt;/span&gt; |
+</code></pre></div>
+<p><img align="absmiddle" alt=":wildcore:" class="gemoji" height="20px" src="https://static.wikia.nocookie.net/leagueoflegends/images/8/8e/WC_icon.png" title=":wildcore:" width="20px"/></p>
+<p>::: wildcores</p>
+  </div>
+  <footer class="flex flex-col mt-10 ">
+    <ul class="flex flex-wrap">
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="../tag/gaid.html">#ГАЙД</a>
+        </li>
+    </ul>
+    <div class="flex w-full my-2 bg-zinc-200 dark:bg-zinc-700 rounded-lg">
+      <div class="w-1/2 rounded-l-lg"></div>
+    </div>
+    <div class="flex bg-zinc-200 dark:bg-zinc-700 py-2 rounded-lg justify-center space-x-2 text-xs">
+      <ul>
+        <li class="bg-gray-900 p-1 text-white rounded-md">
+          <a target="_blank" rel="noopener noreferrer" title="telegram" aria-label="share Features on telegram"
+            href="https://telegram.me/share/url?text=Features&amp;url=../drafts/guide.html">
+            <i class="fab fa-telegram fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+  <div>
+<script async src="https://comments.app/js/widget.js?3" data-comments-app-website="XdtGmopQ" data-limit="5"></script>
+<script async src="https://comments.app/js/widget.js?3" data-comments-app-website="2WZVVfQT" data-limit="10" data-color="FFFFFF" data-dislikes="1" data-colorful="1" data-dark="1"></script>
+  </div>
+</main>
+
+    </div>
+    <footer class="flex w-full text-xs justify-center mt-10 mb-6 text-zinc-600 dark:text-zinc-400">
+        <div class="px-4">
+            <span>©2023&nbsp;&#8226;&nbsp;</span>Виготовлено з 
+            <a class="underline" href="https://getpelican.com/">Pelican</a>&nbsp;&
+            <a class="underline" href="https://github.com/aleylara/Papyrus">Papyrus</a>
+        </div>
+    </footer>
+
+    <script>
+        let themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+        let themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia(
+                '(prefers-color-scheme: dark)').matches)) {
+            themeToggleLightIcon.classList.remove('hidden');
+        } else {
+            themeToggleDarkIcon.classList.remove('hidden');
+        }
+        let themeToggleBtn = document.getElementById('theme-toggle');
+        themeToggleBtn.addEventListener('click', function () {
+            themeToggleDarkIcon.classList.toggle('hidden');
+            themeToggleLightIcon.classList.toggle('hidden');
+            if (localStorage.getItem('color-theme')) {
+                if (localStorage.getItem('color-theme') === 'light') {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                }
+            } else {
+                if (document.documentElement.classList.contains('dark')) {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                } else {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                }
+            }
+        });
+    </script>
+    <button onclick="topFunction()" id="to_the_top" title="Нагору">↑</button> 
+
+    <script>
+        function scrollToTop() {
+        const position = document.documentElement.scrollTop || document.body.scrollTop;
+        if (position > 0) {
+            window.requestAnimationFrame(scrollToTop);
+            window.scrollTo(0, position - position / 15);
+        }
+        }
+        // Знаходимо кнопку "Нагору"
+        const btnToTop = document.getElementById("to_the_top");
+
+        // Приховуємо кнопку, якщо ми на початку сторінки
+        btnToTop.style.display = "none";
+
+        // Коли користувач прокручує сторінку вниз, кнопка з'являється
+        window.onscroll = function() {
+        if (document.body.scrollTop > 60 || document.documentElement.scrollTop > 60) {
+            btnToTop.style.display = "block";
+        } else {
+            btnToTop.style.display = "none";
+        }
+        };
+
+        // Коли користувач натискає кнопку, сторінка прокручується вверх з плавною анімацією
+        btnToTop.onclick = function() {
+        scrollToTop();
+        };
+    </script>
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = '/theme/css/comments.css';
+        document.head.appendChild(link);
+    </script>
+</body>
+
+</html>

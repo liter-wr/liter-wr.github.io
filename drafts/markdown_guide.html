@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Альманах Поро">
+    <title>Гайд для Каті</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+    <link rel="stylesheet" type="text/css" href="../theme/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="../theme/css/pygment.css" />
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../theme/css/stork.css">
+    <link rel="stylesheet" media="screen and (prefers-color-scheme: dark)"
+        href="../theme/css/stork-dark.css">
+<meta name="description" content="Неймовірні пояснення від куріосіті, що далі?" />
+<meta property="og:description" content="Неймовірні пояснення від куріосіті, що далі?">
+<meta property="og:title" content="Чи зрозуміє Катя написане?">
+<meta property="og:site_name" content="Curiosity продакшин">
+<meta property="og:image" content="https://telegra.ph/file/79edbe0fbe377f1f47920.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://telegra.ph/file/79edbe0fbe377f1f47920.png">
+</head>
+
+<body class="min-h-screen flex flex-col max-w-7xl lg:max-w-none text-zinc-800 bg-neutral-100 
+    dark:bg-neutral-900 dark:text-zinc-300 container mx-auto justify-center md:px-3 ">
+    <script>
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia(
+                '(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
+    <nav class="sm:flex sm:justify-between xl:ml-32 pl-4 items-center">
+        <div class="flex pt-4">
+            <h1 class="font-semibold text-2xl"><a href="../">Альманах Поро</a></h1>
+            <button id="theme-toggle" type="button" aria-label="Light|Dark"
+                class="text-zinc-700 dark:text-zinc-400 rounded-full focus:outline-none text-sm ml-2 p-1">
+                <svg id="theme-toggle-dark-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                </svg>
+                <svg id="theme-toggle-light-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                        fill-rule="evenodd" clip-rule="evenodd"></path>
+                </svg>
+            </button>
+        </div>
+        <ul class="flex flex-wrap lg:mr-24 md:pt-0">
+            <li class="mr-4 pt-6"><a  href="../arch">Архів</a></li>
+            <li class="mr-4 pt-6"><a                     href="../lib">Бібліотека</a></li>
+            <li class="mr-4 pt-6"><a  href="../tags">Теги</a></li>
+            <li class="mr-4 pt-6"><a  href="../srch">Пошук</a></li>
+        </ul>
+    </nav>
+    <div class="flex-grow md:max-w-screen-md md:mx-auto md:w-3/4 px-4">
+        <nav class="text-zinc-800 dark:text-zinc-300 mt-12 pb-2 md:mt-16" aria-label="Breadcrumb">
+            <ul class="p-0 inline-flex items-center">
+                <li class="flex items-center">
+                    <a href="../" class="text-zinc-800 dark:text-zinc-300 inline-flex items-center">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z">
+                            </path>
+                        </svg>
+                        <!-- головна -->
+                    </a>
+                    <svg class="fill-current w-3 h-3 mr-2 ml-1" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 320 512">
+                        <path
+                            d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z" />
+                    </svg>
+                </li>
+                <li class="flex items-center">
+                    <a href="../categories.html">Бібліотека</a>
+                    <svg class="fill-current w-3 h-3 mr-2 ml-1" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 320 512">
+                        <path
+                            d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z" />
+                    </svg>
+                </li>
+                <li class="flex items-center">
+                    <a href="../lib/gaid/">Гайд</a>
+                    <svg class="fill-current w-3 h-3 mr-2 ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                        <path
+                            d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z" />
+                    </svg>
+                </li>
+            </ul>
+        </nav>
+
+<main>
+  <header>
+    <h1 class="font-semibold text-3xl my-2">Гайд для Каті</h1>
+    <footer class="flex text-sm text-zinc-800 dark:text-zinc-400">
+      <div class="flex text-xs text-zinc-800 dark:text-zinc-400">
+        <time>30.03.2023</time>
+        <div>
+          <span>&nbsp;·&nbsp;15 хв</span>
+        </div>
+        <div>
+          <span>
+            <span>&nbsp;·&nbsp;Альманах Поро | Wild Rift UA</span>
+          </span>
+        </div>
+      </div>
+    </footer>
+    <div class="flex text-xs text-zinc-800 dark:text-zinc-400">
+      <span>Останнє оновлення: 07.04.2023</span>
+    </div>
+  </header>
+  <details class="flex flex-col my-6 p-4 bg-zinc-200 dark:bg-zinc-800 rounded-lg">
+    <summary class="text-lg font-bold">Зміст</summary>
+    <div class="mx-4 px-4 underline">
+      <div id="toc"><ul><li><a class="toc-href" href="#zagolovok-pershogo-rivnia" title="&Zcy;&acy;&gcy;&ocy;&lcy;&ocy;&vcy;&ocy;&kcy; &pcy;&iecy;&rcy;&shcy;&ocy;&gcy;&ocy; &rcy;&iukcy;&vcy;&ncy;&yacy; ">&Zcy;&acy;&gcy;&ocy;&lcy;&ocy;&vcy;&ocy;&kcy; &pcy;&iecy;&rcy;&shcy;&ocy;&gcy;&ocy; &rcy;&iukcy;&vcy;&ncy;&yacy; </a><ul><li><a class="toc-href" href="#tut-zagolovok-drugogo-rivnia" title="&Tcy;&ucy;&tcy; &zcy;&acy;&gcy;&ocy;&lcy;&ocy;&vcy;&ocy;&kcy; &dcy;&rcy;&ucy;&gcy;&ocy;&gcy;&ocy; &rcy;&iukcy;&vcy;&ncy;&yacy; ">&Tcy;&ucy;&tcy; &zcy;&acy;&gcy;&ocy;&lcy;&ocy;&vcy;&ocy;&kcy; &dcy;&rcy;&ucy;&gcy;&ocy;&gcy;&ocy; &rcy;&iukcy;&vcy;&ncy;&yacy; </a><ul><li><a class="toc-href" href="#a-tut-zagolovok-tretogo-rivnia-khikhi" title="&Acy; &tcy;&ucy;&tcy; &zcy;&acy;&gcy;&ocy;&lcy;&ocy;&vcy;&ocy;&kcy; &tcy;&rcy;&iecy;&tcy;&softcy;&ocy;&gcy;&ocy; &rcy;&iukcy;&vcy;&ncy;&yacy;, &khcy;&iukcy;&khcy;&iukcy; ">&Acy; &tcy;&ucy;&tcy; &zcy;&acy;&gcy;&ocy;&lcy;&ocy;&vcy;&ocy;&kcy; &tcy;&rcy;&iecy;&tcy;&softcy;&ocy;&gcy;&ocy; &rcy;&iukcy;&vcy;&ncy;&yacy;, &khcy;&iukcy;&khcy;&iukcy; </a></li></ul></li></ul></li><li><a class="toc-href" href="#zagolovok-pershogo-rivnia-dva_2" title="&Zcy;&acy;&gcy;&ocy;&lcy;&ocy;&vcy;&ocy;&kcy; &pcy;&iecy;&rcy;&shcy;&ocy;&gcy;&ocy; &rcy;&iukcy;&vcy;&ncy;&yacy; &dcy;&vcy;&acy;">&Zcy;&acy;&gcy;&ocy;&lcy;&ocy;&vcy;&ocy;&kcy; &pcy;&iecy;&rcy;&shcy;&ocy;&gcy;&ocy; &rcy;&iukcy;&vcy;&ncy;&yacy; &dcy;&vcy;&acy;</a></li></ul></div>
+    </div>
+  </details>
+  <div class="max-w-7xl container mx-auto my-8 text-zinc-800 dark:text-zinc-300  
+              prose lg:max-w-none prose-headings:text-zinc-800 prose-headings:dark:text-zinc-300 
+              prose-h1:text-3xl lg:prose-h1:text-3xl prose-headings:font-semibold 
+              prose-pre:bg-zinc-200 prose-pre:text-zinc-800
+              dark:prose-pre:bg-zinc-800 dark:prose-pre:text-zinc-200
+              prose-blockquote:text-zinc-800
+              dark:prose-blockquote:text-zinc-200
+              prose-a:text-slate-600 prose-a:font-normal
+              dark:prose-a:text-slate-400
+              dark:prose-strong:text-zinc-200 
+              dark:prose-code:text-zinc-200
+              dark:prose-code:bg-zinc-800
+              prose-code:bg-zinc-200
+              prose-code:font-light
+              prose-img:rounded-md
+              sm:text-left md:text-justify
+              ">
+    <!-- почнемо з головного, це - коментар, його не видно в статті і в цьому форматі буду пояснювати -->
+<!-- доречі, його можна переносити на
+    наступну строчку без болісно -->
+<!-- Title:           Гайд для Каті -- це заголовок статті, краще писати короткі -->
+<!-- Date:            2023-03-30    -- дата публікації в фоматі РІК-МІСЯЦЬ-ДЕНЬ -->
+<!-- Modified:        2023-04-07    -- дата редагування статі, якщо нема - видалить -->
+<!-- Status:          draft         -- статус статті, можуть бути значення:
+                                            draft     - це стаття буде доступна за посиланням, але ніде не буде відображаться, тобто вона є, але ніхто її не знайде не знаючи посилання, посилання складається з liter-wr.github.io/drafts/{slug}
+                                            hidden    - ця стаття буде недоступною навіть за посиланням
+                                            published - опублікована стаття яку буде видно на сайті -->
+<!-- slug:            markdown_guide    -- це - буде посиланням на статтю -->
+<!-- Tags:            гайд,             -- пояснення, дуже стисле, майже хештеги, case-sensetive я забув як це українсько тому знай що Скін це не те саме що й скін або скіН і так далі, перераховуй хештеги через кому -->
+<!-- Category:        Гайд              -- категорія в якій зберігається новина, може бути тільки одна категорія на статтю -->
+<!-- Readtime:        15                -- кількість хвилин на читання, сама придумай -->
+<!-- twittercard:     summary_large_image   -- тут починаються метатеги, тут завжди це якщо хочеш велику картинку на прев'ю телеграму -->
+<!-- twitterimage:    https://telegra.ph/file/79edbe0fbe377f1f47920.png   -- посилання на картинку яка буде не прев'ю, !!УВАГА!! посилання починається з HTTPS та вказує прямо на файл, а не на сторінку де є картинка -->
+<!-- og_image:        https://telegra.ph/file/79edbe0fbe377f1f47920.png   -- інший метатег в який вказуєш ту саму картинку -->
+<!-- og_title:        Чи зрозуміє Катя написане?                          -- короткий заголовок на прев'ю посилання, можна вказати той самий що вказала в Title -->
+<!-- Summary:         Неймовірні пояснення від куріосіті, що далі?        -- коротке представлення що буде в статті, ліміт 150 символів щоб води не лила -->
+<!-- og_sitename:     Curiosity продакшин                                 -- ім'я групи на прев'ю -->
+<!-- тут закінчується мета-дані статті, взагалі, вони закінчуються одразу як тільки ти зробиш відступ
+    від ключ:значення, тобто якщо ти почнеш статтю з відступа, то мета-даних не буде (very bad) -->
+<!-- почнем з простого - заголовки. всього існує 6 рівнів заголовків починаються вони з знаку # -->
+<h1 id="zagolovok-pershogo-rivnia">&Zcy;&acy;&gcy;&ocy;&lcy;&ocy;&vcy;&ocy;&kcy; &pcy;&iecy;&rcy;&shcy;&ocy;&gcy;&ocy; &rcy;&iukcy;&vcy;&ncy;&yacy; <!-- якісь пояснення треба??? --></h1>
+<p>&YAcy;&kcy;&icy;&jcy;&scy;&softcy; &dcy;&ucy;&zhcy;&iecy; &tscy;&iukcy;&kcy;&acy;&vcy;&icy;&jcy; &tcy;&iecy;&kcy;&scy;&tcy; &pcy;&iukcy;&dcy; &zcy;&acy;&gcy;&ocy;&lcy;&ocy;&vcy;&kcy;&ocy;&mcy; &pcy;&iecy;&rcy;&shcy;&ocy;&gcy;&ocy; &rcy;&iukcy;&vcy;&ncy;&yacy; <!-- це просто текст статті --></p>
+<h2 id="tut-zagolovok-drugogo-rivnia">&Tcy;&ucy;&tcy; &zcy;&acy;&gcy;&ocy;&lcy;&ocy;&vcy;&ocy;&kcy; &dcy;&rcy;&ucy;&gcy;&ocy;&gcy;&ocy; &rcy;&iukcy;&vcy;&ncy;&yacy; <!-- між кожним записом треба робити перехід на наступну строку, бо це маркдавн --></h2>
+<p>&Acy; &tcy;&ucy;&tcy; &dcy;&ucy;&zhcy;&iecy; <strong>&zhcy;&icy;&rcy;&ncy;&icy;&jcy; &tcy;&iecy;&kcy;&scy;&tcy;</strong> &pcy;&iukcy;&dcy; &zcy;&acy;&gcy;&ocy;&lcy;&ocy;&vcy;&kcy;&ocy;&mcy; &dcy;&rcy;&ucy;&gcy;&ocy;&gcy;&ocy; &rcy;&iukcy;&vcy;&ncy;&yacy; <!-- якщо ти хочеш виділити шось жирним шрифтом - виділи це в подвійні зірочки --></p>
+<h3 id="a-tut-zagolovok-tretogo-rivnia-khikhi">&Acy; &tcy;&ucy;&tcy; &zcy;&acy;&gcy;&ocy;&lcy;&ocy;&vcy;&ocy;&kcy; &tcy;&rcy;&iecy;&tcy;&softcy;&ocy;&gcy;&ocy; &rcy;&iukcy;&vcy;&ncy;&yacy;, &khcy;&iukcy;&khcy;&iukcy; <!-- чого смієся --></h3>
+<p>&TScy;&iecy;&jcy; &tcy;&iecy;&kcy;&scy;&tcy; &pcy;&iukcy;&shcy;&ocy;&vcy; &pcy;&ocy; <em>&kcy;&rcy;&icy;&vcy;&iukcy;&jcy; &dcy;&ocy;&rcy;&ocy;&zhcy;&tscy;&iukcy;</em> <!-- якщо хочеш виділити текст нахилом, виділи його в одинарні зірочки --></p>
+<h4>&acy; &ocy;&scy;&softcy; &zcy;&acy;&gcy;&ocy;&lcy;&ocy;&vcy;&ocy;&kcy; 4-&gcy;&ocy; &rcy;&iukcy;&vcy;&ncy;&yacy; <!-- я зробив так, щоб у змісті не було видно заголовки, які йдуть нижче третього рівня, бо нахуй надо --></h4>
+<p>&Acy; &tscy;&iecy;&jcy; <strong><em>&tcy;&ocy;&vcy;&scy;&tcy;&ucy;&ncy; &pcy;&iukcy;&dcy; &ncy;&acy;&khcy;&icy;&lcy;&ocy;&mcy;</em></strong> <!-- потрійні зірочки - текст товстий та під нахилом --></p>
+<h5>&zcy;&acy;&gcy;&ocy;&lcy;&ocy;&vcy; 5&gcy;&ocy; &rcy;&iukcy;&vcy;&ncy;&yacy; &dcy;&lcy;&yacy; &dcy;&iecy;&mcy;&ocy;&ncy;&scy;&tcy;&rcy;&acy;&tscy;&iukcy;&yicy; &zcy;&dcy;&iukcy;&bcy;&ncy;&ocy;&scy;&tcy;&iecy;&jcy; <!-- ??? --></h5>
+<p>&YAcy; &khcy;&ocy;&chcy;&ucy; &shcy;&ocy;&bcy; &tcy;&ucy;&tcy; &bcy;&ucy;&lcy;&acy; &kcy;&acy;&rcy;&tcy;&icy;&ncy;&kcy;&acy;, &yacy;&kcy; &mcy;&iecy;&ncy;&iukcy; &tscy;&iecy; &zcy;&rcy;&ocy;&bcy;&icy;&tcy;&icy;?</p>
+<blockquote>
+<p>&Acy; &ocy;&scy;&softcy;! - &kcy;&acy;&zhcy;&iecy; &kcy;&ucy;&rcy;&iukcy;&ocy;&scy;&tcy;&iukcy; &vcy;&kcy;&acy;&zcy;&ucy;&yucy;&chcy;&icy; &vcy;&ncy;&icy;&zcy;</p>
+</blockquote>
+<!-- це цитата, починається з знаку > -->
+<p><img alt="event card trick chaos" class="image-center image-large" src="https://images.contentstack.io/v3/assets/blt370612131b6e0756/blt9a8832bd31a79d27/64227054d794441fc0f45089/03292023_WRPatchNotes4.1a_CardTrickChaos.jpg"/></p>
+<!-- прийми це як должне, це - html-розмітка пояснюю по пунктіках:
+    img - означає шо тут буде картинка
+    src - тут ти вказуєш пряме посилання на файл картинки робиш це в " " та посилання починається з хттпс
+    alt - альтушка означає що якщо картинка вдруг broken або не існує то цей текст буде замість неї, пиши шо хочеш а краще пояснюй шо на картинці
+    class - ну началось, це - CSS, ксс - це стилі для HTML розмітки, сюди пишеш не шо хочеш а шось конкретне у нашому випадку - "image-center image-large".
+    у мене є таблиця з ксс стилями де сталі носять назви "image-center" та "image-large", наводжу приклади як виглядають ці стилі на практиці -->
+<p><br/> <!-- це хтлм розмітка переходу на наступно сторінку, треба боо картинка зліва-зправа можуть містити біля себе текст або іншу картинку --></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><img alt="event card trick chaos" class="image-left image-medium" src="https://images.contentstack.io/v3/assets/blt370612131b6e0756/blt9a8832bd31a79d27/64227054d794441fc0f45089/03292023_WRPatchNotes4.1a_CardTrickChaos.jpg"/></p>
+<!-- ця картинка буде зліва та середнього розміру -->
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><img alt="event card trick chaos" class="image-right image-thumbnail" src="https://images.contentstack.io/v3/assets/blt370612131b6e0756/blt9a8832bd31a79d27/64227054d794441fc0f45089/03292023_WRPatchNotes4.1a_CardTrickChaos.jpg"/></p>
+<!-- а ця маленькою та справа, доречі -->
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><img alt="&yacy; &ncy;&iecy; &vcy;&kcy;&acy;&zcy;&acy;&vcy; https:// &vcy; src" class="image-center image-large" src="images.contentstack.io/v3/assets/blt370612131b6e0756/blt9a8832bd31a79d27/64227054d794441fc0f45089/03292023_WRPatchNotes4.1a_CardTrickChaos.jpg"/></p>
+<!-- демонстрація альтушки -->
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<h6>&Zcy;&acy;&gcy;&ocy;&lcy;&ocy;&vcy;&ocy;&kcy; &shcy;&ocy;&scy;&tcy;&ocy;&gcy;&ocy; &rcy;&iukcy;&vcy;&ncy;&yacy; &tcy;&ucy;&tcy; &bcy;&ucy;&dcy;&iecy; &vcy;&iukcy;&dcy;&iecy;&ocy;</h6>
+<div class="aspect-w-16 aspect-h-9">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube-nocookie.com/embed/nJ97e_Ge5ZA" title="YouTube video player" width="560"></iframe>
+</div>
+<!-- АПЯТЬ HTML!?!?!?!!? да
+    з оцього всього тобі треба знати тільки одне - міняєш тільки iframe src
+    https://www.youtube-nocookie.com/embed/ ТУТ ІДЕНТИФІКАТОР ВІДЕО ?modestbranding=1&rel=0&cc_load_policy=1&iv_load_policy=3&hl=uk-ua&fs=0&disablekb=1 
+    зайшли на ютубчик ухти яке класне відео https://www.youtube.com/watch?v=nJ97e_Ge5ZA як дізнатись його ідентифікатор??
+                                                                            ^ осьо nJ97e_Ge5ZA
+-->
+<p>&Tcy;&acy;&bcy;&lcy;&icy;&chcy;&kcy;&icy; &pcy;&ocy;&yacy;&scy;&ncy;&iecy;&mcy;&ocy;? &Acy; &dcy;&acy;&vcy;&acy;&jcy;</p>
+<h1 id="zagolovok-pershogo-rivnia-dva_2">&Zcy;&acy;&gcy;&ocy;&lcy;&ocy;&vcy;&ocy;&kcy; &pcy;&iecy;&rcy;&shcy;&ocy;&gcy;&ocy; &rcy;&iukcy;&vcy;&ncy;&yacy; &dcy;&vcy;&acy;</h1>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>#</strong></th>
+<th align="center"><strong>&Kcy;&Ocy;&Mcy;&Acy;&Ncy;&Dcy;&Acy;</strong></th>
+<th align="right"><strong>MP</strong></th>
+<th align="left"><strong>W</strong></th>
+<th align="center"><strong>L</strong></th>
+<th align="center"><strong>&Ocy;&Scy;&Tcy;&Acy;&Ncy;&Ncy;&Iukcy;</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">1</td>
+<td align="center"><span class="tour-comm-text-align">&Kcy;&ocy;&mcy;&acy;&ncy;&dcy;&acy; &ocy;&gcy;&iukcy;&rcy;&kcy;&iukcy;&vcy;</span></td>
+<td align="right">6</td>
+<td align="left">2</td>
+<td align="center">4</td>
+<td align="center"><span class="lose">L</span> <span class="win">W</span></td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center"><span class="tour-comm-text-align">&Kcy;&ocy;&mcy;&acy;&ncy;&dcy;&acy; &pcy;&ocy;&mcy;&iukcy;&dcy;&ocy;&rcy;&iukcy;&vcy;</span></td>
+<td align="right">6</td>
+<td align="left">3</td>
+<td align="center">3</td>
+<td align="center"><span class="win">W</span> <span class="lose">L</span></td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center"><span class="tour-comm-text-align">&Kcy;&ocy;&mcy;&acy;&ncy;&dcy;&acy; &zcy; &ncy;&iecy;&jcy;&mcy;&ocy;&vcy;&iukcy;&rcy;&ncy;&ocy; &dcy;&ocy;&vcy;&gcy;&ocy;&yucy; &ncy;&acy;&zcy;&vcy;&ocy;&yucy; &shcy;&ocy;&bcy; &bcy;&ucy;&lcy;&ocy; &shcy;&ocy; &rcy;&ocy;&bcy;&icy;&tcy;&icy;</span></td>
+<td align="right">6</td>
+<td align="left">0</td>
+<td align="center">6</td>
+<td align="center"><span class="lose">L</span> <span class="lose">L</span></td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center"><span class="tour-comm-text-align">&Kcy;&ocy;&mcy;&acy;&ncy;&dcy;&acy; &bcy;&acy;&ncy;&acy;&ncy;&iukcy;&vcy;</span></td>
+<td align="right">6</td>
+<td align="left">4</td>
+<td align="center">2</td>
+<td align="center"><span class="win">W</span> <span class="win">W</span></td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center"><span class="tour-comm-text-align">&Kcy;&ocy;&mcy;&acy;&ncy;&dcy;&acy; ツ</span></td>
+<td align="right">6</td>
+<td align="left">2</td>
+<td align="center">4</td>
+<td align="center"><span class="win">W</span> <span class="lose">L</span></td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center"><span class="tour-comm-text-align">&Kcy;&ocy;&mcy;&acy;&ncy;&dcy;&acy; ソ</span></td>
+<td align="right">4</td>
+<td align="left">2</td>
+<td align="center">2</td>
+<td align="center"><span class="win">W</span> <span class="lose">L</span></td>
+</tr>
+<tr>
+<td align="center">7</td>
+<td align="center"><span class="tour-comm-text-align">&Kcy;&ocy;&mcy;&acy;&ncy;&dcy;&acy; シ</span></td>
+<td align="right">7</td>
+<td align="left">0</td>
+<td align="center">7</td>
+<td align="center"><span class="win">W</span> <span class="win">W</span></td>
+</tr>
+<tr>
+<td align="center">8</td>
+<td align="center"><span class="tour-comm-text-align">&Kcy;&ocy;&mcy;&acy;&ncy;&dcy;&acy; ン</span></td>
+<td align="right">1</td>
+<td align="left">1</td>
+<td align="center">0</td>
+<td align="center"><span class="win">W</span> <span class="unknown">?</span></td>
+</tr>
+<tr>
+<td align="center">9</td>
+<td align="center"><span class="tour-comm-text-align">&Kcy;&ocy;&mcy;&acy;&ncy;&dcy;&acy; ノ</span></td>
+<td align="right">12</td>
+<td align="left">3</td>
+<td align="center">9</td>
+<td align="center"><span class="lose">L</span> <span class="lose">L</span></td>
+</tr>
+</tbody>
+</table>
+<p>&Ocy;&scy;&softcy; &tcy;&acy;&bcy;&lcy;&icy;&chcy;&kcy;&acy; &yacy;&kcy;&ucy; &tcy;&icy; &vcy;&zhcy;&iecy; &bcy;&acy;&chcy;&icy;&lcy;&acy; &shchcy;&ocy; &tcy;&ucy;&tcy;?</p>
+<p>&Pcy;&iecy;&rcy;&shcy;&iecy; &shcy;&ocy; &kcy;&icy;&ncy;&ucy;&lcy;&ocy;&scy;&softcy; &vcy; &ocy;&chcy;&iukcy; - &tscy;&iecy; &kcy;&ocy;&scy;&acy; &lcy;&iukcy;&ncy;&iukcy;&yacy; &bcy;&iukcy;&lcy;&yacy; &zcy;&ncy;&acy;&kcy;&ucy; # &yacy;&kcy;&ucy; &ncy;&iecy; &vcy;&icy;&dcy;&ncy;&ocy; &ncy;&acy; &scy;&acy;&jcy;&tcy;&iukcy;, &yacy;&kcy;&shchcy;&ocy; &tcy;&icy; &khcy;&ocy;&chcy;&iecy;&shcy; &dcy;&ocy;&dcy;&acy;&tcy;&icy; &yacy;&kcy;&icy;&jcy;&scy;&softcy; &zcy;&ncy;&acy;&kcy; &yacy;&kcy;&icy;&jcy; &vcy;&icy;&kcy;&ocy;&rcy;&icy;&scy;&tcy;&ocy;&vcy;&ucy;&jukcy;&tcy;&softcy;&scy;&yacy; &vcy; &rcy;&ocy;&zcy;&mcy;&iukcy;&tcy;&tscy;&iukcy; &mcy;&acy;&rcy;&kcy;&dcy;&acy;&ucy;&ncy;, &tcy;&ocy; &scy;&tcy;&acy;&vcy; &pcy;&iecy;&rcy;&iecy;&dcy; &ncy;&icy; &kcy;&ocy;&scy;&ucy; &lcy;&iukcy;&ncy;&iukcy;&yucy; \, &tscy;&iecy; &pcy;&rcy;&acy;&tscy;&yucy;&jukcy; &tcy;&iukcy;&lcy;&softcy;&kcy;&icy; &zcy; &ncy;&acy;&scy;&tcy;&ucy;&pcy;&ncy;&icy;&mcy; &zcy;&ncy;&acy;&kcy;&ocy;&mcy; &pcy;&iukcy;&scy;&lcy;&yacy; &lcy;&iukcy;&ncy;&iukcy;&yicy;.</p>
+<p>&Dcy;&rcy;&ucy;&gcy;&iecy; &shcy;&ocy; &kcy;&icy;&ncy;&ucy;&lcy;&ocy;&scy;&softcy; &vcy; &ocy;&chcy;&iukcy; - &vcy;&icy;&rcy;&iukcy;&vcy;&ncy;&yucy;&vcy;&acy;&ncy;&ncy;&yacy; &tcy;&acy;&bcy;&lcy;&icy;&tscy;&iukcy;, &tscy;&iecy; &rcy;&ocy;&bcy;&icy;&tcy;&softcy;&scy;&yacy; &zcy;&acy;&vcy;&dcy;&yacy;&kcy;&icy; <code>:---:</code> &pcy;&iukcy;&dcy; &pcy;&iecy;&rcy;&shcy;&icy;&mcy; &rcy;&yacy;&dcy;&kcy;&ocy;&mcy; &tcy;&acy;&bcy;&lcy;&icy;&tscy;&iukcy;, &vcy;&icy;&rcy;&iukcy;&vcy;&ncy;&yucy;&vcy;&acy;&ncy;&ncy;&yacy; &scy;&tcy;&ocy;&vcy;&pcy;&chcy;&icy;&kcy;&acy; &vcy;&lcy;&iukcy;&vcy;&ocy; - <code>----:</code>, &acy; &vcy;&pcy;&rcy;&acy;&vcy;&ocy; - &ncy;&acy;&vcy;&pcy;&acy;&kcy;&icy; <code>:----</code></p>
+<!-- В HTML не задивляйся, це я сам робив щоб текст був в табличці вирівняний вліво, навіть якщо табличка вирівняна по центру -->
+  </div>
+  <footer class="flex flex-col mt-10 ">
+    <ul class="flex flex-wrap">
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="../tag/duzhe-stisle.html">#ДУЖЕ СТИСЛЕ</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="../tag/gaid.html">#ГАЙД</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="../tag/maizhe.html">#МАЙЖЕ</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="../tag/poiasnennia.html">#ПОЯСНЕННЯ</a>
+        </li>
+    </ul>
+    <div class="flex w-full my-2 bg-zinc-200 dark:bg-zinc-700 rounded-lg">
+      <div class="w-1/2 rounded-l-lg"></div>
+    </div>
+    <div class="flex bg-zinc-200 dark:bg-zinc-700 py-2 rounded-lg justify-center space-x-2 text-xs">
+      <ul>
+        <li class="bg-gray-900 p-1 text-white rounded-md">
+          <a target="_blank" rel="noopener noreferrer" title="telegram" aria-label="share Features on telegram"
+            href="https://telegram.me/share/url?text=Features&amp;url=../drafts/markdown_guide.html">
+            <i class="fab fa-telegram fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+  <div>
+<script async src="https://comments.app/js/widget.js?3" data-comments-app-website="XdtGmopQ" data-limit="5"></script>
+<script async src="https://comments.app/js/widget.js?3" data-comments-app-website="2WZVVfQT" data-limit="10" data-color="FFFFFF" data-dislikes="1" data-colorful="1" data-dark="1"></script>
+  </div>
+</main>
+
+    </div>
+    <footer class="flex w-full text-xs justify-center mt-10 mb-6 text-zinc-600 dark:text-zinc-400">
+        <div class="px-4">
+            <span>©2023&nbsp;&#8226;&nbsp;</span>Виготовлено з 
+            <a class="underline" href="https://getpelican.com/">Pelican</a>&nbsp;&
+            <a class="underline" href="https://github.com/aleylara/Papyrus">Papyrus</a>
+        </div>
+    </footer>
+
+    <script>
+        let themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+        let themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia(
+                '(prefers-color-scheme: dark)').matches)) {
+            themeToggleLightIcon.classList.remove('hidden');
+        } else {
+            themeToggleDarkIcon.classList.remove('hidden');
+        }
+        let themeToggleBtn = document.getElementById('theme-toggle');
+        themeToggleBtn.addEventListener('click', function () {
+            themeToggleDarkIcon.classList.toggle('hidden');
+            themeToggleLightIcon.classList.toggle('hidden');
+            if (localStorage.getItem('color-theme')) {
+                if (localStorage.getItem('color-theme') === 'light') {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                }
+            } else {
+                if (document.documentElement.classList.contains('dark')) {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                } else {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                }
+            }
+        });
+    </script>
+    <button onclick="topFunction()" id="to_the_top" title="Нагору">↑</button> 
+
+    <script>
+        function scrollToTop() {
+        const position = document.documentElement.scrollTop || document.body.scrollTop;
+        if (position > 0) {
+            window.requestAnimationFrame(scrollToTop);
+            window.scrollTo(0, position - position / 15);
+        }
+        }
+        // Знаходимо кнопку "Нагору"
+        const btnToTop = document.getElementById("to_the_top");
+
+        // Приховуємо кнопку, якщо ми на початку сторінки
+        btnToTop.style.display = "none";
+
+        // Коли користувач прокручує сторінку вниз, кнопка з'являється
+        window.onscroll = function() {
+        if (document.body.scrollTop > 60 || document.documentElement.scrollTop > 60) {
+            btnToTop.style.display = "block";
+        } else {
+            btnToTop.style.display = "none";
+        }
+        };
+
+        // Коли користувач натискає кнопку, сторінка прокручується вверх з плавною анімацією
+        btnToTop.onclick = function() {
+        scrollToTop();
+        };
+    </script>
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = '/theme/css/comments.css';
+        document.head.appendChild(link);
+    </script>
+</body>
+
+</html>

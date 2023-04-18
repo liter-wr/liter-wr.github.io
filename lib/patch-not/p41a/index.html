@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Альманах Поро">
+    <title>Патч-нот 4.1а</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+    <link rel="stylesheet" type="text/css" href="../../../theme/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="../../../theme/css/pygment.css" />
+    <link rel="shortcut icon" href="../../../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../../theme/css/stork.css">
+    <link rel="stylesheet" media="screen and (prefers-color-scheme: dark)"
+        href="../../../theme/css/stork-dark.css">
+<meta name="description" content="Нещодавно до нас прибули нові предмети, тому їх треба збалансувати. Плюс до цього - зміна одного предмету для брузерів. Про це та інше ви..." />
+<meta property="og:description" content="Нещодавно до нас прибули нові предмети, тому їх треба збалансувати. Плюс до цього - зміна одного предмету для брузерів. Про це та інше ви...">
+<meta property="og:title" content="Оновлення 4.1а, що нового?">
+<meta property="og:site_name" content="Wild Rift українською">
+<meta property="og:image" content="https://telegra.ph/file/79edbe0fbe377f1f47920.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://telegra.ph/file/79edbe0fbe377f1f47920.png">
+</head>
+
+<body class="min-h-screen flex flex-col max-w-7xl lg:max-w-none text-zinc-800 bg-neutral-100 
+    dark:bg-neutral-900 dark:text-zinc-300 container mx-auto justify-center md:px-3 ">
+    <script>
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia(
+                '(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
+    <nav class="sm:flex sm:justify-between xl:ml-32 pl-4 items-center">
+        <div class="flex pt-4">
+            <h1 class="font-semibold text-2xl"><a href="../../../">Альманах Поро</a></h1>
+            <button id="theme-toggle" type="button" aria-label="Light|Dark"
+                class="text-zinc-700 dark:text-zinc-400 rounded-full focus:outline-none text-sm ml-2 p-1">
+                <svg id="theme-toggle-dark-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                </svg>
+                <svg id="theme-toggle-light-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                        fill-rule="evenodd" clip-rule="evenodd"></path>
+                </svg>
+            </button>
+        </div>
+        <ul class="flex flex-wrap lg:mr-24 md:pt-0">
+            <li class="mr-4 pt-6"><a  href="../../../arch">Архів</a></li>
+            <li class="mr-4 pt-6"><a                     href="../../../lib">Бібліотека</a></li>
+            <li class="mr-4 pt-6"><a  href="../../../tags">Теги</a></li>
+            <li class="mr-4 pt-6"><a  href="../../../srch">Пошук</a></li>
+        </ul>
+    </nav>
+    <div class="flex-grow md:max-w-screen-md md:mx-auto md:w-3/4 px-4">
+        <nav class="text-zinc-800 dark:text-zinc-300 mt-12 pb-2 md:mt-16" aria-label="Breadcrumb">
+            <ul class="p-0 inline-flex items-center">
+                <li class="flex items-center">
+                    <a href="../../../" class="text-zinc-800 dark:text-zinc-300 inline-flex items-center">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z">
+                            </path>
+                        </svg>
+                        <!-- головна -->
+                    </a>
+                    <svg class="fill-current w-3 h-3 mr-2 ml-1" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 320 512">
+                        <path
+                            d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z" />
+                    </svg>
+                </li>
+                <li class="flex items-center">
+                    <a href="../../../categories.html">Бібліотека</a>
+                    <svg class="fill-current w-3 h-3 mr-2 ml-1" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 320 512">
+                        <path
+                            d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z" />
+                    </svg>
+                </li>
+                <li class="flex items-center">
+                    <a href="../../../lib/patch-not/">Патч-нот</a>
+                    <svg class="fill-current w-3 h-3 mr-2 ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                        <path
+                            d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z" />
+                    </svg>
+                </li>
+            </ul>
+        </nav>
+
+<main>
+  <header>
+    <h1 class="font-semibold text-3xl my-2">Патч-нот 4.1а</h1>
+    <footer class="flex text-sm text-zinc-800 dark:text-zinc-400">
+      <div class="flex text-xs text-zinc-800 dark:text-zinc-400">
+        <time>30.03.2023</time>
+        <div>
+          <span>&nbsp;·&nbsp;15 хв</span>
+        </div>
+        <div>
+          <span>
+            <span>&nbsp;·&nbsp;Альманах Поро | Wild Rift UA</span>
+          </span>
+        </div>
+      </div>
+    </footer>
+  </header>
+  <details class="flex flex-col my-6 p-4 bg-zinc-200 dark:bg-zinc-800 rounded-lg">
+    <summary class="text-lg font-bold">Зміст</summary>
+    <div class="mx-4 px-4 underline">
+      <div id="toc"><ul><li><a class="toc-href" href="#podiyi" title="&Pcy;&Ocy;&Dcy;&Iukcy;&YIcy;">&Pcy;&Ocy;&Dcy;&Iukcy;&YIcy;</a><ul><li><a class="toc-href" href="#ivent-ultimativnoyi-knigi-vmin" title="&Iukcy;&Vcy;&IEcy;&Ncy;&Tcy; &Ucy;&Lcy;&SOFTcy;&Tcy;&Icy;&Mcy;&Acy;&Tcy;&Icy;&Vcy;&Ncy;&Ocy;&YIcy; &Kcy;&Ncy;&Icy;&Gcy;&Icy; &Vcy;&Mcy;&Iukcy;&Ncy;&SOFTcy;">&Iukcy;&Vcy;&IEcy;&Ncy;&Tcy; &Ucy;&Lcy;&SOFTcy;&Tcy;&Icy;&Mcy;&Acy;&Tcy;&Icy;&Vcy;&Ncy;&Ocy;&YIcy; &Kcy;&Ncy;&Icy;&Gcy;&Icy; &Vcy;&Mcy;&Iukcy;&Ncy;&SOFTcy;</a></li><li><a class="toc-href" href="#kartkovii-khaos" title="&Kcy;&Acy;&Rcy;&Tcy;&Kcy;&Ocy;&Vcy;&Icy;&Jcy; &KHcy;&Acy;&Ocy;&Scy;">&Kcy;&Acy;&Rcy;&Tcy;&Kcy;&Ocy;&Vcy;&Icy;&Jcy; &KHcy;&Acy;&Ocy;&Scy;</a></li></ul></li><li><a class="toc-href" href="#zmini-chempioniv_1" title="&Zcy;&Mcy;&Iukcy;&Ncy;&Icy; &CHcy;&IEcy;&Mcy;&Pcy;&Iukcy;&Ocy;&Ncy;&Iukcy;&Vcy;">&Zcy;&Mcy;&Iukcy;&Ncy;&Icy; &CHcy;&IEcy;&Mcy;&Pcy;&Iukcy;&Ocy;&Ncy;&Iukcy;&Vcy;</a><ul><li><a class="toc-href" href="#amumu" title="&Acy;&Mcy;&Ucy;&Mcy;&Ucy;">&Acy;&Mcy;&Ucy;&Mcy;&Ucy;</a></li><li><a class="toc-href" href="#dzhin" title="&Dcy;&ZHcy;&Icy;&Ncy;">&Dcy;&ZHcy;&Icy;&Ncy;</a></li><li><a class="toc-href" href="#nautilus" title="&Ncy;&Acy;&Ucy;&Tcy;&Iukcy;&Lcy;&Ucy;&Scy;">&Ncy;&Acy;&Ucy;&Tcy;&Iukcy;&Lcy;&Ucy;&Scy;</a></li><li><a class="toc-href" href="#nunu-ta-villump" title="&Ncy;&Ucy;&Ncy;&Ucy; &Tcy;&Acy; &Vcy;&Iukcy;&Lcy;&Lcy;&Ucy;&Mcy;&Pcy;">&Ncy;&Ucy;&Ncy;&Ucy; &Tcy;&Acy; &Vcy;&Iukcy;&Lcy;&Lcy;&Ucy;&Mcy;&Pcy;</a></li><li><a class="toc-href" href="#paik" title="&Pcy;&Acy;&Jcy;&Kcy;">&Pcy;&Acy;&Jcy;&Kcy;</a></li><li><a class="toc-href" href="#rammus" title="&Rcy;&Acy;&Mcy;&Mcy;&Ucy;&Scy;">&Rcy;&Acy;&Mcy;&Mcy;&Ucy;&Scy;</a></li><li><a class="toc-href" href="#varus" title="&Vcy;&Acy;&Rcy;&Ucy;&Scy;">&Vcy;&Acy;&Rcy;&Ucy;&Scy;</a></li><li><a class="toc-href" href="#varvik" title="&Vcy;&Acy;&Rcy;&Vcy;&Iukcy;&Kcy;">&Vcy;&Acy;&Rcy;&Vcy;&Iukcy;&Kcy;</a></li><li><a class="toc-href" href="#zeri" title="&Zcy;&IEcy;&Rcy;&Iukcy;">&Zcy;&IEcy;&Rcy;&Iukcy;</a></li></ul></li><li><a class="toc-href" href="#zmini-predmetiv_1" title="&Zcy;&Mcy;&Iukcy;&Ncy;&Icy; &Pcy;&Rcy;&IEcy;&Dcy;&Mcy;&IEcy;&Tcy;&Iukcy;&Vcy;">&Zcy;&Mcy;&Iukcy;&Ncy;&Icy; &Pcy;&Rcy;&IEcy;&Dcy;&Mcy;&IEcy;&Tcy;&Iukcy;&Vcy;</a><ul><li><a class="toc-href" href="#mantiia-12-yi-godini" title="&Mcy;&Acy;&Ncy;&Tcy;&Iukcy;&YAcy; 12-&YIcy; &Gcy;&Ocy;&Dcy;&Icy;&Ncy;&Icy;">&Mcy;&Acy;&Ncy;&Tcy;&Iukcy;&YAcy; 12-&YIcy; &Gcy;&Ocy;&Dcy;&Icy;&Ncy;&Icy;</a></li><li><a class="toc-href" href="#viklik-steraka" title="&Vcy;&Icy;&Kcy;&Lcy;&Icy;&Kcy; &Scy;&Tcy;&IEcy;&Rcy;&Acy;&Kcy;&Acy;">&Vcy;&Icy;&Kcy;&Lcy;&Icy;&Kcy; &Scy;&Tcy;&IEcy;&Rcy;&Acy;&Kcy;&Acy;</a></li></ul></li><li><a class="toc-href" href="#skini_1" title="&Scy;&Kcy;&Iukcy;&Ncy;&Icy;">&Scy;&Kcy;&Iukcy;&Ncy;&Icy;</a></li><li><a class="toc-href" href="#aksesuari" title="&Acy;&Kcy;&Scy;&IEcy;&Scy;&Ucy;&Acy;&Rcy;&Icy;">&Acy;&Kcy;&Scy;&IEcy;&Scy;&Ucy;&Acy;&Rcy;&Icy;</a></li><li><a class="toc-href" href="#rotatsiia-bezkoshtovnikh-geroyiv" title="&Rcy;&Ocy;&Tcy;&Acy;&TScy;&Iukcy;&YAcy; &Bcy;&IEcy;&Zcy;&Kcy;&Ocy;&SHcy;&Tcy;&Ocy;&Vcy;&Ncy;&Icy;&KHcy; &Gcy;&IEcy;&Rcy;&Ocy;&YIcy;&Vcy;">&Rcy;&Ocy;&Tcy;&Acy;&TScy;&Iukcy;&YAcy; &Bcy;&IEcy;&Zcy;&Kcy;&Ocy;&SHcy;&Tcy;&Ocy;&Vcy;&Ncy;&Icy;&KHcy; &Gcy;&IEcy;&Rcy;&Ocy;&YIcy;&Vcy;</a></li></ul></div>
+    </div>
+  </details>
+  <div class="max-w-7xl container mx-auto my-8 text-zinc-800 dark:text-zinc-300  
+              prose lg:max-w-none prose-headings:text-zinc-800 prose-headings:dark:text-zinc-300 
+              prose-h1:text-3xl lg:prose-h1:text-3xl prose-headings:font-semibold 
+              prose-pre:bg-zinc-200 prose-pre:text-zinc-800
+              dark:prose-pre:bg-zinc-800 dark:prose-pre:text-zinc-200
+              prose-blockquote:text-zinc-800
+              dark:prose-blockquote:text-zinc-200
+              prose-a:text-slate-600 prose-a:font-normal
+              dark:prose-a:text-slate-400
+              dark:prose-strong:text-zinc-200 
+              dark:prose-code:text-zinc-200
+              dark:prose-code:bg-zinc-800
+              prose-code:bg-zinc-200
+              prose-code:font-light
+              prose-img:rounded-md
+              sm:text-left md:text-justify
+              ">
+    <h1 id="podiyi">&Pcy;&Ocy;&Dcy;&Iukcy;&YIcy;</h1>
+<h3 id="ivent-ultimativnoyi-knigi-vmin">&Iukcy;&Vcy;&IEcy;&Ncy;&Tcy; &Ucy;&Lcy;&SOFTcy;&Tcy;&Icy;&Mcy;&Acy;&Tcy;&Icy;&Vcy;&Ncy;&Ocy;&YIcy; &Kcy;&Ncy;&Icy;&Gcy;&Icy; &Vcy;&Mcy;&Iukcy;&Ncy;&SOFTcy;</h3>
+<p><img alt="event usb" class="image-center image-large" src="https://images.contentstack.io/v3/assets/blt370612131b6e0756/blt5d0f07ba3194e5e0/642270878867dd109d531fe5/03292023_WRPatchNotes4.1a_USBevent.jpg"/>
+&Scy;&vcy;&yacy;&tcy;&kcy;&ucy;&jcy;&tcy;&iecy; &zcy;&acy;&pcy;&ucy;&scy;&kcy; &ncy;&acy;&shcy;&ocy;&gcy;&ocy; &ncy;&ocy;&vcy;&ocy;&gcy;&ocy; &iukcy;&gcy;&rcy;&ocy;&vcy;&ocy;&gcy;&ocy; &rcy;&iecy;&zhcy;&icy;&mcy;&ucy; &pcy;&iukcy;&dcy; &chcy;&acy;&scy; &tscy;&iukcy;&jukcy;&yicy; &vcy;&iecy;&scy;&iecy;&lcy;&ocy;&yicy; &pcy;&ocy;&dcy;&iukcy;&yicy;!<br/>
+<br/></p>
+<p><em>&Iukcy;&vcy;&iecy;&ncy;&tcy; &Ucy;&lcy;&softcy;&tcy;&icy;&mcy;&acy;&tcy;&icy;&vcy;&ncy;&ocy;&yicy; &Kcy;&ncy;&icy;&gcy;&icy; &Vcy;&mcy;&iukcy;&ncy;&softcy; &bcy;&ucy;&dcy;&iecy; &dcy;&ocy;&scy;&tcy;&ucy;&pcy;&ncy;&icy;&jcy; &vcy;&iukcy;&dcy; 30 &bcy;&iecy;&rcy;&iecy;&zcy;&ncy;&yacy; 03:01 UTC+3.</em></p>
+<p><img alt="event card trick chaos" class="image-center image-large" src="https://images.contentstack.io/v3/assets/blt370612131b6e0756/blt9a8832bd31a79d27/64227054d794441fc0f45089/03292023_WRPatchNotes4.1a_CardTrickChaos.jpg"/></p>
+<h3 id="kartkovii-khaos">&Kcy;&Acy;&Rcy;&Tcy;&Kcy;&Ocy;&Vcy;&Icy;&Jcy; &KHcy;&Acy;&Ocy;&Scy;</h3>
+<p>&Scy;&pcy;&rcy;&ocy;&bcy;&ucy;&jcy;&tcy;&iecy; &vcy;&icy;&kcy;&ocy;&ncy;&acy;&tcy;&icy; &scy;&iecy;&rcy;&jcy;&ocy;&zcy;&ncy;&iukcy; &tcy;&acy; &kcy;&acy;&tcy;&acy;&scy;&tcy;&rcy;&ocy;&fcy;&iukcy;&chcy;&ncy;&ocy; &vcy;&acy;&zhcy;&lcy;&icy;&vcy;&iukcy; &mcy;&iukcy;&scy;&iukcy;&yicy; &pcy;&iukcy;&dcy; &chcy;&acy;&scy; &ncy;&acy;&shcy;&ocy;&yicy; &ncy;&acy;&jcy;&dcy;&ucy;&rcy;&ncy;&iukcy;&shcy;&ocy;&yucy; &pcy;&ocy;&dcy;&iukcy;&yicy;! <br/></p>
+<p><em>&Iukcy;&vcy;&iecy;&ncy;&tcy; &Kcy;&acy;&rcy;&tcy;&kcy;&ocy;&vcy;&ocy;&gcy;&ocy; &KHcy;&acy;&ocy;&scy;&ucy; &bcy;&ucy;&dcy;&iecy; &dcy;&ocy;&scy;&tcy;&ucy;&pcy;&ncy;&icy;&jcy; &vcy;&iukcy;&dcy; 30 &bcy;&iecy;&rcy;&iecy;&zcy;&ncy;&yacy; 03:01 UTC+3.</em></p>
+<h1 id="zmini-chempioniv_1">&Zcy;&Mcy;&Iukcy;&Ncy;&Icy; &CHcy;&IEcy;&Mcy;&Pcy;&Iukcy;&Ocy;&Ncy;&Iukcy;&Vcy;</h1>
+<blockquote>
+<p><img alt="&scy;&pcy;&lcy;&iecy;&shcy;-&acy;&rcy;&tcy; &Acy;&mcy;&ucy;&mcy;&ucy;" class="image-center image-large" id="amumu" src="https://images.contentstack.io/v3/assets/blt370612131b6e0756/bltcebfac6b09264e99/642621d52e3e5f1225cc1747/033023_LOLWR_Patch26_AmumuPatchNotes.jpg"/></p>
+<h3 id="amumu">&Acy;&Mcy;&Ucy;&Mcy;&Ucy;</h3>
+<p>&Zcy;&dcy;&acy;&tcy;&ncy;&iukcy;&scy;&tcy;&softcy; &Acy;&Pcy; &Acy;&mcy;&ucy;&mcy;&ucy; &scy;&acy;&mcy;&ocy;&tcy;&ucy;&zhcy;&kcy;&icy; &vcy;&bcy;&icy;&vcy;&acy;&tcy;&icy; &Bcy;&acy;&rcy;&ocy;&ncy;&acy; &Ncy;&acy;&shcy;&ocy;&rcy;&acy; &tcy;&acy; &Scy;&tcy;&acy;&rcy;&shcy;&ocy;&gcy;&ocy; &Dcy;&rcy;&acy;&kcy;&ocy;&ncy;&acy; &zcy;&acy;&ncy;&acy;&dcy;&tcy;&ocy; &scy;&icy;&lcy;&softcy;&ncy;&acy; &ncy;&acy; &pcy;&iukcy;&zcy;&ncy;&iukcy;&jcy; &scy;&tcy;&acy;&dcy;&iukcy;&yicy; &gcy;&rcy;&icy;, &tcy;&ocy;&mcy;&ucy; &mcy;&icy; &ocy;&scy;&lcy;&acy;&bcy;&lcy;&yucy;&jukcy;&mcy;&ocy; &jcy;&ocy;&gcy;&ocy; &ncy;&acy;&vcy;&icy;&chcy;&kcy;&ucy;, &yacy;&kcy;&acy; &dcy;&ocy;&pcy;&ocy;&mcy;&acy;&gcy;&acy;&jukcy; &ucy; &tscy;&softcy;&ocy;&mcy;&ucy;, &zcy;&acy;&lcy;&icy;&shcy;&acy;&yucy;&chcy;&icy; &rcy;&acy;&ncy;&ncy;&yucy; &gcy;&rcy;&ucy; &ncy;&iecy;&zcy;&mcy;&iukcy;&ncy;&ncy;&ocy;&yucy;.</p>
+<blockquote>
+<p><div class="container-skill"><div id="bord-skill">
+<img alt="&Dcy;&rcy;&ucy;&gcy;&icy;&jcy; &scy;&kcy;&iukcy;&lcy; &Acy;&mcy;&ucy;&mcy;&ucy;" class="skill-image" src="https://images.contentstack.io/v3/assets/blt370612131b6e0756/blt9b1cbda93d9ae34f/5f7f7072a85bbe0f755da365/amumu_2.jpg"/></div>
+<div class="text-container-skill"><h4>W</h4><ul>
+<li>&kcy;&ocy;&iecy;&fcy;&iukcy;&tscy;&iukcy;&jukcy;&ncy;&tcy; &scy;&icy;&lcy;&icy; &ucy;&mcy;&iukcy;&ncy;&softcy;: 0,75% &rarr; <strong>0.6%</strong></li>
+</ul></div></div>
+</p>
+</blockquote>
+</blockquote>
+<hr/>
+<blockquote>
+<p><img alt="&scy;&pcy;&lcy;&iecy;&shcy;-&acy;&rcy;&tcy; &Dcy;&zhcy;&icy;&ncy;&acy;" class="image-center image-large" id="dzhin" src="https://telegra.ph/file/213752b8401641eee2a57.png"/></p>
+<h3 id="dzhin">&Dcy;&ZHcy;&Icy;&Ncy;</h3>
+<p>&Dcy;&zhcy;&icy;&ncy; &ncy;&acy;&rcy;&acy;&zcy;&iukcy; &vcy;&iecy;&dcy;&iecy; &pcy;&ocy;&gcy;&acy;&ncy;&iukcy; &vcy;&icy;&scy;&tcy;&ucy;&pcy;&icy; &ncy;&acy; &vcy;&icy;&shchcy;&icy;&khcy; &rcy;&iukcy;&vcy;&ncy;&yacy;&khcy; &gcy;&rcy;&icy;, &tcy;&ocy;&mcy;&ucy; &mcy;&icy; &pcy;&ocy;&scy;&icy;&lcy;&yucy;&jukcy;&mcy;&ocy; &ocy;&dcy;&ncy;&ucy; &zcy; &jcy;&ocy;&gcy;&ocy; &scy;&kcy;&lcy;&acy;&dcy;&ncy;&icy;&khcy; &ncy;&acy;&vcy;&icy;&chcy;&ocy;&kcy;, &acy;&bcy;&icy; &dcy;&ocy;&pcy;&ocy;&mcy;&ocy;&gcy;&tcy;&icy; &jcy;&ocy;&mcy;&ucy; &vcy; &shcy;&ocy;&ucy;.</p>
+<blockquote>
+<p><div class="container-skill"><div id="bord-skill"><img alt="&Dcy;&rcy;&ucy;&gcy;&icy;&jcy; &scy;&kcy;&iukcy;&lcy; &Dcy;&zhcy;&icy;&ncy;&acy;" class="skill-image" src="https://www.mobafire.com/images/ability/jhin-deadly-flourish.png"/></div>
+<div class="text-container-skill"><h4>W</h4><ul>
+<li>&chcy;&acy;&scy; &pcy;&iecy;&rcy;&iecy;&zcy;&acy;&rcy;&yacy;&dcy;&zhcy;&acy;&ncy;&ncy;&yacy;: 14&scy; &rarr; <strong>12&scy;</strong></li>
+</ul></div></div></p>
+</blockquote>
+</blockquote>
+<hr/>
+<blockquote>
+<p><img alt="&scy;&pcy;&lcy;&iecy;&shcy;-&acy;&rcy;&tcy; &Ncy;&acy;&ucy;&tcy;&iukcy;&lcy;&ucy;&scy;&acy;" class="image-center image-large" id="nautilus" src="https://images.contentstack.io/v3/assets/blt370612131b6e0756/blte8ab06207a08e7c9/62a91f755ec90f4f1bae243c/Nautilus_800x200.jpg"/></p>
+<h3 id="nautilus">&Ncy;&Acy;&Ucy;&Tcy;&Iukcy;&Lcy;&Ucy;&Scy;</h3>
+<p>&Pcy;&iukcy;&scy;&lcy;&yacy; &ncy;&acy;&shcy;&icy;&khcy; &ocy;&scy;&tcy;&acy;&ncy;&ncy;&iukcy;&khcy; &pcy;&ocy;&scy;&icy;&lcy;&iecy;&ncy;&softcy; &Ncy;&acy;&ucy;&tcy;&iukcy;&lcy;&ucy;&scy;&acy; &vcy;&iukcy;&ncy; &pcy;&ocy;&chcy;&acy;&vcy; &dcy;&ocy;&mcy;&iukcy;&ncy;&ucy;&vcy;&acy;&tcy;&icy; &vcy; &lcy;&iukcy;&scy;&iukcy;. &Mcy;&icy; &scy;&pcy;&ucy;&scy;&kcy;&acy;&jukcy;&mcy;&ocy; &ncy;&acy;&shcy; &yacy;&kcy;&iukcy;&rcy; &ncy;&acy; &dcy;&ncy;&ocy; &tcy;&acy; &pcy;&ocy;&vcy;&iecy;&rcy;&tcy;&acy;&jukcy;&mcy;&ocy; &dcy;&iecy;&yacy;&kcy;&iukcy; &zcy;&mcy;&iukcy;&ncy;&icy; &ncy;&acy;&zcy;&acy;&dcy;.</p>
+<blockquote>
+<p><div class="container-skill"><div id="bord-skill"><img alt="3-&jcy; &scy;&kcy;&iukcy;&lcy; &Ncy;&acy;&ucy;&tcy;&iukcy;&lcy;&ucy;&scy;&acy;" class="skill-image" src="https://www.mobafire.com/images/ability/nautilus-riptide.png"/></div>
+<div class="text-container-skill"><h4>E</h4><ul>
+<li>&shcy;&kcy;&ocy;&dcy;&acy; &lcy;&iukcy;&scy;&ncy;&icy;&mcy; &mcy;&ocy;&ncy;&scy;&tcy;&rcy;&acy;&mcy;: 200%  &rarr; <strong>175%</strong></li>
+</ul></div></div></p>
+</blockquote>
+</blockquote>
+<hr/>
+<blockquote>
+<p><img alt="&scy;&pcy;&lcy;&iecy;&shcy;-&acy;&rcy;&tcy; &Ncy;&ucy;&ncy;&ucy;" class="image-center image-large" id="nunu-ta-villump" src="https://images.contentstack.io/v3/assets/blt370612131b6e0756/blta02c716405e3b57f/6164e134ca79db05abb0f20a/LOLWR_Patch25_NunuPatchNotes.jpg"/></p>
+<h3 id="nunu-ta-villump">&Ncy;&Ucy;&Ncy;&Ucy; &Tcy;&Acy; &Vcy;&Iukcy;&Lcy;&Lcy;&Ucy;&Mcy;&Pcy;</h3>
+<p>&Ncy;&ucy;&ncy;&ucy; &ncy;&iecy; &ocy;&tcy;&rcy;&icy;&mcy;&acy;&vcy; &zcy;&ncy;&acy;&chcy;&ncy;&icy;&khcy; &pcy;&ocy;&kcy;&rcy;&acy;&shchcy;&iecy;&ncy;&softcy; &pcy;&iukcy;&scy;&lcy;&yacy; &vcy;&icy;&pcy;&ucy;&scy;&kcy;&ucy; &ncy;&ocy;&vcy;&icy;&khcy; &pcy;&rcy;&iecy;&dcy;&mcy;&iecy;&tcy;&iukcy;&vcy; &dcy;&lcy;&yacy; &tcy;&acy;&ncy;&kcy;&iukcy;&vcy;, &tcy;&ocy;&mcy;&ucy; &pcy;&ocy;&tcy;&rcy;&iecy;&bcy;&ucy;&jukcy; &dcy;&iecy;&yacy;&kcy;&ocy;&yicy; &dcy;&ocy;&pcy;&ocy;&mcy;&ocy;&gcy;&icy;, &shchcy;&ocy;&bcy; &vcy;&iukcy;&ncy; &zcy;&ncy;&ocy;&vcy;&ucy; &mcy;&iukcy;&gcy; &vcy;&iecy;&scy;&tcy;&icy; &kcy;&ocy;&mcy;&acy;&ncy;&dcy;&ucy; &dcy;&ocy; &pcy;&iecy;&rcy;&iecy;&mcy;&ocy;&gcy;&icy;.</p>
+<blockquote>
+<p><div class="text-container-skill"><h4>&Bcy;&Acy;&Zcy;&Ocy;&Vcy;&Iukcy; &KHcy;&Acy;&Rcy;&Acy;&Kcy;&Tcy;&IEcy;&Rcy;&Icy;&Scy;&Tcy;&Icy;&Kcy;&Icy;</h4><ul>
+<li>&zcy;&dcy;&ocy;&rcy;&ocy;&vcy;'&yacy; &zcy;&acy; &rcy;&iukcy;&vcy;&iecy;&ncy;&softcy;: 105 &rarr; <strong>112</strong></li>
+</ul></div></p>
+<hr/>
+<p><div class="container-skill"><div id="bord-skill"><img alt="1-&jcy; &scy;&kcy;&iukcy;&lcy; &Ncy;&ucy;&ncy;&ucy;" class="skill-image" src="https://www.mobafire.com/images/ability/nunu-amp-willump-consume.png"/></div>
+<div class="text-container-skill"><h4>Q</h4><ul>
+<li>&kcy;&ocy;&iecy;&fcy;&iukcy;&tscy;&iukcy;&jukcy;&ncy;&tcy; &lcy;&iukcy;&kcy;&ucy;&vcy;&acy;&ncy;&ncy;&yacy; &vcy;&iukcy;&dcy; &bcy;&ocy;&ncy;&ucy;&scy;&ncy;&ocy;&gcy;&ocy; &zcy;&dcy;&ocy;&rcy;&ocy;&vcy;'&yacy;: 8% &rarr; <strong>9%</strong></li>
+</ul></div></div></p>
+</blockquote>
+</blockquote>
+<hr/>
+<blockquote>
+<p><img alt="&scy;&pcy;&lcy;&iecy;&shcy;-&acy;&rcy;&tcy; &Pcy;&acy;&jcy;&kcy;&acy;" class="image-center image-large" id="paik" src="https://images.contentstack.io/v3/assets/blt370612131b6e0756/blt5cfcd6ee9cc1d7ad/62a95b0ca9454a5197099705/Pyke_800x200.jpg"/></p>
+<h3 id="paik">&Pcy;&Acy;&Jcy;&Kcy;</h3>
+<p>&Ncy;&acy;&rcy;&acy;&zcy;&iukcy;, &Pcy;&acy;&jcy;&kcy; &ncy;&acy; &rcy;&ocy;&lcy;&iukcy; &pcy;&iukcy;&dcy;&tcy;&rcy;&icy;&mcy;&kcy;&icy; &scy;&lcy;&acy;&bcy;&iukcy;&shcy;&icy;&jcy; &ncy;&iukcy;&zhcy; &ncy;&acy; &scy;&iecy;&rcy;&iecy;&dcy;&ncy;&iukcy;&jcy; &lcy;&iukcy;&ncy;&iukcy;&yicy; &tcy;&acy; &vcy; &lcy;&iukcy;&scy;&iukcy;. &Mcy;&icy; &khcy;&ocy;&chcy;&iecy;&mcy;&ocy; &vcy;&vcy;&iecy;&scy;&tcy;&icy; &tscy;&iukcy; &zcy;&mcy;&iukcy;&ncy;&icy;, &acy;&bcy;&ocy; &zcy;&bcy;&acy;&lcy;&acy;&ncy;&scy;&ucy;&vcy;&acy;&tcy;&icy; &tcy;&rcy;&icy; &rcy;&ocy;&lcy;&iukcy; &ncy;&acy; &ocy;&dcy;&ncy;&ocy;&mcy;&ucy; &rcy;&iukcy;&vcy;&ncy;&iukcy;.</p>
+<blockquote>
+<p><div class="container-skill">
+<div id="bord-skill"><img alt="1-&jcy; &scy;&kcy;&iukcy;&lcy; &Pcy;&acy;&jcy;&kcy;&acy;" class="skill-image" src="https://images.contentstack.io/v3/assets/blt370612131b6e0756/blt1791722dbdecf5f0/62a95bd844e495573d5622da/Pyke_1.jpg"/></div>
+<div class="text-container-skill"><h4>Q</h4><ul>
+<li>&kcy;&ocy;&iecy;&fcy;&iukcy;&tscy;&iukcy;&jukcy;&ncy;&tcy; &shcy;&kcy;&ocy;&dcy;&icy; &mcy;&iukcy;&ncy;&softcy;&jcy;&ocy;&ncy;&acy;&mcy;: 100% &rarr; <strong>80%</strong></li>
+<li>&kcy;&ocy;&iecy;&fcy;&iukcy;&tscy;&iukcy;&jukcy;&ncy;&tcy; &shcy;&kcy;&ocy;&dcy;&icy; &lcy;&iukcy;&scy;&ncy;&icy;&mcy; &mcy;&ocy;&ncy;&scy;&tcy;&rcy;&acy;&mcy;: 110% &rarr; <strong>90%</strong></li>
+</ul></div></div></p>
+<hr/>
+<p><div class="container-skill">
+<div id="bord-skill"><img alt="3-&jcy; &scy;&kcy;&iukcy;&lcy; &Pcy;&acy;&jcy;&kcy;&acy;" class="skill-image" src="https://images.contentstack.io/v3/assets/blt370612131b6e0756/blt988365c24b1231df/62a95c2ce75cbf5ab6769df0/Pyke_3.jpg"/></div>
+<div class="text-container-skill"><h4>E</h4><ul>
+<li>&kcy;&ocy;&iecy;&fcy;&iukcy;&tscy;&iukcy;&jukcy;&ncy;&tcy; &shcy;&kcy;&ocy;&dcy;&icy; &lcy;&iukcy;&scy;&ncy;&icy;&mcy; &mcy;&ocy;&ncy;&scy;&tcy;&rcy;&acy;&mcy;: 110%  &rarr; <strong>100%</strong></li>
+</ul></div></div></p>
+<hr/>
+<p><div class="container-skill">
+<div id="bord-skill"><img alt="4-&jcy; &scy;&kcy;&iukcy;&lcy; &Pcy;&acy;&jcy;&kcy;&acy;" class="skill-image" src="https://images.contentstack.io/v3/assets/blt370612131b6e0756/blt8e92226911a284c6/62a95c52c4d59b57e0c256f2/Pyke_4.jpg"/></div>
+<div class="text-container-skill"><h4>R</h4><ul>
+<li>&dcy;&ocy;&dcy;&acy;&tcy;&kcy;&ocy;&vcy;&iecy; &zcy;&ocy;&lcy;&ocy;&tcy;&ocy; &pcy;&rcy;&icy; &dcy;&lcy;&yacy; &scy;&acy;&mcy;&ocy;&scy;&tcy;&iukcy;&jcy;&ncy;&icy;&khcy; &vcy;&bcy;&icy;&vcy;&scy;&tcy;&vcy;: 110% &rarr; <strong>100%</strong></li>
+<li>&zcy;&ocy;&lcy;&ocy;&tcy;&ocy;, &yacy;&kcy;&iecy; &ocy;&tcy;&rcy;&icy;&mcy;&acy;&jukcy; &Pcy;&acy;&jcy;&kcy; &pcy;&rcy;&icy; &ucy;&chcy;&acy;&scy;&tcy;&iukcy; &ucy; &vcy;&bcy;&icy;&vcy;&scy;&tcy;&vcy;&iukcy;: 110% &rarr; <strong>120%</strong></li>
+<li>&zcy;&ocy;&lcy;&ocy;&tcy;&ocy;, &yacy;&kcy;&iecy; &ocy;&tcy;&rcy;&icy;&mcy;&acy;&jukcy; &Pcy;&acy;&jcy;&kcy;, &yacy;&kcy;&shchcy;&ocy; &scy;&ocy;&yucy;&zcy;&ncy;&icy;&kcy; &vcy;&bcy;&icy;&vcy;&acy;&jukcy; &vcy;&ocy;&rcy;&ocy;&gcy;&acy; &vcy; &rcy;&acy;&dcy;&iukcy;&ucy;&scy;&iukcy; &ucy;&lcy;&softcy;&tcy;&icy;&mcy;&iecy;&jcy;&tcy;&ucy; &Pcy;&acy;&jcy;&kcy;&acy;: 110% &rarr; <strong>120%</strong></li>
+<li>&mcy;&acy;&kcy;&scy;&icy;&mcy;&ucy;&mcy; &dcy;&ocy;&dcy;&acy;&tcy;&kcy;&ocy;&vcy;&ocy;&gcy;&ocy; &zcy;&ocy;&lcy;&ocy;&tcy;&acy;: 550 &zcy;. &rarr; <strong>600 &zcy;.</strong></li>
+</ul></div></div></p>
+</blockquote>
+</blockquote>
+<hr/>
+<blockquote>
+<p><img alt="&scy;&pcy;&lcy;&iecy;&shcy;-&acy;&rcy;&tcy; &Rcy;&acy;&mcy;&mcy;&ucy;&scy;&acy;" class="image-center image-large" id="rammus" src="https://images.contentstack.io/v3/assets/blt370612131b6e0756/blt8c2129cd88ee4f91/613bf742fbe3b8273005fc3e/LOLWR_Patch24c_Rammus.jpg"/></p>
+<h3 id="rammus">&Rcy;&Acy;&Mcy;&Mcy;&Ucy;&Scy;</h3>
+<p>&Vcy; &ocy;&scy;&tcy;&acy;&ncy;&ncy;&softcy;&ocy;&mcy;&ucy; &pcy;&acy;&tcy;&chcy;-&ncy;&ocy;&tcy;&iukcy; &Rcy;&acy;&mcy;&mcy;&ucy;&scy; &ocy;&tcy;&rcy;&icy;&mcy;&acy;&vcy; &ncy;&iecy;&jcy;&mcy;&ocy;&vcy;&iukcy;&rcy;&ncy;&iukcy; &pcy;&ocy;&kcy;&acy;&zcy;&ncy;&icy;&kcy;&icy; &bcy;&rcy;&ocy;&ncy;&iukcy; &zcy;&acy;&vcy;&dcy;&yacy;&kcy;&icy; &Ocy;&bcy;&lcy;&acy;&dcy;&ucy;&ncy;&kcy;&ucy; &Acy;&mcy;&acy;&rcy;&acy;&ncy;&tcy;&ucy; (Amaranth Twinguard). &Acy;&bcy;&icy; &zcy;&acy;&scy;&pcy;&ocy;&kcy;&ocy;&yicy;&tcy;&icy; &ncy;&acy;&shcy;&ocy;&gcy;&ocy; &yicy;&zhcy;&acy;&kcy;&acy;, &mcy;&icy; &zcy;&mcy;&iecy;&ncy;&shcy;&ucy;&jukcy;&mcy;&ocy; &jcy;&ocy;&gcy;&ocy; &pcy;&rcy;&icy;&rcy;&iukcy;&scy;&tcy; &bcy;&rcy;&ocy;&ncy;&iukcy; &ncy;&acy; &pcy;&iukcy;&zcy;&ncy;&iukcy;&khcy; &iecy;&tcy;&acy;&pcy;&acy;&khcy; &gcy;&rcy;&icy;.</p>
+<blockquote>
+<p><div class="container-skill"><div id="bord-skill"><img alt="1-&jcy; &scy;&kcy;&iukcy;&lcy; &Rcy;&acy;&mcy;&mcy;&ucy;&scy;&acy;" class="skill-image" src="https://images.contentstack.io/v3/assets/blt370612131b6e0756/blt6bf0cddd54d8cf4b/608b1afa2d1d2210321935ff/Rammus_2.jpg"/></div>
+<div class="text-container-skill"><h4>Q</h4><ul>
+<li>&bcy;&acy;&zcy;&ocy;&vcy;&acy; &shcy;&kcy;&ocy;&dcy;&acy;: 8/10/12/14 &rarr; <strong>10/12/14/16</strong></li>
+<li>&vcy;&iukcy;&dcy;&scy;&ocy;&tcy;&ocy;&kcy; &pcy;&ocy;&scy;&icy;&lcy;&iecy;&ncy;&ncy;&yacy; &bcy;&rcy;&ocy;&ncy;&iukcy;: 70/80/90/100% &rarr; <strong>70/75/80/85%</strong></li>
+<li><strong>[&Ncy;&Ocy;&Vcy;&IEcy;]</strong> &bcy;&iukcy;&lcy;&softcy;&shcy;&iecy; &ncy;&iecy; &zcy;&mcy;&iecy;&ncy;&shcy;&ucy;&jukcy; &scy;&vcy;&ocy;&yucy; &shcy;&vcy;&icy;&dcy;&kcy;&iukcy;&scy;&tcy;&softcy; &rcy;&ucy;&khcy;&ucy; &ncy;&acy; 30% &pcy;&rcy;&icy; &acy;&kcy;&tcy;&icy;&vcy;&acy;&tscy;&iukcy;&yicy; &ncy;&acy;&vcy;&icy;&chcy;&kcy;&icy;</li>
+<li><strong>[&Bcy;&Acy;&Gcy;-&Fcy;&Iukcy;&Kcy;&Scy;]</strong> &pcy;&rcy;&icy; &acy;&kcy;&tcy;&icy;&vcy;&acy;&tscy;&iukcy;&yicy; &bcy;&iukcy;&lcy;&softcy;&shcy;&iecy; &ncy;&iecy; &ocy;&tcy;&rcy;&icy;&mcy;&ucy;&jukcy; &acy;&ncy;&ocy;&mcy;&acy;&lcy;&softcy;&ncy;&iukcy; &zcy;&ncy;&acy;&chcy;&iecy;&ncy;&ncy;&yacy; &bcy;&rcy;&ocy;&ncy;&iukcy;, &yacy;&kcy;&shchcy;&ocy; &yicy;&yicy; &pcy;&ocy;&kcy;&acy;&zcy;&ncy;&icy;&kcy;&icy; &ocy;&tcy;&rcy;&icy;&mcy;&acy;&ncy;&iukcy; &ucy; &vcy;&iukcy;&dcy;&scy;&ocy;&tcy;&kcy;&acy;&khcy; &zcy; &iukcy;&ncy;&shcy;&icy;&khcy; &dcy;&zhcy;&iecy;&rcy;&iecy;&lcy;</li>
+</ul></div></div></p>
+</blockquote>
+</blockquote>
+<hr/>
+<blockquote>
+<p><img alt="&scy;&pcy;&lcy;&iecy;&shcy;-&acy;&rcy;&tcy; &Vcy;&acy;&rcy;&ucy;&scy;&acy;" class="image-center image-large" id="varus" src="https://images.contentstack.io/v3/assets/blt370612131b6e0756/blt270e3f7d6389e76b/62cd1ce78437a53767620826/WRLOL_PatchNotes_Varus.jpg"/></p>
+<h3 id="varus">&Vcy;&Acy;&Rcy;&Ucy;&Scy;</h3>
+<p>&Vcy;&acy;&rcy;&ucy;&scy; &iukcy;&zcy; &Acy;&Pcy; &zcy;&bcy;&iukcy;&rcy;&kcy;&ocy;&yucy; &pcy;&ocy;&kcy;&acy;&zcy;&acy;&vcy; &zcy;&rcy;&ocy;&scy;&tcy;&acy;&ncy;&ncy;&yacy; &vcy;&iukcy;&ncy;-&rcy;&iecy;&jcy;&tcy;&ucy; &vcy;&iukcy;&dcy;&ncy;&ocy;&scy;&ncy;&ocy; &Acy;&Dcy;, &tcy;&ocy;&mcy;&ucy; &mcy;&icy; &vcy;&vcy;&ocy;&dcy;&icy;&mcy;&ocy; &ocy;&scy;&lcy;&acy;&bcy;&lcy;&iecy;&ncy;&ncy;&yacy;, &shchcy;&ocy;&bcy; &zcy;&bcy;&acy;&lcy;&acy;&ncy;&scy;&ucy;&vcy;&acy;&tcy;&icy; &ocy;&bcy;&icy;&dcy;&vcy;&iukcy; &zcy;&bcy;&iukcy;&rcy;&kcy;&icy;.</p>
+<blockquote>
+<p><div class="container-skill"><div id="bord-skill"><img alt="4-&jcy; &scy;&kcy;&iukcy;&lcy; &Vcy;&acy;&rcy;&ucy;&scy;&acy;" class="skill-image" src="https://images.contentstack.io/v3/assets/blt370612131b6e0756/blt06cdc738309d60b3/5f7f7b99e91fb80ef8022cf3/varus_4.jpg"/></div>
+<div class="text-container-skill"><h4>R</h4><ul>
+<li>&kcy;&ocy;&iecy;&fcy;&iukcy;&tscy;&iukcy;&jukcy;&ncy;&tcy; &scy;&icy;&lcy;&icy; &ucy;&mcy;&iukcy;&ncy;&softcy;: 100% &rarr; <strong>85%</strong></li>
+</ul></div></div></p>
+</blockquote>
+</blockquote>
+<hr/>
+<blockquote>
+<p><img alt="&scy;&pcy;&lcy;&iecy;&shcy;-&acy;&rcy;&tcy; &Vcy;&acy;&rcy;&vcy;&iukcy;&kcy;&acy;" class="image-center image-large" id="varvik" src="https://images.contentstack.io/v3/assets/blt370612131b6e0756/bltdfb2068d5f649680/635af8260e5b13107f550280/Warwick_800x200.jpg"/></p>
+<h3 id="varvik">&Vcy;&Acy;&Rcy;&Vcy;&Iukcy;&Kcy;</h3>
+<p>&Pcy;&iukcy;&scy;&lcy;&yacy; &ocy;&scy;&tcy;&acy;&ncy;&ncy;&iukcy;&khcy; &pcy;&rcy;&acy;&vcy;&ocy;&kcy;, &Vcy;&acy;&rcy;&vcy;&iukcy;&kcy; &vcy;&tcy;&rcy;&acy;&tcy;&icy;&vcy; &mcy;&ocy;&zhcy;&lcy;&icy;&vcy;&iukcy;&scy;&tcy;&softcy; &vcy;&lcy;&acy;&shcy;&tcy;&ocy;&vcy;&ucy;&vcy;&acy;&tcy;&icy; &dcy;&ucy;&iecy;&lcy;&iukcy; &ncy;&acy; &rcy;&acy;&ncy;&ncy;&iukcy;&khcy; &scy;&tcy;&acy;&dcy;&iukcy;&yacy;&khcy; &gcy;&rcy;&icy;. &Acy;&bcy;&icy; &dcy;&ocy;&vcy;&iecy;&scy;&tcy;&icy; &jcy;&ocy;&gcy;&ocy; &dcy;&ocy; &zcy;&dcy;&ocy;&rcy;&ocy;&vcy;&ocy;&gcy;&ocy; &vcy;&icy;&gcy;&lcy;&yacy;&dcy;&ucy;, &mcy;&icy; &vcy;&icy;&rcy;&iukcy;&shcy;&icy;&lcy;&icy; &ncy;&acy;&tcy;&ocy;&chcy;&icy;&tcy;&icy; &jcy;&ocy;&mcy;&ucy; &zcy;&ucy;&bcy;&icy;.</p>
+<blockquote>
+<p><div class="container-skill"><div id="bord-skill"><img alt="1-&jcy; &scy;&kcy;&iukcy;&lcy; &Vcy;&acy;&rcy;&vcy;&iukcy;&kcy;&acy;" class="skill-image" src="https://images.contentstack.io/v3/assets/blt370612131b6e0756/bltf668fa12b7837eea/6359f1b5882b96108ae788b4/Warwick_1.jpg"/></div>
+<div class="text-container-skill"><h4>Q</h4><ul>
+<li>&shcy;&kcy;&ocy;&dcy;&acy;, &pcy;&iecy;&rcy;&iecy;&tcy;&vcy;&ocy;&rcy;&iecy;&ncy;&acy; &ncy;&acy; &zcy;&tscy;&iukcy;&lcy;&iecy;&ncy;&ncy;&yacy;: 22,5/40/57,5/75% &rarr; <strong>37,5/50/62,5/75%</strong></li>
+</ul></div></div></p>
+</blockquote>
+</blockquote>
+<hr/>
+<blockquote>
+<p><img alt="&scy;&pcy;&lcy;&iecy;&shcy;-&acy;&rcy;&tcy; &Zcy;&iecy;&rcy;&iukcy;" class="image-center image-large" id="zeri" src="https://images.contentstack.io/v3/assets/blt370612131b6e0756/blt42317410bde0cfad/63ec10a77c0ff85658855f38/Zeri_800x200.jpg"/></p>
+<h3 id="zeri">&Zcy;&IEcy;&Rcy;&Iukcy;</h3>
+<p>&Ocy;&scy;&tcy;&acy;&ncy;&ncy;&iukcy; &zcy;&mcy;&iukcy;&ncy;&icy; &ncy;&acy; &ncy;&acy;&shcy;&ucy; &bcy;&lcy;&icy;&scy;&kcy;&acy;&vcy;&kcy;&ucy; &vcy;&pcy;&lcy;&icy;&ncy;&ucy;&lcy;&icy;, &acy;&lcy;&iecy; &ncy;&acy; &pcy;&iukcy;&zcy;&ncy;&iukcy;&khcy; &scy;&tcy;&acy;&dcy;&iukcy;&yacy;&khcy; &gcy;&rcy;&icy; &vcy;&ocy;&ncy;&acy; &dcy;&ocy;&scy;&iukcy; &bcy;'&jukcy; &dcy;&ocy;&vcy;&ocy;&lcy;&iukcy; &scy;&icy;&lcy;&softcy;&ncy;&ocy;. &Scy;&icy;&pcy;&ncy;&iecy;&mcy;&ocy; &shchcy;&iecy; &pcy;&iukcy;&scy;&kcy;&ucy;.</p>
+<p><div class="text-container-skill"><h4>&Bcy;&Acy;&Zcy;&Ocy;&Vcy;&Iukcy; &KHcy;&Acy;&Rcy;&Acy;&Kcy;&Tcy;&IEcy;&Rcy;&Icy;&Scy;&Tcy;&Icy;&Kcy;&Icy;</h4><ul>
+<li>&zcy;&dcy;&ocy;&rcy;&ocy;&vcy;'&yacy; &zcy;&acy; &rcy;&iukcy;&vcy;&iecy;&ncy;&softcy;: 120 &rarr; <strong>112</strong></li>
+</ul></div></p>
+<blockquote>
+<hr/>
+<p><div class="container-skill"><div id="bord-skill"><img alt="4-&jcy; &scy;&kcy;&iukcy;&lcy; &Zcy;&iecy;&rcy;&iukcy;" class="skill-image" src="https://images.contentstack.io/v3/assets/blt370612131b6e0756/blt16cbddce24d49a17/63ec1280fb32ec1b0e9c9bfa/Zeri_4.jpg"/></div>
+<div class="text-container-skill"><h4>R</h4><ul>
+<li>&shcy;&kcy;&ocy;&dcy;&acy; &lcy;&acy;&ncy;&tscy;&yucy;&gcy;&ocy;&vcy;&ocy;&yicy; &bcy;&lcy;&icy;&scy;&kcy;&acy;&vcy;&kcy;&icy; &vcy;&iukcy;&dcy; &bcy;&acy;&zcy;&ocy;&vcy;&icy;&khcy; &acy;&tcy;&acy;&kcy;: 25% &Acy;&Dcy; &rarr; <strong>20% &Acy;&Dcy;</strong></li>
+</ul></div></div></p>
+</blockquote>
+</blockquote>
+<h1 id="zmini-predmetiv_1">&Zcy;&Mcy;&Iukcy;&Ncy;&Icy; &Pcy;&Rcy;&IEcy;&Dcy;&Mcy;&IEcy;&Tcy;&Iukcy;&Vcy;</h1>
+<h3 id="mantiia-12-yi-godini">&Mcy;&Acy;&Ncy;&Tcy;&Iukcy;&YAcy; 12-&YIcy; &Gcy;&Ocy;&Dcy;&Icy;&Ncy;&Icy;</h3>
+<blockquote>
+<p>&Mcy;&icy; &zcy;&ncy;&acy;&jukcy;&mcy;&ocy;, &ncy;&acy;&scy;&kcy;&iukcy;&lcy;&softcy;&kcy;&icy; &Mcy;&acy;&ncy;&tcy;&iukcy;&yacy; &scy;&icy;&lcy;&softcy;&ncy;&acy;, &ocy;&scy;&ocy;&bcy;&lcy;&icy;&vcy;&ocy; &ncy;&acy; &pcy;&iukcy;&zcy;&ncy;&iukcy;&khcy; &iecy;&tcy;&acy;&pcy;&acy;&khcy; &gcy;&rcy;&icy;. &Acy;&lcy;&iecy; &mcy;&icy; &vcy;&vcy;&acy;&zhcy;&acy;&jukcy;&mcy;&ocy;, &shchcy;&ocy; &ucy; &ncy;&acy;&scy; &shchcy;&iecy; &jukcy; &pcy;&rcy;&ocy;&scy;&tcy;&iukcy;&rcy; &dcy;&lcy;&yacy; &pcy;&ocy;&kcy;&rcy;&acy;&shchcy;&iecy;&ncy;&ncy;&yacy; &ncy;&acy; &rcy;&acy;&ncy;&ncy;&iukcy;&khcy; &tcy;&acy; &scy;&iecy;&rcy;&iecy;&dcy;&ncy;&iukcy;&khcy; &iecy;&tcy;&acy;&pcy;&acy;&khcy; &gcy;&rcy;&icy;. &Mcy;&icy; &zcy;&mcy;&iecy;&ncy;&shcy;&ucy;&jukcy;&mcy;&ocy; &dcy;&iecy;&yacy;&kcy;&iukcy; &khcy;&acy;&rcy;&acy;&kcy;&tcy;&iecy;&rcy;&icy;&scy;&tcy;&icy;&kcy;&icy;, &tcy;&ocy; &dcy;&ocy;&dcy;&acy;&jukcy;&mcy;&ocy; &zcy;&dcy;&ocy;&rcy;&ocy;&vcy;'&yacy;. &Scy;&pcy;&ocy;&dcy;&iukcy;&vcy;&acy;&jukcy;&mcy;&ocy;&scy;&softcy;, &tscy;&iecy; &pcy;&ocy;&kcy;&rcy;&acy;&shchcy;&icy;&tcy;&softcy; &pcy;&rcy;&iecy;&dcy;&mcy;&iecy;&tcy; &ucy; &rcy;&acy;&ncy;&ncy;&iukcy;&jcy; &gcy;&rcy;&iukcy;.</p>
+<blockquote>
+<p><div class="text-container-skill"><h4>&KHcy;&acy;&rcy;&acy;&kcy;&tcy;&iecy;&rcy;&icy;&scy;&tcy;&icy;&kcy;&icy;</h4><ul class="no-style-list">
+<li><span class="stat-hp">&Dcy;&acy;&jukcy; 200 &zcy;&dcy;&ocy;&rcy;&ocy;&vcy;'&yacy;</span></li>
+<li><span class="stat-ar">&Bcy;&rcy;&ocy;&ncy;&yacy;: 50 &rarr; <strong>40</strong></span></li>
+<li><span class="stat-mr">&Mcy;&acy;&gcy;&iukcy;&chcy;&ncy;&icy;&jcy; &scy;&ucy;&pcy;&rcy;&ocy;&tcy;&icy;&vcy;: 50 &rarr; <strong>40</strong></span></li>
+</ul></div></p>
+</blockquote>
+</blockquote>
+<h3 id="viklik-steraka">&Vcy;&Icy;&Kcy;&Lcy;&Icy;&Kcy; &Scy;&Tcy;&IEcy;&Rcy;&Acy;&Kcy;&Acy;</h3>
+<blockquote>
+<p>&Dcy;&iecy;&yacy;&kcy;&iukcy; &chcy;&iecy;&mcy;&pcy;&iukcy;&ocy;&ncy;&icy; &dcy;&acy;&lcy;&softcy;&ncy;&softcy;&ocy;&gcy;&ocy; &bcy;&ocy;&yucy;, &tcy;&acy;&kcy;&iukcy; &yacy;&kcy; &Ucy;&rcy;&gcy;&ocy;&tcy;, &ncy;&iecy; &mcy;&acy;&yucy;&tcy;&softcy; &vcy;&iecy;&lcy;&icy;&kcy;&ocy;&yicy; &vcy;&acy;&rcy;&iukcy;&acy;&tscy;&iukcy;&yicy; &pcy;&rcy;&iecy;&dcy;&mcy;&iecy;&tcy;&iukcy;&vcy;, &yacy;&kcy;&iukcy; &dcy;&acy;&yucy;&tcy;&softcy; &yicy;&mcy; &shcy;&kcy;&ocy;&dcy;&ucy; &tcy;&acy; &zcy;&dcy;&ocy;&rcy;&ocy;&vcy;'&yacy;. &Tcy;&ocy;&mcy;&ucy;, &mcy;&icy; &zcy;&mcy;&iukcy;&ncy;&yucy;&jukcy;&mcy;&ocy; &Vcy;&icy;&kcy;&lcy;&icy;&kcy; &Scy;&tcy;&iecy;&rcy;&acy;&kcy;&acy;, &acy; &tcy;&ocy;&chcy;&ncy;&iukcy;&shcy;&iecy;, &vcy;&iukcy;&dcy;&kcy;&rcy;&icy;&vcy;&acy;&jukcy;&mcy;&ocy; &jcy;&ocy;&gcy;&ocy; &dcy;&lcy;&yacy; &chcy;&iecy;&mcy;&pcy;&iukcy;&ocy;&ncy;&iukcy;&vcy; &dcy;&acy;&lcy;&softcy;&ncy;&softcy;&ocy;&gcy;&ocy; &bcy;&ocy;&yucy;. &Scy;&pcy;&ocy;&dcy;&iukcy;&vcy;&acy;&jukcy;&mcy;&ocy;&scy;&softcy;, &tscy;&yacy; &zcy;&mcy;&iukcy;&ncy;&acy; &dcy;&ocy;&dcy;&acy;&scy;&tcy;&softcy; &ncy;&ocy;&vcy;&icy;&jcy; &pcy;&rcy;&iecy;&dcy;&mcy;&iecy;&tcy; &vcy; &zcy;&bcy;&iukcy;&rcy;&kcy;&acy;&khcy; &Ucy;&rcy;&gcy;&ocy;&tcy;&acy;.</p>
+<blockquote>
+<p><div class="text-container-skill"><h4>&KHcy;&acy;&rcy;&acy;&kcy;&tcy;&iecy;&rcy;&icy;&scy;&tcy;&icy;&kcy;&icy;</h4><ul>
+<li><strong>&chcy;&iecy;&mcy;&pcy;&iukcy;&ocy;&ncy;&icy; &dcy;&acy;&lcy;&softcy;&ncy;&softcy;&ocy;&gcy;&ocy; &bcy;&ocy;&yucy; &tcy;&iecy;&pcy;&iecy;&rcy; &mcy;&ocy;&zhcy;&ucy;&tcy;&softcy; &kcy;&ucy;&pcy;&icy;&tcy;&icy; &tscy;&iecy;&jcy; &pcy;&rcy;&iecy;&dcy;&mcy;&iecy;&tcy;</strong></li>
+</ul></div></p>
+</blockquote>
+</blockquote>
+<h1 id="skini_1">&Scy;&Kcy;&Iukcy;&Ncy;&Icy;</h1>
+<div class="skins">
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><img class="image-center image-large" src="https://images.contentstack.io/v3/assets/blt370612131b6e0756/blt1a50e4b1471b25d5/642270578cbb571155db1927/03292023_WRPatchNotes4.1a_Birdio.jpg">&Pcy;&IEcy;&Rcy;&SHcy;&Ocy;&Kcy;&Vcy;&Iukcy;&Tcy;&Ncy;&IEcy;&Vcy;&Icy;&Jcy; &Gcy;&Acy;&Lcy;&Iukcy;&Ocy;<br/><em>&Bcy;&ucy;&dcy;&iecy; &dcy;&ocy;&scy;&tcy;&ucy;&pcy;&ncy;&icy;&jcy; &zcy; 30 &bcy;&iecy;&rcy;&iecy;&zcy;&ncy;&yacy; 03:01 UTC+3</em></img></td>
+<td align="center"><img class="image-center image-large" src="https://images.contentstack.io/v3/assets/blt370612131b6e0756/blt6d15c6fea9e21f78/64227058b7ff2821000dd23b/03292023_WRPatchNotes4.1a_Cosmic-Defender-Xin-Zhao.jpg">&Kcy;&Ocy;&Scy;&Mcy;&Iukcy;&CHcy;&Ncy;&Icy;&Jcy; &Zcy;&Acy;&KHcy;&Icy;&Scy;&Ncy;&Icy;&Kcy; &Kcy;&Scy;&Iukcy;&Ncy;&SOFTcy; &CHcy;&ZHcy;&Acy;&Ocy;<br/><em>&Bcy;&ucy;&dcy;&iecy; &dcy;&ocy;&scy;&tcy;&ucy;&pcy;&ncy;&icy;&jcy; &zcy; 04 &kcy;&vcy;&iukcy;&tcy;&ncy;&yacy; 03:01 UTC+3</em></img></td>
+</tr>
+<tr>
+<td align="center"><img class="image-center image-large" src="https://images.contentstack.io/v3/assets/blt370612131b6e0756/blt00e7ed39b0912750/64227059f328751d801e7a3d/03292023_WRPatchNotes4.1a_CosmicQueenAshe_FINAL.jpg">&Kcy;&Ocy;&Scy;&Mcy;&Iukcy;&CHcy;&Ncy;&Acy; &Kcy;&Ocy;&Rcy;&Ocy;&Lcy;&IEcy;&Vcy;&Acy; &IEcy;&SHcy;<br/><em>&Bcy;&ucy;&dcy;&iecy; &dcy;&ocy;&scy;&tcy;&ucy;&pcy;&ncy;&acy; &zcy; 04 &kcy;&vcy;&iukcy;&tcy;&ncy;&yacy; 03:01 UTC+3</em></img></td>
+<td align="center"><img class="image-center image-large" src="https://images.contentstack.io/v3/assets/blt370612131b6e0756/blt9deba7de00030963/64227059f7f78f5e04dc9986/03292023_WRPatchNotes4.1a_Cosmic-Reaver-Kassadin.jpg"/>&Kcy;&Ocy;&Scy;&Mcy;&Iukcy;&CHcy;&Ncy;&Icy;&Jcy; &Rcy;&Ocy;&Zcy;&Vcy;&Iukcy;&Dcy;&Ncy;&Icy;&Kcy; &Kcy;&Acy;&Scy;&Scy;&Acy;&Dcy;&Iukcy;&Ncy;<br/><em>&Bcy;&ucy;&dcy;&iecy; &dcy;&ocy;&scy;&tcy;&ucy;&pcy;&ncy;&icy;&jcy; &zcy; 04 &kcy;&vcy;&iukcy;&tcy;&ncy;&yacy; 03:01 UTC+3</em></td>
+</tr>
+<tr>
+<td align="center"><img class="image-center image-large" src="https://images.contentstack.io/v3/assets/blt370612131b6e0756/blt199d392c965b8b9b/642270598cbb571155db192b/03292023_WRPatchNotes4.1a_CosmicLux.jpg"/>&Kcy;&Ocy;&Scy;&Mcy;&Iukcy;&CHcy;&Ncy;&Acy; &Lcy;&YUcy;&Kcy;&Scy;<br/><em>&Bcy;&ucy;&dcy;&iecy; &dcy;&ocy;&scy;&tcy;&ucy;&pcy;&ncy;&acy; &zcy; 04 &kcy;&vcy;&iukcy;&tcy;&ncy;&yacy; 03:01 UTC+3</em></td>
+<td align="center"><img class="image-center image-large" src="https://images.contentstack.io/v3/assets/blt370612131b6e0756/blt05a7f4e0be9c56de/64227059649e141123a6e0a9/03292023_WRPatchNotes4.1a_Dark-Cosmic-Lux.jpg"/>&Tcy;&IEcy;&Mcy;&Ncy;&Acy; &Kcy;&Ocy;&Scy;&Mcy;&Iukcy;&CHcy;&Ncy;&Acy; &Lcy;&YUcy;&Kcy;&Scy;<br/><em>&Bcy;&ucy;&dcy;&iecy; &dcy;&ocy;&scy;&tcy;&ucy;&pcy;&ncy;&acy; &zcy; 04 &kcy;&vcy;&iukcy;&tcy;&ncy;&yacy; 03:01 UTC+3</em></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="aksesuari">&Acy;&Kcy;&Scy;&IEcy;&Scy;&Ucy;&Acy;&Rcy;&Icy;</h1>
+<p><img class="image-center image-large" src="https://images.contentstack.io/v3/assets/blt370612131b6e0756/blte6f2bc4aa56b0aa3/6422705a72523f63bd3b36fc/03292023_WRPatchNotes4.1a_Goodies4.1a.jpg"/></p>
+<p>&Vcy;&icy; &mcy;&ocy;&zhcy;&iecy;&tcy;&iecy; &zcy;&acy;&rcy;&ocy;&bcy;&lcy;&yacy;&tcy;&icy; &acy;&bcy;&ocy; &kcy;&ucy;&pcy;&ucy;&vcy;&acy;&tcy;&icy; &acy;&kcy;&scy;&iecy;&scy;&ucy;&acy;&rcy;&icy; &zcy; &rcy;&iukcy;&zcy;&ncy;&icy;&khcy; &dcy;&zhcy;&iecy;&rcy;&iecy;&lcy;. &Pcy;&iecy;&rcy;&iecy;&gcy;&lcy;&yacy;&ncy;&softcy;&tcy;&iecy; &vcy;&iukcy;&dcy;&pcy;&ocy;&vcy;&iukcy;&dcy;&ncy;&ucy; &scy;&tcy;&ocy;&rcy;&iukcy;&ncy;&kcy;&ucy; &ucy; &gcy;&rcy;&iukcy;, &shchcy;&ocy;&bcy; &dcy;&iukcy;&zcy;&ncy;&acy;&tcy;&icy;&scy;&yacy; &bcy;&iukcy;&lcy;&softcy;&shcy;&iecy; &pcy;&rcy;&ocy; &tcy;&iecy;, &yacy;&kcy; &yicy;&khcy; &ocy;&tcy;&rcy;&icy;&mcy;&acy;&tcy;&icy;.</p>
+<p><strong>&Bcy;&ocy;&jcy;&ocy;&vcy;&iukcy; &iecy;&mcy;&ocy;&tscy;&iukcy;&yicy;:</strong> Oh well!; CAW!</p>
+<p><strong>&Iukcy;&kcy;&ocy;&ncy;&kcy;&icy;:</strong> Jinx here!; Birdio; Celestial Light; Dark Matter</p>
+<p><strong>&Rcy;&acy;&mcy;&kcy;&acy; &iukcy;&kcy;&ocy;&ncy;&kcy;&icy;:</strong> SNACKS</p>
+<p><strong>&IEcy;&fcy;&iecy;&kcy;&tcy; &vcy;&bcy;&icy;&vcy;&scy;&tcy;&vcy;&acy;:</strong> ORB????; Cosmic Mascot</p>
+<p><strong>&IEcy;&fcy;&iecy;&kcy;&tcy; &pcy;&ocy;&vcy;&iecy;&rcy;&ncy;&iecy;&ncy;&ncy;&yacy;:</strong> Celestial Revocation</p>
+<p>&Ucy;&scy;&iukcy; &acy;&kcy;&scy;&iecy;&scy;&ucy;&acy;&rcy;&icy; &bcy;&ucy;&dcy;&ucy;&tcy;&softcy; &vcy;&icy;&pcy;&ucy;&shchcy;&iecy;&ncy;&iukcy; &pcy;&rcy;&ocy;&tcy;&yacy;&gcy;&ocy;&mcy; &pcy;&acy;&tcy;&chcy;&ucy;.</p>
+<h1 id="rotatsiia-bezkoshtovnikh-geroyiv">&Rcy;&Ocy;&Tcy;&Acy;&TScy;&Iukcy;&YAcy; &Bcy;&IEcy;&Zcy;&Kcy;&Ocy;&SHcy;&Tcy;&Ocy;&Vcy;&Ncy;&Icy;&KHcy; &Gcy;&IEcy;&Rcy;&Ocy;&YIcy;&Vcy;</h1>
+<p><em>30 &bcy;&iecy;&rcy;&iecy;&zcy;&ncy;&yacy; - 05 &kcy;&vcy;&iukcy;&tcy;&ncy;&yacy;:</em> &Bcy;&rcy;&acy;&ucy;&mcy;, &Lcy;&yucy;&tscy;&icy;&acy;&ncy;, &Ocy;&rcy;&iukcy;&acy;&ncy;&acy;, &Scy;&iecy;&ncy;&ncy;&acy;, &Scy;&iukcy;&ncy;&zhcy;&iecy;&tcy;, &Tcy;&rcy;&iukcy;&scy;&tcy;&acy;&ncy;&acy;, &Ucy;&rcy;&gcy;&ocy;&tcy;, &Vcy;&acy;&rcy;&vcy;&iukcy;&kcy;, &Kcy;&scy;&iukcy;&ncy;&softcy; &CHcy;&zhcy;&acy;&ocy;, &Zcy;&iukcy;&gcy;&gcy;&scy;</p>
+<p><em>06 &kcy;&vcy;&iukcy;&tcy;&ncy;&yacy; - 12 &kcy;&vcy;&iukcy;&tcy;&ncy;&yacy;:</em> &Acy;&acy;&tcy;&rcy;&ocy;&kcy;&scy;, &Acy;&ucy;&rcy;&iecy;&lcy;&iukcy;&ocy;&ncy; &Scy;&ocy;&lcy;, &Dcy;&iukcy;&acy;&ncy;&acy;, &IEcy;&vcy;&iecy;&lcy;&iukcy;&ncy;&ncy;, &Fcy;&iukcy;&ocy;&rcy;&acy;, &ZHcy;&acy;&ncy;&ncy;&acy;, &Kcy;&acy;&rcy;&mcy;&acy;, &Lcy;&iukcy; &Scy;&iukcy;&ncy;, &Mcy;&iukcy;&scy; &Fcy;&ocy;&rcy;&tcy;&ucy;&ncy;&acy;, &Vcy;&iecy;&jcy;&ncy;</p>
+<p><em>13 &kcy;&vcy;&iukcy;&tcy;&ncy;&yacy; - 19 &kcy;&vcy;&iukcy;&tcy;&ncy;&yacy;:</em> &Dcy;&ocy;&kcy;&tcy;&ocy;&rcy; &Mcy;&ucy;&ncy;&dcy;&ocy;, &Kcy;&acy;&jcy;'&Scy;&acy;, &Kcy;&acy;&scy;&scy;&acy;&dcy;&iukcy;&ncy;, &Ncy;&acy;&mcy;&iukcy;, &Ncy;&acy;&ucy;&tcy;&iukcy;&lcy;&ucy;&scy;, &Rcy;&acy;&mcy;&mcy;&ucy;&scy;, &SHcy;&iecy;&ncy;, &SHcy;&icy;&vcy;&acy;&ncy;&ncy;&acy;, &Tcy;&vcy;&iukcy;&scy;&tcy;&iecy;&dcy; &Fcy;&iecy;&jcy;&tcy;, &Kcy;&scy;&acy;&yacy;</p>
+<blockquote>
+<blockquote>
+<p><div class="container-skill"><div id="bord-skill"><img class="skill-image" src="https://telegra.ph/file/d40cae9227f42e666a1d7.png"/></div>
+<div class="text-container-skill"><h4>&Pcy;&IEcy;&Rcy;&IEcy;&Kcy;&Lcy;&Acy;&Dcy; &Scy;&Tcy;&Acy;&Tcy;&Tcy;&Iukcy;</h4>&Scy;&tcy;&acy;&tcy;&tcy;&yucy; &pcy;&iecy;&rcy;&iecy;&kcy;&lcy;&acy;&dcy;&iecy;&ncy;&ocy; &kcy;&ocy;&mcy;&acy;&ncy;&dcy;&ocy;&yucy; <a class="external" href="https://t.me/wild_rift_lol_ua">Wild Rift UA</a>.</div></div></p>
+</blockquote>
+</blockquote>
+  </div>
+  <footer class="flex flex-col mt-10 ">
+    <ul class="flex flex-wrap">
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="../../../tag/baf.html">#БАФ</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="../../../tag/nerf.html">#НЕРФ</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="../../../tag/nove.html">#НОВЕ</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="../../../tag/podiia.html">#ПОДІЯ</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="../../../tag/skin.html">#СКІН</a>
+        </li>
+        <li
+          class="bg-zinc-200 hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 mb-2 mr-2 px-3 py-1.5 rounded-md transition ease-in active:-translate-y-1 active:scale-110 duration-75">
+          <a href="../../../tag/zmina.html">#ЗМІНА</a>
+        </li>
+    </ul>
+    <div class="flex w-full my-2 bg-zinc-200 dark:bg-zinc-700 rounded-lg">
+      <div class="w-1/2 rounded-l-lg"></div>
+    </div>
+    <div class="flex bg-zinc-200 dark:bg-zinc-700 py-2 rounded-lg justify-center space-x-2 text-xs">
+      <ul>
+        <li class="bg-gray-900 p-1 text-white rounded-md">
+          <a target="_blank" rel="noopener noreferrer" title="telegram" aria-label="share Features on telegram"
+            href="https://telegram.me/share/url?text=Features&amp;url=../../../lib/patch-not/p41a/">
+            <i class="fab fa-telegram fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+  <div>
+<script async src="https://comments.app/js/widget.js?3" data-comments-app-website="XdtGmopQ" data-limit="5"></script>
+<script async src="https://comments.app/js/widget.js?3" data-comments-app-website="2WZVVfQT" data-limit="10" data-color="FFFFFF" data-dislikes="1" data-colorful="1" data-dark="1"></script>
+  </div>
+</main>
+
+    </div>
+    <footer class="flex w-full text-xs justify-center mt-10 mb-6 text-zinc-600 dark:text-zinc-400">
+        <div class="px-4">
+            <span>©2023&nbsp;&#8226;&nbsp;</span>Виготовлено з 
+            <a class="underline" href="https://getpelican.com/">Pelican</a>&nbsp;&
+            <a class="underline" href="https://github.com/aleylara/Papyrus">Papyrus</a>
+        </div>
+    </footer>
+
+    <script>
+        let themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+        let themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia(
+                '(prefers-color-scheme: dark)').matches)) {
+            themeToggleLightIcon.classList.remove('hidden');
+        } else {
+            themeToggleDarkIcon.classList.remove('hidden');
+        }
+        let themeToggleBtn = document.getElementById('theme-toggle');
+        themeToggleBtn.addEventListener('click', function () {
+            themeToggleDarkIcon.classList.toggle('hidden');
+            themeToggleLightIcon.classList.toggle('hidden');
+            if (localStorage.getItem('color-theme')) {
+                if (localStorage.getItem('color-theme') === 'light') {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                }
+            } else {
+                if (document.documentElement.classList.contains('dark')) {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                } else {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                }
+            }
+        });
+    </script>
+    <button onclick="topFunction()" id="to_the_top" title="Нагору">↑</button> 
+
+    <script>
+        function scrollToTop() {
+        const position = document.documentElement.scrollTop || document.body.scrollTop;
+        if (position > 0) {
+            window.requestAnimationFrame(scrollToTop);
+            window.scrollTo(0, position - position / 15);
+        }
+        }
+        // Знаходимо кнопку "Нагору"
+        const btnToTop = document.getElementById("to_the_top");
+
+        // Приховуємо кнопку, якщо ми на початку сторінки
+        btnToTop.style.display = "none";
+
+        // Коли користувач прокручує сторінку вниз, кнопка з'являється
+        window.onscroll = function() {
+        if (document.body.scrollTop > 60 || document.documentElement.scrollTop > 60) {
+            btnToTop.style.display = "block";
+        } else {
+            btnToTop.style.display = "none";
+        }
+        };
+
+        // Коли користувач натискає кнопку, сторінка прокручується вверх з плавною анімацією
+        btnToTop.onclick = function() {
+        scrollToTop();
+        };
+    </script>
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = '/theme/css/comments.css';
+        document.head.appendChild(link);
+    </script>
+</body>
+
+</html>
